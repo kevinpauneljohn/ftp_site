@@ -6,6 +6,8 @@
 @section('extra_stylesheet')
     <!-- DataTables -->
     <link rel="stylesheet" href="{{asset('/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('/bower_components/select2/dist/css/select2.min.css')}}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
 @endsection
 @section('page_header')
@@ -15,6 +17,7 @@ Roles
 @section('main_content')
     <div class="row">
         <div class="col-lg-3">
+            {{--Roles--}}
             <div class="box">
                 <div class="box-header">
                     Add Role
@@ -33,6 +36,46 @@ Roles
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            {{--Permission--}}
+            <div class="box">
+                <div class="box-header">
+                    Add Permission
+                </div>
+                <div class="box-body">
+                    @if(session('success') == true)
+                        <div class="alert alert-success">Role Successfully Added!</div>
+                    @endif
+                    <form action="{{route('permissions')}}" method="post" class="permission-form">
+                        @csrf
+                        <div class="form-group">
+                            <label for="permission">Permission Label</label>
+                            <input type="text" name="permission" class="permission form-control {{$errors->has('permission') ? 'is-invalid' : ''}}" id="roleName"/>
+                            @error('permission')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Assign to Roles</label>
+                            <select name="roleAssignment" class="form-control role-assign" multiple="multiple" data-placeholder="Select roles"
+                                    style="width: 100%;">
+                                @foreach($roles as $role)
+                                        <option value="{{$role->name}}">{{$role->name}}</option>
+                                    @endforeach
+                            </select>
+                            @error('roleAssignment')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -91,13 +134,16 @@ Roles
     <script src="{{asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
 
     <!-- growl notification -->
-    <script src="{{asset('bower_components/remarkable-bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+{{--    <script src="{{asset('bower_components/remarkable-bootstrap-notify/bootstrap-notify.min.js')}}"></script>--}}
+    <!-- Select2 -->
+    <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-    <script src="{{asset('/js/employee.js')}}"></script>
+    <script src="{{asset('/js/rolesPermissions.js')}}"></script>
 
     <script>
         $(function () {
             $('#role-list').DataTable()
+            $('.role-assign').select2()
         })
     </script>
 @endsection
