@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    @yield('extra_meta')
     <title>@yield('title')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -41,9 +40,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>O</b>Box</span>
+            <span class="logo-mini"><b>F2</b>P</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Outerbox</b>PRO</span>
+            <span class="logo-lg"><b>File2</b>PRINT</span>
         </a>
 
         <!-- Header Navbar -->
@@ -158,7 +157,7 @@
                             <!-- The user image in the navbar-->
                             <img src="{{ asset('/bower_components/admin-lte/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -166,24 +165,8 @@
                                 <img src="{{ asset('/bower_components/admin-lte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
-                                    <small>Member since Nov. 2012</small>
+                                    {{ucfirst(Auth::user()->username)}}
                                 </p>
-                            </li>
-                            <!-- Menu Body -->
-                            <li class="user-body">
-                                <div class="row">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
-                                </div>
-                                <!-- /.row -->
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
@@ -191,7 +174,16 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+
+                                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </div>
                             </li>
                         </ul>
@@ -205,7 +197,6 @@
         </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <!-- Left side column. contains the sidebar -->
     <aside class="main-sidebar">
 
         <!-- sidebar: style can be found in sidebar.less -->
@@ -214,40 +205,27 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="{{ asset("/bower_components/admin-lte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
+                    <img src="{{ asset('/bower_components/admin-lte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>{{ucfirst(Auth::user()->username)}}</p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
 
-            <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                    <span class="input-group-btn">
-  <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-</span>
-                </div>
-            </form>
-            <!-- /.search form -->
-
             <!-- Sidebar Menu -->
-            <ul class="sidebar-menu">
-                <li class="header">HEADER</li>
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">MAIN NAVIGATION</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><span>Link</span></a></li>
-                <li><a href="#"><span>Another Link</span></a></li>
-                <li class="treeview">
-                    <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
-                    </ul>
-                </li>
-            </ul><!-- /.sidebar-menu -->
+                <li{{(Request::segment(1) == 'dashboard') ? ' class=active' : ''}}><a href="{{url('/dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                @role('super admin')
+                    <li{{(Request::segment(1) == 'roles') ? ' class=active' : ''}}><a href="{{url('/roles')}}"><i class="fa fa-sitemap"></i> <span>Roles</span></a></li>
+                @endrole
+
+                <li{{(Request::segment(1) == 'product') ? ' class=active' : ''}}><a href="{{url('product')}}"><i class="fa fa-shopping-bag"></i> <span>Product</span></a></li>
+            </ul>
+            <!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
     </aside>
