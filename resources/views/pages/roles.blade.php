@@ -28,9 +28,9 @@ Roles
                     @endif
                     <form action="{{route('roles')}}" method="post">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group {{$errors->has('roleName') ? 'has-error' : ''}}">
                             <label for="roleName">Role Name</label>
-                            <input type="text" name="roleName" class="roleName form-control {{$errors->has('roleName') ? 'is-invalid' : ''}}" id="roleName"/>
+                            <input type="text" name="roleName" class="roleName form-control" id="roleName" value="{{ old('roleName') }}"/>
                             @error('roleName')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -48,23 +48,23 @@ Roles
                     Add Permission
                 </div>
                 <div class="box-body">
-                    @if(session('success') == true)
-                        <div class="alert alert-success">Role Successfully Added!</div>
+                    @if(session('permissionSuccess') == true)
+                        <div class="alert alert-success">Permission Successfully Added!</div>
                     @endif
                     <form action="{{route('permissions')}}" method="post" class="permission-form">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group {{$errors->has('permission') ? 'has-error' : ''}}">
                             <label for="permission">Permission Label</label>
-                            <input type="text" name="permission" class="permission form-control {{$errors->has('permission') ? 'is-invalid' : ''}}" id="roleName"/>
+                            <input type="text" name="permission" class="permission form-control" id="roleName" value="{{ old('permission') }}"/>
                             @error('permission')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group {{$errors->has('roleAssignment') ? 'has-error' : ''}}">
                             <label>Assign to Roles</label>
-                            <select name="roleAssignment" class="form-control role-assign" multiple="multiple" data-placeholder="Select roles"
+                            <select name="roleAssignment[]" class="form-control role-assign" multiple="multiple" data-placeholder="Select roles"
                                     style="width: 100%;">
                                 @foreach($roles as $role)
                                         <option value="{{$role->name}}">{{$role->name}}</option>
@@ -100,7 +100,11 @@ Roles
                                     <tr>
                                         <td>{{$role->created_at}}</td>
                                         <td>{{$role->name}}</td>
-                                        <td></td>
+                                        <td>
+                                            @foreach($role->getAllPermissions() as $permission)
+                                                {{$permission->name.", "}}
+                                                @endforeach
+                                        </td>
                                         <td>
                                             <button type="button" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button>
                                             <button type="button" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></button>
@@ -138,7 +142,7 @@ Roles
     <!-- Select2 -->
     <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-    <script src="{{asset('/js/rolesPermissions.js')}}"></script>
+{{--    <script src="{{asset('/js/rolesPermissions.js')}}"></script>--}}
 
     <script>
         $(function () {

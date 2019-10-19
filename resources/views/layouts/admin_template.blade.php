@@ -18,6 +18,7 @@
           apply the skin class to the body tag so the changes take effect. -->
     <link rel="stylesheet" href="{{ asset('/bower_components/admin-lte/dist/css/skins/skin-purple.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/design.css') }}">
+
 @yield('extra_stylesheet')
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,6 +31,12 @@
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style type="text/css">
+        .invalid-feedback{
+            color:red;
+            font-size:12px;
+        }
+    </style>
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
@@ -222,8 +229,9 @@
                 @role('super admin')
                     <li{{(Request::segment(1) == 'roles') ? ' class=active' : ''}}><a href="{{url('/roles')}}"><i class="fa fa-sitemap"></i> <span>Roles</span></a></li>
                 @endrole
-
+                @hasanyrole('super admin|admin')
                 <li{{(Request::segment(1) == 'product') ? ' class=active' : ''}}><a href="{{url('product')}}"><i class="fa fa-shopping-bag"></i> <span>Product</span></a></li>
+                @endhasanyrole
             </ul>
             <!-- /.sidebar-menu -->
         </section>
