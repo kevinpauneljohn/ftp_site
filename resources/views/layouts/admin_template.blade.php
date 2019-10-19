@@ -227,6 +227,7 @@
                 <!-- Optionally, you can add icons to the links -->
                 <li{{(Request::segment(1) == 'dashboard') ? ' class=active' : ''}}><a href="{{url('/dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 @role('super admin')
+                    <li{{(Request::segment(1) == 'users') ? ' class=active' : ''}}><a href="{{url('/users')}}"><i class="fa fa-users"></i> <span>Users</span></a></li>
                     <li{{(Request::segment(1) == 'roles') ? ' class=active' : ''}}><a href="{{url('/roles')}}"><i class="fa fa-sitemap"></i> <span>Roles</span></a></li>
                 @endrole
                 @hasanyrole('super admin|admin')
