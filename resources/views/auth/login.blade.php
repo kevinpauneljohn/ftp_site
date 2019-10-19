@@ -12,16 +12,16 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="accessAccount" class="col-md-4 col-form-label text-md-right">{{ __('Username or Email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                                <input id="accessAccount" type="text" class="form-control {{($errors->has('email') || $errors->has('username')) ? 'is-invalid' :''}}" name="accessAccount" value="{{ old('accessAccount') }}" autocomplete="email" autofocus>
 
-                                @error('email')
+                                @if($errors->has('username') || $errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                            <strong>{{ $errors->first('username') ?: $errors->first('email') }}</strong>
                                     </span>
-                                @enderror
+                                @endif
                             </div>
                         </div>
 
