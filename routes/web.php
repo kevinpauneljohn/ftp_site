@@ -27,4 +27,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']],function (){
     Route::get('/dashboard','DashboardController@dashboard');
+    Route::get('/roles','RolesController@roles');
+    Route::post('/roles-create','RolesController@rolesForm')->name('roles');
 });

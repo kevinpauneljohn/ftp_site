@@ -9,5 +9,5 @@
     @endsection
 
 @section('main_content')
-{{auth()->user()->hasRole('super dadmin') ? 'yes':'no'}}
+
     @endsection
