@@ -30,4 +30,5 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('/roles','RolesController@roles');
     Route::post('/roles-create','RolesController@rolesForm')->name('roles');
     Route::post('/permission','PermissionController@permission')->name('permissions');
+    Route::get('/product','ProductController@product')->name('product');
 });
