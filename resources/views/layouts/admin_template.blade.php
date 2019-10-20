@@ -278,7 +278,6 @@
 
         <!-- Main content -->
         <section class="content container-fluid">
-
             @section('main_content')
 
             @show
