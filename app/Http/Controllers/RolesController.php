@@ -8,6 +8,10 @@ use Spatie\Permission\Models\Role;
 
 class RolesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:super admin']);
+    }
     /**
      * Oct. 19, 2019
      * @author john kevin paunel

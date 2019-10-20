@@ -90,9 +90,9 @@ Roles
                         <thead>
                         <tr>
                             <th width="8%">Date Created</th>
-                            <th width="8%">Role Name</th>
-                            <th width="70%">Permissions</th>
-                            <th>Action</th>
+                            <th width="15%">Role Name</th>
+                            <th width="60%">Permissions</th>
+                            <th width="10%">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -115,9 +115,9 @@ Roles
                         <tfoot>
                         <tr>
                             <th width="8%">Date Created</th>
-                            <th width="8%">Role Name</th>
-                            <th width="70%">Permissions</th>
-                            <th>Action</th>
+                            <th width="15%">Role Name</th>
+                            <th width="60%">Permissions</th>
+                            <th width="10%">Action</th>
                         </tr>
                         </tfoot>
                     </table>

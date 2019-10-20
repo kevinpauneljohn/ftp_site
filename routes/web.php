@@ -32,4 +32,5 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('/permission','PermissionController@permission')->name('permissions');
     Route::get('/product','ProductController@product')->name('product');
     Route::get('/users','UserController@users')->name('users');
+    Route::post('/user-create','UserController@userForm')->name('users.create');
 });
