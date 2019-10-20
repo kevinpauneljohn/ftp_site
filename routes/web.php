@@ -12,17 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('login'));
 });
 
 Route::get('admin', function () {
     return view('admin_template');
 });
-Auth::routes();
+Auth::routes([
+    'register'  => false
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+/*Auth::routes();*/
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']],function (){
