@@ -98,6 +98,21 @@
                                     </span>
                             @enderror
                         </div>
+                        <div class="form-group {{$errors->has('permissions') ? 'has-error' : ''}}">
+                            <label>Assign to Roles</label>
+                            <select name="permissions[]" class="form-control permissions-assign" multiple="multiple" data-placeholder="Select Permission"
+                                    style="width: 100%;">
+                                @foreach($permissions as $permission)
+                                    <option value="{{$permission->name}}">{{$permission->name}}</option>
+                                @endforeach
+                            </select>
+                            @error('permissions')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
@@ -175,7 +190,7 @@
     <script>
         $(function () {
             $('#role-list').DataTable()
-            $('.role-assign').select2()
+            $('.permissions-assign').select2()
         })
     </script>
 @endsection

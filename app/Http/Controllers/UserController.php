@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -22,8 +23,9 @@ class UserController extends Controller
     public function users()
     {
         return view('pages.users')->with([
-            'roles'     => Role::all(),
-            'users'     => User::all(),
+            'roles'         => Role::all(),
+            'users'         => User::all(),
+            'permissions'   => Permission::all(),
         ]);
     }
 
@@ -47,6 +49,13 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->active = 0;
         $user->assignRole($request->role);
+        if(!empty($request->permissions))
+        {
+            foreach ($request->permissions as $permission){
+                $user->givePermissionTo($permission);
+            }
+        }
+
 
         if($user->save())
         {

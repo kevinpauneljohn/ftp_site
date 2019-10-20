@@ -27,7 +27,7 @@
                     <th width="30%">Description</th>
                     <th width="12%">Author</th>
                     <th width="12%">Category</th>
-                    <th width="12%">Action</th>
+                    <th width="15%">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,10 +37,18 @@
                             <td>&#8369; {{$product->price}}</td>
                             <td><img src="{{asset('images/'.$product->productImage)}}" class="img-thumbnail"/></td>
                             <td>{{$product->title}}</td>
-                            <td>{{$category->getCategory($product->category_id)->name}}</td>
+                            <td>{{$product->description}}</td>
                             <td>{{$user->getAuthor($product->id)->username}}</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$category->getCategory($product->category_id)->name}}</td>
+                            <td>
+                                @if($currentUser->can('edit-product') || $currentUser->hasAnyRole(['super admin','admin']))
+                                    <button class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button>
+                                @endif
+                                    @if($currentUser->can('delete-product') || $currentUser->hasAnyRole(['super admin']))
+                                    <button class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></button>
+                                @endif
+
+                            </td>
                         </tr>
                         @endforeach
                 </tbody>
@@ -51,8 +59,8 @@
                     <th width="8%">Thumbnail</th>
                     <th width="8%">Name</th>
                     <th width="30%">Description</th>
-                    <th width="15%">Author</th>
-                    <th width="15%">Category</th>
+                    <th width="12%">Author</th>
+                    <th width="12%">Category</th>
                     <th width="15%">Action</th>
                 </tr>
                 </tfoot>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\category;
 use App\Product;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class ProductController extends Controller
 {
@@ -20,6 +22,7 @@ class ProductController extends Controller
             'products'      => Product::all(),
             'user'          => new ProductController(),
             'category'      => new ProductController(),
+            'currentUser'   => auth()->user(),
         ]);
     }
 
