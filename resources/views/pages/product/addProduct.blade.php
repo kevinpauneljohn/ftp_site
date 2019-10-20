@@ -17,7 +17,7 @@
 @section('main_content')
     <div class="box">
         <div class="box-body">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{route('product.create')}}" method="post" enctype="multipart/form-data">
                 @csrf
             <div class="row">
                <div class="col-lg-6">
@@ -39,7 +39,7 @@
                                     </span>
                            @enderror
                        </div>
-                   <div class="form-group {{$errors->has('size') ? 'has-error' : ''}}">
+                   <div class="form-group">
                        <label for="size">Size</label>
                        <div class="row">
                            <div class="col-lg-10">
@@ -57,12 +57,6 @@
                                </select>
                            </div>
                        </div>
-
-                       @error('size')
-                       <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                       @enderror
                    </div>
                    <div class="form-group {{$errors->has('description') ? 'has-error' : ''}}">
                        <label for="description">Description</label>
@@ -74,8 +68,22 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                        @enderror
+                    </div>
+                   <div class="form-group {{$errors->has('category') ? 'has-error' : ''}}">
+                       <label for="category">Category</label>
+                       <select name="category" class="form-control">
+                           <option></option>
+                           @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                               @endforeach
+                       </select>
+                       @error('category')
+                       <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                       @enderror
+                   </div>
                 </div>
-            </div>
             </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

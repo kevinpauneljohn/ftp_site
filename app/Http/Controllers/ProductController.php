@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\category;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -25,7 +27,9 @@ class ProductController extends Controller
      * */
     public function addProduct()
     {
-        return view('pages.product.addProduct');
+        return view('pages.product.addProduct')->with([
+            'categories' => category::all()
+        ]);
     }
 
     public function createProduct(Request $request)
@@ -33,7 +37,27 @@ class ProductController extends Controller
         $request->validate([
             'image'     => ['required','image:jpeg,png','max:2048'],
             'title'     => ['required'],
-            ''
+            'category'  => ['required'],
         ]);
+
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+
+        $product = new Product();
+        $product->title = $request->title;
+        $product->size = $request->size.' '.$request->measurement;
+        $product->description = $request->description;
+        $product->category_id = $request->category;
+        $product->created_by = auth()->user()->id;
+        $product->productImage = $imageName;
+
+        if($product->save())
+        {
+            request()->image->move(public_path('images'), $imageName);
+            $result = back()->with('success',true);
+        }else{
+            $result = back()->with('success',false);
+        }
+
+        return $result;
     }
 }
