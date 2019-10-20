@@ -106,7 +106,52 @@
         </div>
 
         <div class="col-lg-8">
-
+            <div class="box">
+                <div class="box-body">
+                    <table id="role-list" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th width="8%">Date Created</th>
+                            <th width="8%">Roles</th>
+                            <th width="30%">Full name</th>
+                            <th width="30%">Username</th>
+                            <th width="15%">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($users as $user)
+                            <tr>
+                                <td>{{$user->created_at}}</td>
+                                <td>
+                                    @foreach($user->getRoleNames() as $roleName)
+                                        {{$roleName}}
+                                        @endforeach
+                                </td>
+                                <td>
+                                    {{ucfirst($user->firstname)}}
+                                    {{ucfirst($user->middlename)}}
+                                    {{ucfirst($user->lastname)}}
+                                </td>
+                                <td>{{$user->username}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th width="8%">Date Created</th>
+                            <th width="8%">Roles</th>
+                            <th width="30%">Full name</th>
+                            <th width="30%">Username</th>
+                            <th width="15%">Action</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

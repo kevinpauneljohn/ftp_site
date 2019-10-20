@@ -22,7 +22,8 @@ class UserController extends Controller
     public function users()
     {
         return view('pages.users')->with([
-            'roles'     => Role::all()
+            'roles'     => Role::all(),
+            'users'     => User::all(),
         ]);
     }
 
