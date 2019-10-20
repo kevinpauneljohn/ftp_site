@@ -228,7 +228,18 @@
                 <li{{(Request::segment(1) == 'dashboard') ? ' class=active' : ''}}><a href="{{url('/dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 @role('super admin')
                     <li{{(Request::segment(1) == 'users') ? ' class=active' : ''}}><a href="{{url('/users')}}"><i class="fa fa-users"></i> <span>Users</span></a></li>
-                    <li{{(Request::segment(1) == 'roles') ? ' class=active' : ''}}><a href="{{url('/roles')}}"><i class="fa fa-sitemap"></i> <span>Roles</span></a></li>
+                <li class="{{(Request::segment(1) == 'roles') ? 'active ' : ' '}}treeview">
+                    <a href="#">
+                        <i class="fa fa-sitemap"></i><span>Roles and Permission</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                        <ul class="treeview-menu">
+                            <li{{(Request::segment(2) == 'roles') ? ' class=active' : ''}}><a href="{{url('/roles/roles')}}">Roles</a></li>
+                            <li{{(Request::segment(2) == 'permissions') ? ' class=active' : ''}}><a href="{{url('/roles/permissions')}}">Permissions</a></li>
+                        </ul>
+                    </a>
+                </li>
                 @endrole
 
                 @hasanyrole('super admin|admin')

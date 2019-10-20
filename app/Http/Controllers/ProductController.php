@@ -16,7 +16,35 @@ class ProductController extends Controller
      * */
     public function products()
     {
-        return view('pages.product.products');
+        return view('pages.product.products')->with([
+            'products'      => Product::all(),
+            'user'          => new ProductController(),
+            'category'      => new ProductController(),
+        ]);
+    }
+
+    /**
+     * Oct. 19, 2019
+     * @author john kevin paunel
+     * get the object data of user creator of product
+     * @param int $productId
+     * @return object
+     * */
+    public function getAuthor($productId)
+    {
+        return Product::find($productId)->users;
+    }
+
+    /**
+     * Oct. 20, 2019
+     * @author john kevin paunel
+     * get the product category object
+     * @param int $categoryId
+     * @return object
+     * */
+    public function getCategory($categoryId)
+    {
+        return category::find($categoryId);
     }
 
     /**
@@ -32,11 +60,19 @@ class ProductController extends Controller
         ]);
     }
 
+    /**
+     * Oct. 20, 2019
+     * @author john kevin paunel
+     * Create product
+     * @param Request $request
+     * @return mixed
+     * */
     public function createProduct(Request $request)
     {
         $request->validate([
             'image'     => ['required','image:jpeg,png','max:2048'],
             'title'     => ['required'],
+            'price'     => ['required','numeric','between:0,99.99'],
             'category'  => ['required'],
         ]);
 
@@ -46,6 +82,7 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->size = $request->size.' '.$request->measurement;
         $product->description = $request->description;
+        $product->price = $request->price;
         $product->category_id = $request->category;
         $product->created_by = auth()->user()->id;
         $product->productImage = $imageName;

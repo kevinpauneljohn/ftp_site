@@ -23,14 +23,16 @@ class PermissionController extends Controller
     {
         $validatedData = $request->validate([
             'permission'  => ['required','unique:permissions,name','max:300'],
-            'roleAssignment'  => ['required'],
         ]);
 
         $permission = new Permission();
         $permission->name = $request->permission;
         $permission->guard_name = "web";
-        foreach($request->roleAssignment as $roles){
-            $permission->assignRole($roles);
+        if(!empty($request->roleAssignment))
+        {
+            foreach($request->roleAssignment as $roles){
+                $permission->assignRole($roles);
+            }
         }
 
         if($permission->save())

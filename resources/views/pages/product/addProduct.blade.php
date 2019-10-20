@@ -58,6 +58,16 @@
                            </div>
                        </div>
                    </div>
+                   <div class="form-group {{$errors->has('price') ? 'has-error' : ''}}">
+                       <label for="price">Price</label>
+                       <input type="number" class="form-control" name="price" value="{{old('price')}}" step="0.01"/>
+                       @error('price')
+                       <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                       @enderror
+                    </div>
+
                    <div class="form-group {{$errors->has('description') ? 'has-error' : ''}}">
                        <label for="description">Description</label>
                        <textarea name="description" class="form-control" id="description" style="min-height: 300px;">
@@ -68,7 +78,8 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                        @enderror
-                    </div>
+                   </div>
+
                    <div class="form-group {{$errors->has('category') ? 'has-error' : ''}}">
                        <label for="category">Category</label>
                        <select name="category" class="form-control">
