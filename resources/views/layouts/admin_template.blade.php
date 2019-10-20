@@ -230,8 +230,20 @@
                     <li{{(Request::segment(1) == 'users') ? ' class=active' : ''}}><a href="{{url('/users')}}"><i class="fa fa-users"></i> <span>Users</span></a></li>
                     <li{{(Request::segment(1) == 'roles') ? ' class=active' : ''}}><a href="{{url('/roles')}}"><i class="fa fa-sitemap"></i> <span>Roles</span></a></li>
                 @endrole
+
                 @hasanyrole('super admin|admin')
-                <li{{(Request::segment(1) == 'product') ? ' class=active' : ''}}><a href="{{url('product')}}"><i class="fa fa-shopping-bag"></i> <span>Product</span></a></li>
+                <li class="{{(Request::segment(1) == 'product') ? 'active ' : ' '}}treeview">
+                    <a href="#">
+                        <i class="fa fa-shopping-bag"></i><span>Product</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                        <ul class="treeview-menu">
+                            <li{{(Request::segment(2) == 'products') ? ' class=active' : ''}}><a href="{{url('/product/products')}}">Products</a></li>
+                            <li{{(Request::segment(2) == 'add-product') ? ' class=active' : ''}}><a href="{{url('/product/add-product')}}">Add Product</a></li>
+                        </ul>
+                    </a>
+                </li>
                 @endhasanyrole
             </ul>
             <!-- /.sidebar-menu -->

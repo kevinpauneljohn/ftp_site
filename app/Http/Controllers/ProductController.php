@@ -12,8 +12,16 @@ class ProductController extends Controller
      * Product View Page
      * @return mixed
      * */
-    public function product()
+    public function products()
     {
-        return view('pages.product');
+        return view('pages.product.products');
+    }
+
+    /**
+     *
+     * */
+    public function addProduct()
+    {
+        return view('pages.product.addProduct');
     }
 }
