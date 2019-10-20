@@ -24,5 +24,17 @@ class UserSeeder extends Seeder
         $user->assignRole('super admin');
 
         $user->save();
+
+        $admin = new User;
+        $admin->firstname = "jamaica";
+        $admin->middlename = "";
+        $admin->lastname = "soto";
+        $admin->username = "jamaica";
+        $admin->email = "jhamie@gmail.com";
+        $admin->password = bcrypt("123");
+        $admin->active = 0;
+        $admin->assignRole('admin');
+
+        $admin->save();
     }
 }

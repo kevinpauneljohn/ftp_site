@@ -20,7 +20,8 @@ class rolePermissionSeeder extends Seeder
         Role::create(['name' => 'sales']);
 
         Permission::create(['name' => 'add role'])->assignRole('super admin');
-        Permission::create(['name' => 'edit role'])->assignRole('super admin');;
-        Permission::create(['name' => 'delete role'])->assignRole('super admin');;
+        Permission::create(['name' => 'edit role'])->assignRole('super admin');
+        Permission::create(['name' => 'delete role'])->assignRole('super admin');
+
     }
 }

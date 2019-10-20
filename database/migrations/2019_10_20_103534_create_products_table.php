@@ -19,10 +19,11 @@ class CreateProductsTable extends Migration
             $table->string('size')->nullable();
             $table->string('color')->nullable();
             $table->longText('description');
-            $table->string('category')->nullable();
+            $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('created_by');
+            $table->string('productImage');
             $table->timestamps();
-
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('created_by')->references('id')->on('users');
         });
     }
