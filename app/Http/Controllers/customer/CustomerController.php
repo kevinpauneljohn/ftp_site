@@ -11,4 +11,9 @@ class CustomerController extends Controller
     {
         return view('customer.index');
     }
+
+    public function singleCategory($permalink)
+    {
+        return view('customer.single_category');
+    }
 }

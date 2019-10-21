@@ -79,7 +79,7 @@ class LoginController extends Controller
         {
             if($role == 'customer')
             {
-                return '/customer/dashboard';
+                return '/index';
             }else{
                 return '/dashboard';
             }
