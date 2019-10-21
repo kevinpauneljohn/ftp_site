@@ -42,7 +42,7 @@
                             <td>{{$category->getCategory($product->category_id)->name}}</td>
                             <td>
                                 @if($currentUser->can('edit-product') || $currentUser->hasAnyRole(['super admin','admin']))
-                                    <button class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button>
+                                    <a href="{{route('product.edit',['id'=>$product->id])}}"><button class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button></a>
                                 @endif
                                     @if($currentUser->can('delete-product') || $currentUser->hasAnyRole(['super admin']))
                                     <button class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></button>

@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('/permission','PermissionController@permission')->name('permissions');
 
     Route::get('/product/add-product','ProductController@addProduct')->name('product.add');
+    Route::get('/product/edit-product/{id}','ProductController@editProduct')->name('product.edit');
     Route::get('/product/products','ProductController@products')->name('products');
     Route::post('/product/create','ProductController@createProduct')->name('product.create');
 

@@ -100,4 +100,18 @@ class ProductController extends Controller
 
         return $result;
     }
+
+    /**
+     * Oct. 21, 2019
+     * @author john kevin paunel
+     * @param int $productId
+     * @return mixed
+     * */
+    public function editProduct($productId)
+    {
+        return view('pages.product.editProduct')->with([
+            'product'   => Product::find($productId),
+            'categories' => category::all()
+        ]);
+    }
 }

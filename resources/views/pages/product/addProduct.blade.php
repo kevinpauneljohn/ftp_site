@@ -41,22 +41,7 @@
                        </div>
                    <div class="form-group">
                        <label for="size">Size</label>
-                       <div class="row">
-                           <div class="col-lg-10">
-                               <input type="number" name="size" value="{{old('size')}}" class="form-control" id="size"/>
-                           </div>
-                           <div class="col-lg-2">
-                               <select name="measurement" class="form-control">
-                                   <option></option>
-                                    <option value="in">in</option>
-                                    <option value="cm">cm</option>
-                                    <option value="mm">mm</option>
-                                    <option value="ft">ft</option>
-                                    <option value="px">px</option>
-                                    <option value="pt">pt</option>
-                               </select>
-                           </div>
-                       </div>
+                       <input type="number" name="size" value="{{old('size')}}" class="form-control" id="size"/>
                    </div>
                    <div class="form-group {{$errors->has('price') ? 'has-error' : ''}}">
                        <label for="price">Price</label>
