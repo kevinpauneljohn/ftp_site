@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    public function dashboard()
+    public function index()
     {
-        return view('customer.dashboard');
+        return view('customer.index');
     }
 }

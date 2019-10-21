@@ -45,3 +45,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
 Route::group(['middleware'  => ['role:customer']],function (){
     Route::get('/customer/dashboard','customer\CustomerController@dashboard')->name('customer.dashboard');
 });
+
+Route::get('/test',function (){
+    return view('layouts.customer_template');
+});
