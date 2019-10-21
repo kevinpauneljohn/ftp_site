@@ -1,0 +1,30 @@
+Product
+* edit product
+- create a program that will retrieve uploaded image for upadte or replace
+
+*Product
+- add quantity field
+
+Sales
+* dashboard
+- orders
+- status
+- pending
+- approved
+
+category
+- count orders
+
+total amount of sale per day/week/month/year
+Customers
+changes for approval by admin
+
+Customer
+- must be logged in with required contact number
+- view available product
+- can order product
+- under check out page there should be notes field
+
+add payment method Gcash for order convenience
+
+Cashier capability

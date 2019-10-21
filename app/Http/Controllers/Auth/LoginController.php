@@ -32,7 +32,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    /*protected $redirectTo = '/dashboard';*/
 
     /**
      * Create a new controller instance.
@@ -71,6 +71,19 @@ class LoginController extends Controller
     public function username()
     {
         return $this->username;
+    }
+
+    public function redirectTo()
+    {
+        foreach (auth()->user()->getRoleNames() as $role)
+        {
+            if($role == 'customer')
+            {
+                return '/customer/dashboard';
+            }else{
+                return '/dashboard';
+            }
+        }
     }
 
 }

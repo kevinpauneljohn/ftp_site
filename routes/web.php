@@ -27,7 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*Auth::routes();*/
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['middleware' => ['auth']],function (){
+Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],function (){
     Route::get('/dashboard','DashboardController@dashboard');
     Route::get('/roles/roles','RolesController@roles');
     Route::post('/roles-create','RolesController@rolesForm')->name('roles');
@@ -40,4 +40,8 @@ Route::group(['middleware' => ['auth']],function (){
 
     Route::get('/users','UserController@users')->name('users');
     Route::post('/user-create','UserController@userForm')->name('users.create');
+});
+
+Route::group(['middleware'  => ['role:customer']],function (){
+    Route::get('/customer/dashboard','customer\CustomerController@dashboard')->name('customer.dashboard');
 });
