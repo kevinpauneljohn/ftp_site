@@ -4,6 +4,7 @@ Product
 
 *Product
 - add quantity field
+- add sku field
 
 Sales
 * dashboard
