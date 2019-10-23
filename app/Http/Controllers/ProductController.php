@@ -149,8 +149,37 @@ class ProductController extends Controller
         return $result;
     }
 
+    /**
+     * Oct. 24, 2019
+     * @author john kevin paunel
+     * this will get all the product details
+     * @param Request $request
+     * @return array
+     * */
     public function singleProductDetail(Request $request)
     {
-        return $request->all();
+        $details = "";
+        $productDetail = explode("quick-view-", $request->id);
+        foreach ($productDetail as $detail)
+        {
+            $details = $detail;
+        }
+
+        $productData = Product::find($details);
+        $category = category::find($productData->category_id);
+
+        $data = [
+            'productId'       => $productData->id,
+            'title'           => ucfirst($productData->title),
+            'size'            => $productData->size,
+            'description'     => $productData->description,
+            'price'           => $productData->price,
+            'image'           => asset('/images/'.$productData->productImage),
+            'quantity'        => $productData->quantity,
+            'category'        => $category->name,
+            'permalink'       => $category->permalink,
+            'permalinkUrl'    => route('customer.single',['category' => $category->permalink]),
+        ];
+        return $data;
     }
 }
