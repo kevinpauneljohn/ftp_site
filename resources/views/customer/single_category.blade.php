@@ -57,9 +57,9 @@
                                             </figcaption>
                                         </figure>
                                         <div class="aa-product-hvr-content">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compare"><span class="fa fa-exchange"></span></a>
-                                            <a href="#" data-toggle2="tooltip" data-placement="top" title="" data-toggle="modal" data-target="#quick-view-modal" data-original-title="Quick View"><span class="fa fa-search"></span></a>
+                                            <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist"><i class="fa fa-heart-o"></i></button>
+                                            <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compare"><i class="fa fa-exchange"></i></button>
+                                            <button class="btn btn-default quick-view" data-toggle2="tooltip" data-placement="top" title="" data-toggle="modal" data-target="#quick-view-modal" data-original-title="Quick View" id="quick-view-{{$product->id}}"><i class="fa fa-search"></i></button>
                                         </div>
                                     </li>
                                     @endforeach
@@ -83,22 +83,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="simpleLens-thumbnails-container">
-                                                                <a href="#" class="simpleLens-thumbnail-wrapper"
-                                                                   data-lens-image="img/view-slider/large/polo-shirt-1.png"
-                                                                   data-big-image="img/view-slider/medium/polo-shirt-1.png">
-                                                                    <img src="img/view-slider/thumbnail/polo-shirt-1.png">
-                                                                </a>
-                                                                <a href="#" class="simpleLens-thumbnail-wrapper"
-                                                                   data-lens-image="img/view-slider/large/polo-shirt-3.png"
-                                                                   data-big-image="img/view-slider/medium/polo-shirt-3.png">
                                                                     <img src="img/view-slider/thumbnail/polo-shirt-3.png">
-                                                                </a>
-
-                                                                <a href="#" class="simpleLens-thumbnail-wrapper"
-                                                                   data-lens-image="img/view-slider/large/polo-shirt-4.png"
-                                                                   data-big-image="img/view-slider/medium/polo-shirt-4.png">
-                                                                    <img src="img/view-slider/thumbnail/polo-shirt-4.png">
-                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -298,4 +283,8 @@
     </section>
     <!-- / product category -->
 
+    @endsection
+
+@section('extra_script')
+    <script src="{{asset('/js/product.js')}}"></script>
     @endsection

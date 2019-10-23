@@ -148,4 +148,9 @@ class ProductController extends Controller
 
         return $result;
     }
+
+    public function singleProductDetail(Request $request)
+    {
+        return $request->all();
+    }
 }

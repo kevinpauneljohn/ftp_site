@@ -40,8 +40,4 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function singleProductDetail($productId)
-    {
-
-    }
 }
