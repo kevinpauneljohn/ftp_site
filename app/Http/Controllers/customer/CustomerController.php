@@ -39,4 +39,9 @@ class CustomerController extends Controller
             'products'      => $products,
         ]);
     }
+
+    public function singleProductDetail($productId)
+    {
+
+    }
 }
