@@ -10,4 +10,9 @@ class Product extends Model
     {
         return $this->belongsTo(User::class,'created_by','id');
     }
+
+    public function categories()
+    {
+        return $this->belongsTo(category::class,'category_id','id');
+    }
 }
