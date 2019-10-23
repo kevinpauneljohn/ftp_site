@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::get('/product/edit-product/{id}','ProductController@editProduct')->name('product.edit');
     Route::get('/product/products','ProductController@products')->name('products');
     Route::post('/product/create','ProductController@createProduct')->name('product.create');
+    Route::post('/product/update','ProductController@updateProduct')->name('product.update');
 
     Route::get('/users','UserController@users')->name('users');
     Route::post('/user-create','UserController@userForm')->name('users.create');

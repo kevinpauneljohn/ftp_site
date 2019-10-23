@@ -17,8 +17,9 @@
 @section('main_content')
     <div class="box">
         <div class="box-body">
-            <form action="{{route('product.create')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('product.update')}}" method="post" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="productId" value="{{$product->id}}"/>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group {{$errors->has('title') ? 'has-error' : ''}}">

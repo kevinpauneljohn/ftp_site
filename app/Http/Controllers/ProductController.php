@@ -77,6 +77,7 @@ class ProductController extends Controller
             'title'     => ['required'],
             'price'     => ['required','numeric','between:0,99.99'],
             'category'  => ['required'],
+            'description'  => ['required'],
         ]);
 
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
@@ -113,5 +114,38 @@ class ProductController extends Controller
             'product'   => Product::find($productId),
             'categories' => category::all()
         ]);
+    }
+
+    /**
+     * Oct. 23, 2019
+     * @author john kevin paunel
+     * Update the product details
+     * @param Request $request
+     * @return mixed
+     * */
+    public function updateProduct(Request $request)
+    {
+        $request->validate([
+            'title'     => ['required'],
+            'price'     => ['required','numeric','between:0,99.99'],
+            'category'  => ['required'],
+            'description'  => ['required'],
+        ]);
+
+        $product = Product::find($request->productId);
+        $product->title = $request->title;
+        $product->size = $request->size.' '.$request->measurement;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->category_id = $request->category;
+
+        if($product->save())
+        {
+            $result = back()->with('success',true);
+        }else{
+            $result = back()->with('success',false);
+        }
+
+        return $result;
     }
 }
