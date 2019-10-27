@@ -130,10 +130,12 @@ class ProductController extends Controller
     public function updateProduct(Request $request)
     {
         $request->validate([
-            'title'     => ['required'],
-            'price'     => ['required','numeric','between:0,99.99'],
-            'category'  => ['required'],
-            'description'  => ['required'],
+            'title'         => ['required'],
+            'price'         => ['required','numeric'],
+            'category'      => ['required'],
+            'description'   => ['required'],
+            'sku'           => ['required'],
+            'quantity'      => ['required','numeric'],
         ]);
 
         $product = Product::find($request->productId);
@@ -142,6 +144,8 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->category_id = $request->category;
+        $product->sku = $request->sku;
+        $product->quantity = $request->quantity;
 
         if($product->save())
         {

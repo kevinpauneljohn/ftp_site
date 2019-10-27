@@ -17,6 +17,9 @@
 @section('main_content')
     <div class="box">
         <div class="box-body">
+            @if(session('success') == true)
+                <div class="alert alert-success"> Product Successfully Updated! </div>
+            @endif
             <form action="{{route('product.update')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="productId" value="{{$product->id}}"/>
@@ -72,8 +75,28 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <div class="form-group {{$errors->has('sku') ? 'has-error' : ''}}">
+                            <label for="sku">SKU</label>
+                            <input type="text" name="sku" value="{{$product->sku}}" class="form-control" id="sku"/>
+                            @error('sku')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <div class="form-group {{$errors->has('quantity') ? 'has-error' : ''}}">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" name="quantity" value="{{$product->quantity}}" class="form-control" id="quantity"/>
+                            @error('quantity')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

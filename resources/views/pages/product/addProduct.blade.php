@@ -86,7 +86,7 @@
                                     </span>
                         @enderror
                     </div>
-                    <div class="form-group {{$errors->has('sku') ? 'has-error' : ''}}">
+                    <div class="form-group {{$errors->has('quantity') ? 'has-error' : ''}}">
                         <label for="quantity">Quantity</label>
                         <input type="number" name="quantity" value="{{old('quantity')}}" class="form-control" id="quantity"/>
                         @error('quantity')
