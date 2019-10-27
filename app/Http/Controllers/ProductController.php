@@ -73,11 +73,13 @@ class ProductController extends Controller
     public function createProduct(Request $request)
     {
         $request->validate([
-            'image'     => ['required','image:jpeg,png','max:2048'],
-            'title'     => ['required'],
-            'price'     => ['required','numeric','between:0,99.99'],
-            'category'  => ['required'],
-            'description'  => ['required'],
+            'image'         => ['required','image:jpeg,png','max:2048'],
+            'title'         => ['required'],
+            'price'         => ['required','numeric'],
+            'category'      => ['required'],
+            'description'   => ['required'],
+            'sku'           => ['required'],
+            'quantity'      => ['required','numeric'],
         ]);
 
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
@@ -90,6 +92,8 @@ class ProductController extends Controller
         $product->category_id = $request->category;
         $product->created_by = auth()->user()->id;
         $product->productImage = $imageName;
+        $product->sku = $request->sku;
+        $product->quantity = $request->quantity;
 
         if($product->save())
         {

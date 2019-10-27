@@ -17,19 +17,13 @@
 @section('main_content')
     <div class="box">
         <div class="box-body">
+            @if(session('success') == true)
+                <div class="alert alert-success"> Product Successfully Added! </div>
+                @endif
             <form action="{{route('product.create')}}" method="post" enctype="multipart/form-data">
                 @csrf
             <div class="row">
                <div class="col-lg-6">
-                   <div class="form-group {{$errors->has('image') ? 'has-error' : ''}}">
-                       <label for="image">Image</label>
-                       <input type="file" name="image" value="{{old('image')}}" class="form-control" id="image"/>
-                       @error('image')
-                       <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                       @enderror
-                   </div>
                         <div class="form-group {{$errors->has('title') ? 'has-error' : ''}}">
                            <label for="title">Title</label>
                            <input type="text" name="title" value="{{old('title')}}" class="form-control" id="title"/>
@@ -41,7 +35,7 @@
                        </div>
                    <div class="form-group">
                        <label for="size">Size</label>
-                       <input type="number" name="size" value="{{old('size')}}" class="form-control" id="size"/>
+                       <input type="text" name="size" value="{{old('size')}}" class="form-control" id="size"/>
                    </div>
                    <div class="form-group {{$errors->has('price') ? 'has-error' : ''}}">
                        <label for="price">Price</label>
@@ -67,10 +61,11 @@
 
                    <div class="form-group {{$errors->has('category') ? 'has-error' : ''}}">
                        <label for="category">Category</label>
+                       {{old('$category')}}
                        <select name="category" class="form-control">
                            <option></option>
                            @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    <option value="{{$category->id}}"  @if (old('category') == $category->id) {{ 'selected' }} @endif>{{$category->name}}</option>
                                @endforeach
                        </select>
                        @error('category')
@@ -80,8 +75,39 @@
                        @enderror
                    </div>
                 </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group {{$errors->has('sku') ? 'has-error' : ''}}">
+                        <label for="sku">SKU</label>
+                        <input type="text" name="sku" value="{{old('sku')}}" class="form-control" id="sku"/>
+                        @error('sku')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                    <div class="form-group {{$errors->has('sku') ? 'has-error' : ''}}">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" name="quantity" value="{{old('quantity')}}" class="form-control" id="quantity"/>
+                        @error('quantity')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                    <div class="form-group {{$errors->has('image') ? 'has-error' : ''}}">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" value="{{old('image')}}" class="form-control" id="image"/>
+                        @error('image')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                {{--<button type="submit" class="btn btn-primary">Submit</button>--}}
             </form>
         </div>
     </div>
