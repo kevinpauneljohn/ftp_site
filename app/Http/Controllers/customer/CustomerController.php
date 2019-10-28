@@ -40,4 +40,14 @@ class CustomerController extends Controller
         ]);
     }
 
+    /**
+     * Oct. 28, 2019
+     * @author john kevin paunel
+     * display of single product details
+     * */
+    public function singleProductDetails($id)
+    {
+        return view('customer.productDetail');
+    }
+
 }
