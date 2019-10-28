@@ -48,8 +48,8 @@
                                 @foreach($products as $product)
                                     <li>
                                         <figure>
-                                            <a class="aa-product-img" href="#"><img src="{{asset('/images/'.$product->productImage)}}" alt="{{$product->title}}" style="width:250px;height:300px;"></a>
-                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                            <a class="aa-product-img" href="{{route('product.show',['category' => \App\category::find($product->category_id)->permalink ,'id' => $product->id])}}" title="View Product"><img src="{{asset('/images/'.$product->productImage)}}" alt="{{$product->title}}" style="width:250px;height:300px;"></a>
+                                            {{--<a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>--}}
                                             <figcaption>
                                                 <h4 class="aa-product-title"><a href="#">{{$product->title}}</a></h4>
                                                 <span class="aa-product-price">&#8369; {{$product->price}}</span>

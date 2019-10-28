@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::get('/index','customer\CustomerController@index')->name('customer.index');
     Route::get('/category/{category}','customer\CustomerController@singleCategory')->name('customer.single');
     Route::post('/product-detail','ProductController@singleProductDetail')->name('product.detail');
+    Route::get('/category/{category}/product/{id}','customer\CustomerController@singleProductDetails')->name('product.show');
 
 
 Route::get('/test',function (){
