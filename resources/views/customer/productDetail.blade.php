@@ -39,11 +39,11 @@
                                                 <a>{{$size}}</a>
                                                 @endforeach
                                         </div>
-                                        <form action="">
+                                        <form action="{{route('orders.save')}}" method="post">
                                         <div class="aa-prod-quantity">
 
                                                 @csrf
-                                                <input type="hidden" value="product-{{$product->id}}">
+                                                <input type="hidden" name="product" value="{{$product->id}}">
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <input type="number" name="quantity" class="form-control" id="quantity" min="0" max="{{$product->quantity}}">

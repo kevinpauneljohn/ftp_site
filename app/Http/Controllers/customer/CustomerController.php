@@ -49,27 +49,33 @@ class CustomerController extends Controller
      * */
     public function singleProductDetails($category, $id)
     {
-        $product = Product::find($id);
-        return view('customer.productDetail')->with([
-            'product'               => $product,
-            'category'              => category::find($product->category_id),
-            'productId'             => $id
-        ]);
-
-//        $order = new Order;
-//        $order->user_id = 1;
-//        $orders = array(["product_id"=>1,"quantity"=>5],["product_id"=>2,"quantity"=>12]);
+//        $product = Product::find($id);
+//        return view('customer.productDetail')->with([
+//            'product'               => $product,
+//            'category'              => category::find($product->category_id),
+//            'productId'             => $id
+//        ]);
+        $userId = auth()->user()->id;
+//        $orders = DB::table('orders')
+//            ->where([
+//                ['user_id','=',$userId],
+//                ['status','=','pending'],
+//            ])
+//            ->get();
 //
-//        $order->orders = $orders;
 //
-//        $order->status = "pending";
-//        $order->save();
-
-//        $order = Order::find(7);
-//        foreach ($order->orders as $orders) {
-//            echo $orders['product_id'] . " - " . $orders['quantity']."<br/>";
+//        foreach ($orders as $order){
+//            echo $order->orders[0]['product_id'];
 //        }
 
+        $orders = Order::where([
+            ['user_id','=',$userId],
+            ['status','=','pending'],
+        ])->first();
+
+        $json = json_encode($orders->orders);
+
+        var_dump($json[0][0]) ;
     }
 
 }
