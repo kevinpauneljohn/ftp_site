@@ -4,10 +4,9 @@ namespace App\Http\Controllers\customer;
 
 use App\category;
 use App\Http\Controllers\Controller;
-use App\Order;
 use App\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
@@ -55,6 +54,10 @@ class CustomerController extends Controller
             'category'              => category::find($product->category_id),
             'productId'             => $id
         ]);
+//
+//        foreach (Cart::content() as $row){
+//            echo $row->model->price."<br/>";
+//        }
     }
 
 }

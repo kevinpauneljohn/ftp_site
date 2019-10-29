@@ -4,8 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+use Gloudemans\Shoppingcart\Contracts\Buyable;
+
+class Product extends Model implements Buyable
 {
+    public function getBuyableIdentifier($options = null) {
+        return $this->id;
+    }
+    public function getBuyableDescription($options = null) {
+        return $this->title;
+    }
+    public function getBuyablePrice($options = null) {
+        return $this->price;
+    }
+    public function getBuyableWeight($options = null){
+        return $this->weight;
+    }
     /*protected $casts = [
         'size' => 'array'
     ];*/

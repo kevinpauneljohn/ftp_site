@@ -39,7 +39,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <style type="text/css">
+        .invalid-feedback{
+            color:red;
+            font-size: 12px;
+        }
+    </style>
 
 </head>
 <body>
@@ -139,26 +144,20 @@
                             <a class="aa-cart-link" href="#">
                                 <span class="fa fa-shopping-basket"></span>
                                 <span class="aa-cart-title">SHOPPING CART</span>
-                                <span class="aa-cart-notify">2</span>
+                                <span class="aa-cart-notify">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
                             </a>
                             <div class="aa-cartbox-summary">
                                 <ul>
-                                    <li>
-                                        <a class="aa-cartbox-img" href="#"><img src="{{asset('/themes/img/woman-small-2.jpg')}}" alt="img"></a>
-                                        <div class="aa-cartbox-info">
-                                            <h4><a href="#">Product Name</a></h4>
-                                            <p>1 x $250</p>
-                                        </div>
-                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                    </li>
-                                    <li>
-                                        <a class="aa-cartbox-img" href="#"><img src="{{asset('/themes/img/woman-small-1.jpg')}}" alt="img"></a>
-                                        <div class="aa-cartbox-info">
-                                            <h4><a href="#">Product Name</a></h4>
-                                            <p>1 x $250</p>
-                                        </div>
-                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                    </li>
+                                    @foreach(\Gloudemans\Shoppingcart\Facades\Cart::content() as $row)
+                                        <li>
+                                            <a class="aa-cartbox-img" href="#"><img src="{{asset('/images/'.\App\Product::find($row->id)->productImage)}}" alt="img"></a>
+                                            <div class="aa-cartbox-info">
+                                                <h4><a href="#">{{$row->name}}</a></h4>
+                                                <p>{{$row->qty}} x {{$row->price}}</p>
+                                            </div>
+                                            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                        </li>
+                                        @endforeach
                                     <li>
                       <span class="aa-cartbox-total-title">
                         Total

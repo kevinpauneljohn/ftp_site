@@ -27,6 +27,9 @@
                                 </div>
                                 <!-- Modal view content -->
                                 <div class="col-md-7 col-sm-7 col-xs-12">
+                                    @if(session('success') == true)
+                                        <div class="alert alert-success">Item Successfully added to cart</div>
+                                        @endif
                                     <div class="aa-product-view-content">
                                         <h3>{{$product->title}}</h3>
                                         <div class="aa-price-block">
@@ -46,7 +49,14 @@
                                                 <input type="hidden" name="product" value="{{$product->id}}">
                                             <div class="row">
                                                 <div class="col-lg-4">
-                                                    <input type="number" name="quantity" class="form-control" id="quantity" min="0" max="{{$product->quantity}}">
+                                                    <div class="form-group {{$errors->has('quantity') ? 'has-error' : ''}}">
+                                                        <input type="number" name="quantity" class="form-control" id="quantity" min="0" value="{{old('quantity')}}" max="{{$product->quantity}}">
+                                                        @error('quantity')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                            @enderror
+                                                    </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <p class="aa-prod-category">

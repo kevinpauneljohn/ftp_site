@@ -36,14 +36,12 @@ class OrdersController extends Controller
     public function addToCart(Request $request)
     {
         $item = Product::find($request->product);
-        Cart::add([
-            'id'        =>  $item->id,
-            'name'      =>  $item->title,
-            'qty'       =>  $request->quantity,
-            'price'     =>  $item->price,
-            'weight'    =>  0,
-            'options'   =>  ['size' => $item->size]
+        $request->validate([
+            'quantity'      => ['required','numeric','max:'.$item->quantity],
         ]);
+
+
+        Cart::add($item, $request->quantity, [])->associate(Product::class);
 
         return back()->with(['success' => true]);
     }
