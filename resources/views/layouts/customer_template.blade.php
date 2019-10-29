@@ -141,7 +141,7 @@
                         <!-- / logo  -->
                         <!-- cart box -->
                         <div class="aa-cartbox">
-                            <a class="aa-cart-link" href="#">
+                            <a class="aa-cart-link" href="{{route('cart')}}">
                                 <span class="fa fa-shopping-basket"></span>
                                 <span class="aa-cart-title">SHOPPING CART</span>
                                 <span class="aa-cart-notify">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
@@ -153,7 +153,7 @@
                                             <a class="aa-cartbox-img" href="#"><img src="{{asset('/images/'.\App\Product::find($row->id)->productImage)}}" alt="img"></a>
                                             <div class="aa-cartbox-info">
                                                 <h4><a href="#">{{$row->name}}</a></h4>
-                                                <p>{{$row->qty}} x {{$row->price}}</p>
+                                                <p>{{$row->qty}} x &#8369; {{$row->price}}</p>
                                             </div>
                                             <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
                                         </li>
@@ -163,7 +163,7 @@
                         Total
                       </span>
                                         <span class="aa-cartbox-total-price">
-                        $500
+                        &#8369; {{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}
                       </span>
                                     </li>
                                 </ul>

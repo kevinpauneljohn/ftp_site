@@ -45,6 +45,9 @@ class CustomerController extends Controller
      * Oct. 28, 2019
      * @author john kevin paunel
      * display of single product details
+     * @param int $category
+     * @param int $id
+     * @return mixed
      * */
     public function singleProductDetails($category, $id)
     {
@@ -54,10 +57,17 @@ class CustomerController extends Controller
             'category'              => category::find($product->category_id),
             'productId'             => $id
         ]);
-//
-//        foreach (Cart::content() as $row){
-//            echo $row->model->price."<br/>";
-//        }
+    }
+
+    /**
+     * Oct. 29, 2019
+     * @author john kevin paunel
+     * view cart page
+     * @return mixed
+     * */
+    public function getCart()
+    {
+        return view('customer.cart');
     }
 
 }
