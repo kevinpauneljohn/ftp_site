@@ -12,11 +12,7 @@ Cart
                 <div class="col-md-12">
                     <div class="cart-view-area">
                         <div class="cart-view-table">
-                            @if(session('success') == true && session('action' == 'remove'))
-                                <div class="alert alert-success">Item removed from the cart</div>
-                                @elseif(session('success') == true && session('action' == 'update'))
-                                <div class="alert alert-success">Item quantity successfully update</div>
-                                @endif
+                            <span class="status"></span>
                             <form action="">
                                 <div class="table-responsive">
                                     <table class="table">
@@ -33,8 +29,7 @@ Cart
                                         </thead>
                                         <tbody>
                                         @foreach(\Gloudemans\Shoppingcart\Facades\Cart::content() as $row)
-                                            <form>
-                                                @csrf
+
                                                 <input type="hidden" name="rowId" value="{{$row->rowId}}"/>
                                             <tr>
                                                 <td><a class="remove" href="{{route('cart.remove',['rowId' => $row->rowId])}}"><fa class="fa fa-close"></fa></a></td>
@@ -47,11 +42,11 @@ Cart
                                                 'id'       => $row->model->id
                                                 ])}}">{{$row->model->title}}</a></td>
                                                 <td>&#8369; {{$row->model->price}}</td>
-                                                <td><input class="aa-cart-quantity" name="qty" type="number" value="{{$row->qty}}" min="0" max="{{$row->model->quantity}}"></td>
+                                                <td><input class="aa-cart-quantity" id="qty-{{$row->rowId}}" type="number" value="{{$row->qty}}" min="0" max="{{$row->model->quantity}}"></td>
                                                 <td>&#8369; {{number_format($row->qty * $row->model->price, 2)}}</td>
-                                                <td><button type="submit" class="btn btn-primary">Update</button></td>
+                                                <td><button type="button" class="btn btn-primary update" id="update-{{$row->rowId}}" value="{{$row->rowId}}">Update</button></td>
                                             </tr>
-                                            </form>
+
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -85,4 +80,5 @@ Cart
 
 @section('extra_script')
     <script src="{{asset('/js/product.js')}}"></script>
+    <script src="{{asset('/js/cart.js')}}"></script>
 @endsection

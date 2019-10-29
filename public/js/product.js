@@ -14,7 +14,6 @@ $(document).on('click','.quick-view',function () {
             $('.title').text(result.title)
             $('.description').text(result.description)
             $('.category-link').text(result.category).attr('href',result.permalinkUrl)
-            $('.qty_input').val(+result.quantity)
         },error: function (result) {
             console.log(result.status);
         }

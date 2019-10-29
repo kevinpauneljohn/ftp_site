@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::post('/add-to-cart','OrdersController@addToCart')->name('orders.cart');
     Route::get('/cart','customer\CustomerController@getCart')->name('cart');
     Route::get('/remove-item/{rowId}','OrdersController@removeItemFromCart')->name('cart.remove');
+    Route::post('/update-cart','OrdersController@updateCart')->name('cart.update');
 
 
 Route::get('/test',function (){

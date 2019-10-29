@@ -57,7 +57,7 @@ class OrdersController extends Controller
     {
         Cart::remove($rowId);
 
-        return back()->with(['success' => true, 'action' => 'remove']);
+        return back();
     }
 
     /**
@@ -69,8 +69,20 @@ class OrdersController extends Controller
      * */
     public function updateCart(Request $request)
     {
-        Cart::update($request->rowId,$request->qty);
+        $rowId = explode('update-',$request->id)[1];
 
-        return back()->with(['success' => true, 'action' => 'update']);
+        #item stock quantity
+        $quantity = Cart::get($rowId)->model->quantity;
+
+        if($request->qty <= $quantity)
+        {
+            Cart::update($rowId,$request->qty);
+            $message = ['success' => true];
+        }else{
+            $message = ['success' => false];
+        }
+
+
+        return response()->json($message);
     }
 }

@@ -49,11 +49,11 @@
 </head>
 <body>
 <!-- wpf loader Two -->
-<div id="wpf-loader-two">
-    <div class="wpf-loader-two-inner">
-        <span>Loading</span>
-    </div>
-</div>
+{{--<div id="wpf-loader-two">--}}
+{{--    <div class="wpf-loader-two-inner">--}}
+{{--        <span>Loading</span>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- / wpf loader Two -->
 <!-- SCROLL TOP BUTTON -->
 <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
@@ -155,7 +155,7 @@
                                                 <h4><a href="#">{{$row->name}}</a></h4>
                                                 <p>{{$row->qty}} x &#8369; {{$row->price}}</p>
                                             </div>
-                                            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                            <a class="aa-remove-product" href="{{route('cart.remove',['rowId' => $row->rowId])}}"><span class="fa fa-times"></span></a>
                                         </li>
                                         @endforeach
                                     <li>
