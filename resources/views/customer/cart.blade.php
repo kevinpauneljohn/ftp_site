@@ -12,6 +12,11 @@ Cart
                 <div class="col-md-12">
                     <div class="cart-view-area">
                         <div class="cart-view-table">
+                            @if(session('success') == true && session('action' == 'remove'))
+                                <div class="alert alert-success">Item removed from the cart</div>
+                                @elseif(session('success') == true && session('action' == 'update'))
+                                <div class="alert alert-success">Item quantity successfully update</div>
+                                @endif
                             <form action="">
                                 <div class="table-responsive">
                                     <table class="table">
@@ -23,12 +28,16 @@ Cart
                                             <th>Price</th>
                                             <th>Quantity</th>
                                             <th>Total</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach(\Gloudemans\Shoppingcart\Facades\Cart::content() as $row)
+                                            <form>
+                                                @csrf
+                                                <input type="hidden" name="rowId" value="{{$row->rowId}}"/>
                                             <tr>
-                                                <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
+                                                <td><a class="remove" href="{{route('cart.remove',['rowId' => $row->rowId])}}"><fa class="fa fa-close"></fa></a></td>
                                                 <td><a href="{{route('product.show',[
                                                 'category' => \App\category::find($row->model->category_id)->permalink,
                                                 'id'       => $row->model->id
@@ -38,9 +47,11 @@ Cart
                                                 'id'       => $row->model->id
                                                 ])}}">{{$row->model->title}}</a></td>
                                                 <td>&#8369; {{$row->model->price}}</td>
-                                                <td><input class="aa-cart-quantity" type="number" value="{{$row->qty}}" min="0" max="{{$row->model->quantity}}"></td>
+                                                <td><input class="aa-cart-quantity" name="qty" type="number" value="{{$row->qty}}" min="0" max="{{$row->model->quantity}}"></td>
                                                 <td>&#8369; {{number_format($row->qty * $row->model->price, 2)}}</td>
+                                                <td><button type="submit" class="btn btn-primary">Update</button></td>
                                             </tr>
+                                            </form>
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -61,7 +72,7 @@ Cart
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="#" class="aa-cart-view-btn">Proced to Checkout</a>
+                                <a href="#" class="aa-cart-view-btn">Proceed to Checkout</a>
                             </div>
                         </div>
                     </div>

@@ -45,4 +45,32 @@ class OrdersController extends Controller
 
         return back()->with(['success' => true]);
     }
+
+    /**
+     * Oct. 29, 2019
+     * @author john kevin paunel
+     * remove item from cart
+     * @param int $rowId
+     * @return mixed
+     * */
+    public function removeItemFromCart($rowId)
+    {
+        Cart::remove($rowId);
+
+        return back()->with(['success' => true, 'action' => 'remove']);
+    }
+
+    /**
+     * Oct. 30, 2019
+     * @author john kevin paunel
+     * update item quantity from cart
+     * @param Request $request
+     * @return mixed
+     * */
+    public function updateCart(Request $request)
+    {
+        Cart::update($request->rowId,$request->qty);
+
+        return back()->with(['success' => true, 'action' => 'update']);
+    }
 }
