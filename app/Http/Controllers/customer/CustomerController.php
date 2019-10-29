@@ -54,6 +54,7 @@ class CustomerController extends Controller
         $product = Product::find($id);
         return view('customer.productDetail')->with([
             'product'               => $product,
+            'allProduct'            => Product::all(),
             'category'              => category::find($product->category_id),
             'productId'             => $id
         ]);
