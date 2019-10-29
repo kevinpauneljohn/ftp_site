@@ -39,7 +39,7 @@
                                                 <a>{{$size}}</a>
                                                 @endforeach
                                         </div>
-                                        <form action="{{route('orders.save')}}" method="post">
+                                        <form action="{{route('orders.cart')}}" method="post">
                                         <div class="aa-prod-quantity">
 
                                                 @csrf

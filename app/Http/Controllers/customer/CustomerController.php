@@ -49,33 +49,12 @@ class CustomerController extends Controller
      * */
     public function singleProductDetails($category, $id)
     {
-//        $product = Product::find($id);
-//        return view('customer.productDetail')->with([
-//            'product'               => $product,
-//            'category'              => category::find($product->category_id),
-//            'productId'             => $id
-//        ]);
-        $userId = auth()->user()->id;
-//        $orders = DB::table('orders')
-//            ->where([
-//                ['user_id','=',$userId],
-//                ['status','=','pending'],
-//            ])
-//            ->get();
-//
-//
-//        foreach ($orders as $order){
-//            echo $order->orders[0]['product_id'];
-//        }
-
-        $orders = Order::where([
-            ['user_id','=',$userId],
-            ['status','=','pending'],
-        ])->first();
-
-        $json = json_encode($orders->orders);
-
-        var_dump($json[0][0]) ;
+        $product = Product::find($id);
+        return view('customer.productDetail')->with([
+            'product'               => $product,
+            'category'              => category::find($product->category_id),
+            'productId'             => $id
+        ]);
     }
 
 }
