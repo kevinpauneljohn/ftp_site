@@ -36,7 +36,7 @@ class OrdersController extends Controller
     {
         $item = Product::find($request->product);
         $request->validate([
-            'quantity'      => ['required','numeric','max:'.$item->quantity],
+            'quantity'      => ['required','numeric','min:1','max:'.$item->quantity],
         ]);
 
 
