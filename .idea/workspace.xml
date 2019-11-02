@@ -64,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -398,7 +398,7 @@
       <workItem from="1572327995981" duration="25822000" />
       <workItem from="1572716927735" duration="170000" />
       <workItem from="1572717101836" duration="1813000" />
-      <workItem from="1572719436135" duration="1015000" />
+      <workItem from="1572719436135" duration="1273000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1571299578767</created>
@@ -733,7 +733,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172295000" />
+    <option name="totallyTimeSpent" value="172553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -866,7 +866,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>

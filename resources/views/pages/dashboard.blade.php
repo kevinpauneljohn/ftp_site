@@ -9,5 +9,5 @@
     @endsection
 
 @section('main_content')
-kevin
+another test again
     @endsection
