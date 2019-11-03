@@ -158,4 +158,35 @@ class OrdersController extends Controller
 
         return response()->json($message);
     }
+
+    /**
+     * @author john kevin paunel
+     * Nov. 04, 2019
+     * get the sum of the specific product
+     * @param int $productId
+     * @return int
+     * */
+    public function getProductTotalAmount($productId)
+    {
+        /**
+         * product price
+         * @var $productPrice
+         * */
+        $productPrice = Product::find($productId)->price;
+        /**
+         * item quantity inside the cart
+         * @var $itemQty
+         * */
+        $itemQty = Cart::where([
+            ["user_id","=",auth()->user()->id],
+            ["product_id","=",$productId],
+        ])->first();
+        /**
+         * total amount of the item inside the cart
+         * @var $amount
+         * */
+        $amount = $itemQty->quantity * $productPrice;
+
+        return $amount;
+    }
 }

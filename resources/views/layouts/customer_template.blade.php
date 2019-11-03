@@ -59,6 +59,7 @@
 <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
 <!-- END SCROLL TOP BUTTON -->
 
+@php $totalProductAmount = new \App\Http\Controllers\OrdersController(); @endphp
 
 <!-- Start header section -->
 <header id="aa-header">
@@ -167,6 +168,7 @@
                             <div class="aa-cartbox-summary">
 
                                 <ul>
+                                    @php $total = 0 @endphp
                                     @foreach(\App\User::find(auth()->user()->id)->cart as $row)
                                         <li>
                                             <a class="aa-cartbox-img" href="#"><img src="{{asset('/images/'.\App\Product::find($row->id)->productImage)}}" alt="img"></a>
@@ -174,15 +176,16 @@
                                                 <h4><a href="#">{{$row->title}}</a></h4>
                                                 <p>{{\App\Cart::where([["user_id","=", auth()->user()->id], ["product_id","=",$row->id] ])->first()->quantity}} x &#8369; {{$row->price}}</p>
                                             </div>
-                                            <a class="aa-remove-product" href="{{route('cart.remove',['rowId' => $row->rowId])}}"><span class="fa fa-times"></span></a>
+                                            <a class="aa-remove-product" href="{{route('cart.remove',['rowId' => $row->id])}}"><span class="fa fa-times"></span></a>
                                         </li>
+                                        @php $total = $total + $totalProductAmount->getProductTotalAmount($row->id) @endphp
                                         @endforeach
                                     <li>
                                       <span class="aa-cartbox-total-title">
                                         Total
                                       </span>
-                                                        <span class="aa-cartbox-total-price">
-                                        &#8369; {{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}
+                                       <span class="aa-cartbox-total-price">
+                                        &#8369; {{$total}}
                                       </span>
                                     </li>
                                 </ul>

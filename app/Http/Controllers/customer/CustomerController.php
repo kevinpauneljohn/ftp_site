@@ -36,9 +36,10 @@ class CustomerController extends Controller
          * */
         $category = category::where('permalink',$permalink)->first();
 
-        $products = Product::where('category_id',$category->id)->get();
+        $products = Product::where('category_id',$category->id)->paginate(15);
         return view('customer.single_category')->with([
             'products'      => $products,
+            'categoryId'    => $category->id
         ]);
     }
 

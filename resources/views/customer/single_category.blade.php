@@ -6,7 +6,6 @@
 
 @section('content')
     <!-- product category -->
-    {{auth()->check()}}
     <section id="aa-product-category">
         <div class="container">
             <div class="row">
@@ -45,7 +44,7 @@
                         <div class="aa-product-catg-body">
                             <ul class="aa-product-catg">
                                 <!-- start single product item -->
-
+                            @if(\App\Product::where("category_id",$categoryId)->count() > 0)
                                 @foreach($products as $product)
                                     <li>
                                         <figure>
@@ -64,6 +63,7 @@
                                         </div>
                                     </li>
                                     @endforeach
+                                @endif
                             </ul>
                             <!-- quick view modal -->
                             <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -122,7 +122,7 @@
                                                         </div>
                                                         <div class="aa-prod-view-bottom">
 {{--                                                            <button class="aa-add-to-cart-btn" type="submit"><span class="fa fa-shopping-cart"></span>Add To Cart</button>--}}
-                                                            <button class="aa-add-to-cart-btn" @if(auth()->check() == false) data-toggle="modal" data-target="#login-modal" type="button" @else type="submit" id="product-{{$product->id}}" @endif><span class="fa fa-shopping-cart"></span>Add To Cart</button>
+                                                            <button class="aa-add-to-cart-btn" @if(auth()->check() == false) data-toggle="modal" data-target="#login-modal" type="button" @else type="submit" @if(\App\Product::where("category_id",$categoryId)->count() > 0)id="product-{{$product->id}}" @endif @endif><span class="fa fa-shopping-cart"></span>Add To Cart</button>
 {{--                                                            <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>--}}
                                                             <a href="#" class="aa-add-to-cart-btn">View Details</a>
                                                         </div>
@@ -139,7 +139,8 @@
                         <!-- end of product category body -->
                         <div class="aa-product-catg-pagination">
                             <nav>
-                                <ul class="pagination">
+                                {{$products->links()}}
+                                {{--<ul class="pagination">
                                     <li>
                                         <a href="#" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
@@ -155,7 +156,7 @@
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul>--}}
                             </nav>
                         </div>
                     </div>
