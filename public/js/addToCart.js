@@ -16,6 +16,10 @@ function addToCart(url, data)
         'cache' : false,
         success: function (result) {
             console.log(result);
+            if(result.success === true)
+            {
+                location.reload();
+            }
         },error: function (result) {
             console.log(result.status);
         }
