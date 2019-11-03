@@ -32,4 +32,9 @@ class Product extends Model implements Buyable
     {
         return $this->belongsTo(category::class,'category_id','id');
     }
+
+    public function buyer()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
