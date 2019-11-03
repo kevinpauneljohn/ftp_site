@@ -76,6 +76,7 @@ class OrdersController extends Controller
                     ['product_id','=',$productId[1]],
                 ])->first();
                 $quantity = $oldCart->quantity;
+
                 /**
                  * this will get the product_user table id to be use in retrieving cart
                  * @var $id
