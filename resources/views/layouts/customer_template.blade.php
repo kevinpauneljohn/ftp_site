@@ -113,7 +113,7 @@
                                 <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                                 <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
                                 <li><a @if(auth()->check() == true) href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" @else data-toggle="modal" data-target="#login-modal" @endif>
+                                                     document.getElementById('logout-form').submit();" @else data-toggle="modal" data-target="#login-modal" @endif style="cursor:pointer">
                                         @if(auth()->check() == true)
                                             Logout
                                             @else
@@ -359,11 +359,16 @@
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4>Login or Register</h4>
-                <form class="aa-login-form" action="">
+                <form class="aa-login-form" action="{{route('login')}}">
+                    @csrf
+                    <div class="accessAccount">
                     <label for="">Username or Email address<span>*</span></label>
-                    <input type="text" placeholder="Username or email">
-                    <label for="">Password<span>*</span></label>
-                    <input type="password" placeholder="Password">
+                    <input type="text" name="accessAccount" placeholder="Username or email" id="accessAccount">
+                    </div>
+                    <div class="password">
+                    <label for="password">Password<span>*</span></label>
+                    <input type="password" placeholder="Password" name="password" id="password">
+                    </div>
                     <button class="aa-browse-btn" type="submit">Login</button>
                     <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
                     <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
@@ -399,6 +404,8 @@
 <script src="{{asset('/themes/js/custom.js')}}"></script>
 @if(auth()->check() == true)
     <script src="{{asset('/js/addToCart.js')}}"></script>
+    @else
+    <script src="{{asset('/js/login.js')}}"></script>
 @endif
 @section('extra_script')
 

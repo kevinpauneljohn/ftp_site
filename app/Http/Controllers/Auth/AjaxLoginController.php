@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use http\Env\Response;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
+class AjaxLoginController extends Controller
+{
+    /**
+     * Nov. 03, 2019
+     * @author john kevin paunel
+     * manual login authentication
+     * @param Request $request
+     * @return Response
+     * */
+    public function authenticate(Request $request)
+    {
+        $validator =Validator::make($request->all(),[
+            "accessAccount"     => 'required',
+            "password"          => 'required',
+        ]);
+
+        if($validator->passes())
+        {
+
+        }else{
+
+        }
+
+        return response()->json($validator->errors());
+    }
+
+    /**
+     * Nov. 03, 2019
+     * @author john kevin paunel
+     * this will check if the access account input is an email or username
+     * @param string $account
+     * @return string
+     * */
+    public function findUsername($account)
+    {
+        $login = $account;
+
+        $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        request()->merge([$fieldType => $login]);
+
+        return $fieldType;
+    }
+}
