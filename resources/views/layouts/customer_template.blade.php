@@ -178,7 +178,7 @@
                                             </div>
                                             <a class="aa-remove-product" href="{{route('cart.remove',['rowId' => $row->id])}}"><span class="fa fa-times"></span></a>
                                         </li>
-                                        @php $total = $total + $totalProductAmount->getProductTotalAmount($row->id) @endphp
+                                        @php $total = $total + $totalProductAmount->getProductTotalAmount($row->id)     @endphp
                                         @endforeach
                                     <li>
                                       <span class="aa-cartbox-total-title">
