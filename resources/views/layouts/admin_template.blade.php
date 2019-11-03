@@ -226,6 +226,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <!-- Optionally, you can add icons to the links -->
+                <li><a href="{{route('customer.index')}}"><i class="fa fa-home"></i> <span>Visit Site</span></a></li>
                 <li{{(Request::segment(1) == 'dashboard') ? ' class=active' : ''}}><a href="{{url('/dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 @role('super admin')
                     <li{{(Request::segment(1) == 'users') ? ' class=active' : ''}}><a href="{{url('/users')}}"><i class="fa fa-users"></i> <span>Users</span></a></li>

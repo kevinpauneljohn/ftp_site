@@ -78,7 +78,7 @@ class LoginController extends Controller
     {
         foreach (auth()->user()->getRoleNames() as $role)
         {
-            if($role == 'customer')
+            if($role === 'customer')
             {
                 return '/index';
             }else{
@@ -98,7 +98,7 @@ class LoginController extends Controller
         $this->guard()->logout();
         $request->session()->invalidate();
 
-        return $this->loggedOut($request)?:redirect('/index');
+        return $this->loggedOut($request)?:back();
     }
 
 }

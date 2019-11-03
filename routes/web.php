@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect(route('login'));
-});
+//Route::get('/', function () {
+//    return redirect(route('login'));
+//});
 
 Route::get('admin', function () {
     return view('admin_template');
@@ -22,13 +22,16 @@ Auth::routes([
     'register'  => false
 ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+    return redirect(route("customer.index"));
+})->name('home');
 
 /*Auth::routes();*/
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],function (){
-    Route::get('/dashboard','DashboardController@dashboard');
+    Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
     Route::get('/roles/roles','RolesController@roles');
     Route::post('/roles-create','RolesController@rolesForm')->name('roles');
     Route::post('/permission','PermissionController@permission')->name('permissions');
@@ -43,7 +46,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::post('/user-create','UserController@userForm')->name('users.create');
 });
 
-    Route::get('/index','customer\CustomerController@index')->name('customer.index');
+    Route::get('/','customer\CustomerController@index')->name('customer.index');
     Route::get('/category/{category}','customer\CustomerController@singleCategory')->name('customer.single');
     Route::post('/product-detail','ProductController@singleProductDetail')->name('product.detail');
     Route::get('/category/{category}/product/{id}','customer\CustomerController@singleProductDetails')->name('product.show');
