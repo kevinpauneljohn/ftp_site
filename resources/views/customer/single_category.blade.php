@@ -105,18 +105,28 @@
                                                             <a href="#">L</a>
                                                             <a href="#">XL</a>
                                                         </div>
+                                                        <form class="quick-view-modal-form">
+                                                            @csrf
                                                         <div class="aa-prod-quantity">
-                                                            <form action="">
-                                                                <input type="number" class="form-control qty_input" value="">
-                                                            </form>
-                                                            <p class="aa-prod-category">
-                                                                Category: <a href="#" class="category-link"></a>
-                                                            </p>
+
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <input type="number" class="form-control qty_input" min="1">
+                                                                </div>
+                                                                <div class="col-lg-9">
+                                                                    <p class="aa-prod-category">
+                                                                        Category: <a href="#" class="category-link"></a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="aa-prod-view-bottom">
-                                                            <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+{{--                                                            <button class="aa-add-to-cart-btn" type="submit"><span class="fa fa-shopping-cart"></span>Add To Cart</button>--}}
+                                                            <button class="aa-add-to-cart-btn" @if(auth()->check() == false) data-toggle="modal" data-target="#login-modal" type="button" @else type="submit" id="product-{{$product->id}}" @endif><span class="fa fa-shopping-cart"></span>Add To Cart</button>
+{{--                                                            <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>--}}
                                                             <a href="#" class="aa-add-to-cart-btn">View Details</a>
                                                         </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

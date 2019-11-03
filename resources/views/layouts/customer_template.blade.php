@@ -112,8 +112,18 @@
                                 <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
                                 <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                                 <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
-                                <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                <li><a @if(auth()->check() == true) href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" @else data-toggle="modal" data-target="#login-modal" @endif>
+                                        @if(auth()->check() == true)
+                                            Logout
+                                            @else
+                                            Login
+                                            @endif
+                                    </a></li>
                             </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -144,7 +154,13 @@
                             <a class="aa-cart-link" href="{{route('cart')}}">
                                 <span class="fa fa-shopping-basket"></span>
                                 <span class="aa-cart-title">SHOPPING CART</span>
-                                <span class="aa-cart-notify">{{\App\Cart::where('user_id',auth()->user()->id)->count()}}</span>
+                                <span class="aa-cart-notify">
+                                    @if(auth()->check() == true)
+                                        {{\App\Cart::where('user_id',auth()->user()->id)->count()}}
+                                        @else
+                                        0
+                                        @endif
+                                </span>
                             </a>
                             <div class="aa-cartbox-summary">
                                 <ul>
