@@ -26,9 +26,16 @@ class AjaxLoginController extends Controller
 
         if($validator->passes())
         {
+            $field = $this->findUsername($request->accessAccount);
 
-        }else{
+            if (Auth::attempt([$field => $request->accessAccount, 'password' => $request->password])) {
+                // The user is active, not suspended, and exists.
+                return response()->json(["success" => true]);
+            }else{
+                return response()->json(["success" => false, "error" => "invalid credential"]);
+            }
 
+            return response()->json(["success" => false]);
         }
 
         return response()->json($validator->errors());

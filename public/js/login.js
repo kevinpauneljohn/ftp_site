@@ -12,7 +12,6 @@ function check_value()
 $(document).on('submit','.aa-login-form',function (form) {
     form.preventDefault();
     let data = $('.aa-login-form').serialize();
-    console.log(data);
 
     $.ajax({
         'url'   : '/ajax-login',
@@ -21,16 +20,25 @@ $(document).on('submit','.aa-login-form',function (form) {
         'data'  : data,
         'cache' : false,
         success: function (result) {
-            console.log(result);
             if(result.success == true)
             {
                 setTimeout(function(){
-                    // $('#add-call-center').trigger('reset');
-                    // $('#callCenterModal').modal('toggle');
+                    $('.aa-login-form').trigger('reset');
+                    $('#login-modal').modal('toggle');
 
                     setTimeout(function(){
                         location.reload();
                     },1500);
+                });
+            }else if(result.error === "invalid credential")
+            {
+                setTimeout(function(){
+                    $('#status').html('<div class="alert alert-warning error-message">'+result.error+'</div>');
+
+
+                    setTimeout(function(){
+                        $('.error-message').remove();
+                    },3000);
                 });
             }
 

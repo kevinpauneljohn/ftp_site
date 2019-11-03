@@ -93,12 +93,12 @@ class LoginController extends Controller
      * @param Request $request
      * @return mixed
      * */
-//    public function logout(Request $request)
-//    {
-//        $this->guard()->logout();
-//        $request->session()->invalidate();
-//
-//        return $this->loggedOut($request)?:redirect('/login');
-//    }
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request)?:redirect('/index');
+    }
 
 }

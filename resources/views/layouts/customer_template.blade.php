@@ -162,29 +162,33 @@
                                         @endif
                                 </span>
                             </a>
+                            @if(auth()->check() == true)
                             <div class="aa-cartbox-summary">
+
                                 <ul>
-                                    @foreach(\Gloudemans\Shoppingcart\Facades\Cart::content() as $row)
+                                    @foreach(\App\User::find(auth()->user()->id)->cart as $row)
                                         <li>
                                             <a class="aa-cartbox-img" href="#"><img src="{{asset('/images/'.\App\Product::find($row->id)->productImage)}}" alt="img"></a>
                                             <div class="aa-cartbox-info">
-                                                <h4><a href="#">{{$row->name}}</a></h4>
-                                                <p>{{$row->qty}} x &#8369; {{$row->price}}</p>
+                                                <h4><a href="#">{{$row->title}}</a></h4>
+                                                <p>{{\App\Cart::where([["user_id","=", auth()->user()->id], ["product_id","=",$row->id] ])->first()->quantity}} x &#8369; {{$row->price}}</p>
                                             </div>
                                             <a class="aa-remove-product" href="{{route('cart.remove',['rowId' => $row->rowId])}}"><span class="fa fa-times"></span></a>
                                         </li>
                                         @endforeach
                                     <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                                        <span class="aa-cartbox-total-price">
-                        &#8369; {{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}
-                      </span>
+                                      <span class="aa-cartbox-total-title">
+                                        Total
+                                      </span>
+                                                        <span class="aa-cartbox-total-price">
+                                        &#8369; {{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}
+                                      </span>
                                     </li>
                                 </ul>
+
                                 <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
                             </div>
+                            @endif
                         </div>
                         <!-- / cart box -->
                         <!-- search box -->
@@ -360,6 +364,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4>Login or Register</h4>
                 <form class="aa-login-form" action="{{route('login')}}">
+                    <span id="status"></span>
                     @csrf
                     <div class="accessAccount">
                     <label for="">Username or Email address<span>*</span></label>
