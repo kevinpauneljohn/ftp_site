@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Cart;
 use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Facades\Cart;
+//use Gloudemans\Shoppingcart\Facades\Cart;
 
 class OrdersController extends Controller
 {
@@ -34,15 +35,27 @@ class OrdersController extends Controller
      * */
     public function addToCart(Request $request)
     {
-        $item = Product::find($request->product);
-        $request->validate([
-            'quantity'      => ['required','numeric','min:1','max:'.$item->quantity],
-        ]);
+        $productId = explode("product-",$request->value);
+//        $item = Product::find($request->product);
+//        $request->validate([
+//            'quantity'      => ['required','numeric','min:1','max:'.$item->quantity],
+//        ]);
+//
+//
+//        Cart::add($item, $request->quantity, [])->associate(Product::class);
+//
+//        return back()->with(['success' => true]);
+        $checkIfExist = Cart::where([
+            ["user_id","=",auth()->user()->id],
+            ["product_id","=",$productId[0]],
+        ])->count();
 
+        if($checkIfExist > 0)
+        {
+            $cart = Cart::find($productId[0]);
+        }else{
 
-        Cart::add($item, $request->quantity, [])->associate(Product::class);
-
-        return back()->with(['success' => true]);
+        }
     }
 
     /**

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+
     /**
      * Oct. 23, 2019
      * @author john kevin paunel

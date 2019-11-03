@@ -67,7 +67,7 @@
 
                                         </div>
                                         <div class="aa-prod-view-bottom">
-                                            <button type="submit" class="aa-prod-view-bottom btn btn-default">Add To Cart</button>
+                                            <button @if(auth()->check() == false) type="button" data-target="#login-modal" data-toggle="modal" @else type="submit" @endif class="aa-prod-view-bottom btn btn-default">Add To Cart</button>
                                             {{--<a class="aa-add-to-cart-btn" href="#">Add To Cart</a>
                                             <a class="aa-add-to-cart-btn" href="#">Wishlist</a>
                                             <a class="aa-add-to-cart-btn" href="#">Compare</a>--}}

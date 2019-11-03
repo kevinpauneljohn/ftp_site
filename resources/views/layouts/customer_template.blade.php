@@ -336,6 +336,7 @@
 </footer>
 <!-- / footer -->
 <!-- Login Modal -->
+@if(auth()->check() == false)
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -358,6 +359,8 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
+
+@endif
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -378,6 +381,9 @@
 <script type="text/javascript" src="{{asset('/themes/js/nouislider.js')}}"></script>
 <!-- Custom js -->
 <script src="{{asset('/themes/js/custom.js')}}"></script>
+@if(auth()->check() == true)
+    <script src="{{asset('/js/addToCart.js')}}"></script>
+@endif
 @section('extra_script')
 
     @show
