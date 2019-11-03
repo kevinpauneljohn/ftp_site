@@ -15,10 +15,12 @@ function addToCart(url, data)
         'data'  : data,
         'cache' : false,
         success: function (result) {
-            console.log(result);
             if(result.success === true)
             {
-                location.reload();
+                $('.aa-cart-notify').text(result.quantity);
+            }else if(result.success !== null)
+            {
+                alert(result.message);
             }
         },error: function (result) {
             console.log(result.status);

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="product module">
-      <change afterPath="$PROJECT_DIR$/public/js/addToCart.js" afterDir="false" />
+    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="add to cart module module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/productDetail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/productDetail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/customer/single_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/single_category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/addToCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/addToCart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,23 +40,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrdersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+            <state relative-caret-position="386">
+              <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_03_115831_add_quantity_column_to_product_user_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -79,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="385" column="6" selection-start-line="385" selection-start-column="6" selection-end-line="385" selection-end-column="6" />
+            <state relative-caret-position="90">
+              <caret line="139" column="30" lean-forward="true" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -89,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/customer/productDetail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
-              <caret line="56" column="63" lean-forward="true" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+              <caret line="56" column="63" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -97,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/addToCart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -107,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/public/js/cart.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="31" column="3" lean-forward="true" selection-end-line="31" selection-end-column="3" />
+              <caret line="31" column="3" selection-end-line="31" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -125,16 +113,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -168,6 +147,7 @@
       <find>wpf-loader-two</find>
       <find>add to</find>
       <find>add to ca</find>
+      <find>aa-cart-notify</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_10_20_065701_create_products_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_20_103534_create_products_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/UserSeeder.php" />
@@ -220,13 +199,14 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php" />
         <option value="$PROJECT_DIR$/resources/views/customer/single_category.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/customer/productDetail.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/addToCart.js" />
         <option value="$PROJECT_DIR$/app/CartModel.php" />
         <option value="$PROJECT_DIR$/app/Cart.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_03_115831_add_quantity_column_to_product_user_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_11_03_124057_add_id_column_to_product_user_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/addToCart.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
       </list>
     </option>
   </component>
@@ -507,21 +487,7 @@
       <workItem from="1572716927735" duration="170000" />
       <workItem from="1572717101836" duration="1813000" />
       <workItem from="1572719436135" duration="1867000" />
-      <workItem from="1572767644492" duration="5815000" />
-    </task>
-    <task id="LOCAL-00003" summary="login">
-      <created>1571392917765</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1571392917765</updated>
-    </task>
-    <task id="LOCAL-00004" summary="edited the login controller and login blade">
-      <created>1571469223401</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1571469223401</updated>
+      <workItem from="1572767644492" duration="11208000" />
     </task>
     <task id="LOCAL-00005" summary="roles controller">
       <created>1571475518893</created>
@@ -852,17 +818,31 @@
       <option name="project" value="LOCAL" />
       <updated>1572769676716</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="add to cart module module">
+      <created>1572782408880</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1572782408880</updated>
+    </task>
+    <task id="LOCAL-00053" summary="add to cart module module">
+      <created>1572785475628</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1572785475628</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178962000" />
+    <option name="totallyTimeSpent" value="184355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.27785236" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.27785236" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.020134227" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -877,7 +857,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.20963173" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.20963173" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -896,11 +876,10 @@
     <MESSAGE value="daily shop themes integration" />
     <MESSAGE value="orders module" />
     <MESSAGE value="product module" />
-    <option name="LAST_COMMIT_MESSAGE" value="product module" />
+    <MESSAGE value="add to cart module module" />
+    <option name="LAST_COMMIT_MESSAGE" value="add to cart module module" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_23_184245_add_quantity_column_to_products_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_23_193407_add_sku_column_to_products_table.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_070450_add_soft_delete_to_product.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_20_100841_create_categories_table.php" />
@@ -1009,35 +988,21 @@
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="3" lean-forward="true" selection-end-line="31" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="385" column="6" selection-start-line="385" selection-start-column="6" selection-end-line="385" selection-end-column="6" />
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/customer/productDetail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
-          <caret line="56" column="63" lean-forward="true" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+          <caret line="56" column="63" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -1072,27 +1037,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_03_115831_add_quantity_column_to_product_user_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="69" lean-forward="true" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_03_124057_add_id_column_to_product_user_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="139" column="30" lean-forward="true" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="3" selection-end-line="31" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/addToCart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="272">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        <state relative-caret-position="386">
+          <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_03_115831_add_quantity_column_to_product_user_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
         </state>
       </provider>
     </entry>

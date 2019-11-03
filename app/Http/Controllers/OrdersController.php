@@ -29,6 +29,17 @@ class OrdersController extends Controller
     /**
      * Nov. 03, 2019
      * @author john kevin paunel
+     * @param int $productId
+     * @return int
+     * */
+    public function checkProductQuantity($productId)
+    {
+        return Product::find($productId)->quantity;
+    }
+
+    /**
+     * Nov. 03, 2019
+     * @author john kevin paunel
      * this will add or update the item quantity to cart /product_user table
      * @param Request $request
      * @return mixed
@@ -62,6 +73,10 @@ class OrdersController extends Controller
                     ['product_id','=',$productId[1]],
                 ])->first();
                 $quantity = $oldCart->quantity;
+                /**
+                 * this will get the product_user table id to be use in retrieving cart
+                 * @var $id
+                 * */
                 $id = $oldCart->id;
             }
 
@@ -76,12 +91,27 @@ class OrdersController extends Controller
             $cart->status = "pending";
 
 
-        if($cart->save()){
-            $message = ["success" => true];
-        }else{
-            $message = ["success" => false];
-        }
+            /**
+             * this will get the total quantity of ordered items to be compared in the current product stock
+             * @var $quantity
+             * */
+            $quantity = ($checkIfExist > 0) ? $quantity + 1 : 1;
 
+            #conditional statement for comparing ordered quantity to the current product quantity
+            if( $quantity <= $this->checkProductQuantity($productId[1]))
+            {
+                if($cart->save()){
+                    $message = ["success" => true, "quantity" => Cart::where('user_id',auth()->user()->id)->count()];
+                }else{
+                    $message = ["success" => false];
+                }
+            }else{
+                $message = ["success" => false, "message" => "quantity must not be greater than the available stock!"];
+            }
+
+            /**
+             * this response will be retrieved by addToCart.js
+             * */
         return response()->json($message);
     }
 

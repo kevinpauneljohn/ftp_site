@@ -144,7 +144,7 @@
                             <a class="aa-cart-link" href="{{route('cart')}}">
                                 <span class="fa fa-shopping-basket"></span>
                                 <span class="aa-cart-title">SHOPPING CART</span>
-                                <span class="aa-cart-notify">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}}</span>
+                                <span class="aa-cart-notify">{{\App\Cart::where('user_id',auth()->user()->id)->count()}}</span>
                             </a>
                             <div class="aa-cartbox-summary">
                                 <ul>
