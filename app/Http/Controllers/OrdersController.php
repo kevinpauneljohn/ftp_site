@@ -40,6 +40,8 @@ class OrdersController extends Controller
     /**
      * Nov. 03, 2019
      * @author john kevin paunel
+     * Url: /add-to-cart
+     * Route Name: orders.cart
      * this will add or update the item quantity to cart /product_user table
      * @param Request $request
      * @return mixed
@@ -54,6 +56,7 @@ class OrdersController extends Controller
 
         /**
          * check if product exist or not to determine if it will insert new product or update product quantity
+         * db table: product_user_table
          * @var $checkIfExist
          * */
         $checkIfExist = Cart::where([
@@ -61,13 +64,13 @@ class OrdersController extends Controller
             ["product_id","=",$productId[1]],
         ])->count();
 
-            /**
-             * retrieve the previous product quantity before updating it
-             * @var $oldCart
-             * @var $quantity
-             * */
             if($checkIfExist > 0)
             {
+                /**
+                 * retrieve the previous product quantity before updating it
+                 * @var $oldCart
+                 * @var $quantity
+                 * */
                 $oldCart = Cart::where([
                     ['user_id','=',auth()->user()->id],
                     ['product_id','=',$productId[1]],
@@ -140,7 +143,7 @@ class OrdersController extends Controller
     {
         $rowId = explode('update-',$request->id)[1];
 
-        #item stock quantity
+        #item stock quantity from product_user table
         $quantity = Cart::get($rowId)->model->quantity;
 
         if($request->qty <= $quantity)
