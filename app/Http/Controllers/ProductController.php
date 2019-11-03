@@ -87,6 +87,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->title = $request->title;
         $product->size = $request->size.' '.$request->measurement;
+        $product->weight = 0;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->category_id = $request->category;
