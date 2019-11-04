@@ -5,6 +5,16 @@ $(document).on('click','.aa-add-card-btn',function () {
     addToCart("/add-to-cart" , data)
 });
 
+$(document).on('submit','.quick-view-modal-form',function (form) {
+    form.preventDefault();
+    let id = this.id;
+    let data = $('.quick-view-modal-form').serialize();
+
+    console.log(data);
+
+    addToCart("/add-to-cart" , data)
+});
+
 function addToCart(url, data)
 {
     /*/update-cart*/
@@ -15,6 +25,7 @@ function addToCart(url, data)
         'data'  : data,
         'cache' : false,
         success: function (result) {
+            console.log(result);
             if(result.success === true)
             {
                 $('.aa-cart-notify').text(result.quantity);

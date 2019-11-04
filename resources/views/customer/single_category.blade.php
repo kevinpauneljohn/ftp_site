@@ -111,7 +111,7 @@
 
                                                             <div class="row">
                                                                 <div class="col-lg-3">
-                                                                    <input type="number" class="form-control qty_input" min="1">
+                                                                    <input type="number" name="quantity" class="form-control qty_input" min="1">
                                                                 </div>
                                                                 <div class="col-lg-9">
                                                                     <p class="aa-prod-category">
@@ -120,9 +120,10 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                            <input type="hidden" name="value" value="2"/>
                                                         <div class="aa-prod-view-bottom">
 {{--                                                            <button class="aa-add-to-cart-btn" type="submit"><span class="fa fa-shopping-cart"></span>Add To Cart</button>--}}
-                                                            <button class="aa-add-to-cart-btn" @if(auth()->check() == false) data-toggle="modal" data-target="#login-modal" type="button" @else type="submit" @if(\App\Product::where("category_id",$categoryId)->count() > 0)id="product-{{$product->id}}" @endif @endif><span class="fa fa-shopping-cart"></span>Add To Cart</button>
+                                                            <button class="add-to-cart-btn" @if(auth()->check() == false) data-toggle="modal" data-target="#login-modal" type="button" @else type="submit" @if(\App\Product::where("category_id",$categoryId)->count() > 0)id="product-{{$product->id}}" @endif @endif><span class="fa fa-shopping-cart"></span>Add To Cart</button>
 {{--                                                            <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>--}}
                                                             <a href="#" class="aa-add-to-cart-btn">View Details</a>
                                                         </div>

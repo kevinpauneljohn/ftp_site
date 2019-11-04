@@ -219,35 +219,38 @@
                                                     </div>
                                                 </div>
                                                 <!-- Modal view content -->
-                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <div class="aa-product-view-content">
-                                                        <h3 class="title"></h3>
-                                                        <div class="aa-price-block">
-                                                            <span class="aa-product-view-price"></span>
-                                                            <p class="aa-product-avilability">Availability: <span class="stock">In stock</span></p>
-                                                        </div>
-                                                        <p class="description"></p>
-                                                        <h4>Size</h4>
-                                                        <div class="aa-prod-view-size">
-                                                            <a href="#">S</a>
-                                                            <a href="#">M</a>
-                                                            <a href="#">L</a>
-                                                            <a href="#">XL</a>
-                                                        </div>
-                                                        <div class="aa-prod-quantity">
-                                                            <form action="">
-                                                                <input type="number" class="form-control qty_input" value="">
-                                                            </form>
-                                                            <p class="aa-prod-category">
-                                                                Category: <a href="#" class="category-link"></a>
-                                                            </p>
-                                                        </div>
-                                                        <div class="aa-prod-view-bottom">
-                                                            <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                                            <a href="#" class="aa-add-to-cart-btn">View Details</a>
+                                                <form class="add-to-cart-form">
+                                                    @csrf
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="aa-product-view-content">
+                                                            <h3 class="title"></h3>
+                                                            <div class="aa-price-block">
+                                                                <span class="aa-product-view-price"></span>
+                                                                <p class="aa-product-avilability">Availability: <span class="stock">In stock</span></p>
+                                                            </div>
+                                                            <p class="description"></p>
+                                                            <h4>Size</h4>
+                                                            <div class="aa-prod-view-size">
+                                                                <a href="#">S</a>
+                                                                <a href="#">M</a>
+                                                                <a href="#">L</a>
+                                                                <a href="#">XL</a>
+                                                            </div>
+                                                            <div class="aa-prod-quantity">
+                                                                    <input type="number" class="form-control qty_input" value="">
+
+                                                                <p class="aa-prod-category">
+                                                                    Category: <a href="#" class="category-link"></a>
+                                                                </p>
+                                                            </div>
+                                                            <div class="aa-prod-view-bottom">
+                                                               {{-- <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>--}}
+                                                                <button type="submit" class="aa-add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add To Cart</button>
+                                                                <a href="#" class="aa-add-to-cart-btn">View Details</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div><!-- /.modal-content -->
