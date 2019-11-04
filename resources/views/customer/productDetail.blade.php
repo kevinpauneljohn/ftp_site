@@ -50,7 +50,15 @@
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <div class="form-group {{$errors->has('quantity') ? 'has-error' : ''}}">
-                                                        <input type="number" name="quantity" class="form-control" id="quantity" min="0" value="{{old('quantity')}}" max="{{$product->quantity}}">
+                                                        @if(auth()->check() == true)
+                                                            @php
+                                                                $itemQty = \App\Cart::where([
+                                                                    ["user_id","=",auth()->user()->id],
+                                                                    ["product_id","=",$product->id],
+                                                                ])->first()->quantity
+                                                            @endphp
+                                                        @endif
+                                                        <input type="number" name="quantity" class="form-control" id="quantity" min="0" value="{{old('quantity')}}" @if(auth()->check() == true) max="{{$product->quantity - $itemQty}}" @endif>
                                                         @error('quantity')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
