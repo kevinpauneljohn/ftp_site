@@ -106,14 +106,27 @@ class OrdersController extends Controller
              * this will get the total quantity of ordered items to be compared in the current product stock
              * @var $quantity
              * */
-            $quantity = ($checkIfExist > 0) ? $quantity + 1 : 1;
+            $quantity = ($checkIfExist > 0) ? $quantity + $qty : 1;
+
+            /**
+             * retrieve product stock on the inventory
+             * @var $productCurrentStock
+             * */
+            $productCurrentStock = Product::find($productId[1])->quantity;
+
+            /**
+             * set the maximum item quantity a buyer can order
+             * @var $maxValue
+             * */
+            $maxValue = $productCurrentStock - $oldCart->quantity;
+
 
             #if the request action is null means the event used was submit
             #the event is triggered using addToCart.js file
             if(is_null($request->action))
             {
                 $validator = Validator::make($request->all(),[
-                    'orderQuantity'  => 'required|numeric'
+                    'orderQuantity'  => 'required|numeric|max:'.$maxValue
                 ]);
 
                 if($validator->passes())
