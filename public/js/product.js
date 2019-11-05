@@ -15,6 +15,8 @@ $(document).on('click','.quick-view',function () {
             $('.description').text(result.description)
             $('.category-link').text(result.category).attr('href',result.permalinkUrl)
             $('.qty_input').attr('max',result.quantity);
+            $('#product').val('product-'+result.productId);
+
         },error: function (result) {
             console.log(result.status);
         }

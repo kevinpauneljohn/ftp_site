@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 //use Gloudemans\Shoppingcart\Facades\Cart;
 
 class OrdersController extends Controller
@@ -52,71 +53,97 @@ class OrdersController extends Controller
          * fetch the product ID
          * @var $productId
          * */
-//        $productId = explode("product-",$request->value);
-//
-//        /**
-//         * check if product exist or not to determine if it will insert new product or update product quantity
-//         * db table: product_user_table
-//         * @var $checkIfExist
-//         * */
-//        $checkIfExist = Cart::where([
-//            ["user_id","=",auth()->user()->id],
-//            ["product_id","=",$productId[1]],
-//        ])->count();
-//
-//            if($checkIfExist > 0)
-//            {
-//                /**
-//                 * retrieve the previous product quantity before updating it
-//                 * @var $oldCart
-//                 * @var $quantity
-//                 * */
-//                $oldCart = Cart::where([
-//                    ['user_id','=',auth()->user()->id],
-//                    ['product_id','=',$productId[1]],
-//                ])->first();
-//                $quantity = $oldCart->quantity;
-//
-//                /**
-//                 * this will get the product_user table id to be use in retrieving cart
-//                 * @var $id
-//                 * */
-//                $id = $oldCart->id;
-//            }
-//
-//            /**
-//             * this will save or update the product data to the product_user table
-//             * @var $cart
-//             * */
-//            $cart = ($checkIfExist > 0) ? Cart::find($id) : new Cart();
-//            $cart->user_id = auth()->user()->id;
-//            $cart->product_id = $productId[1];
-//            $cart->quantity = ($checkIfExist > 0) ? $quantity+1 : 1;
-//            $cart->status = "pending";
-//
-//
-//            /**
-//             * this will get the total quantity of ordered items to be compared in the current product stock
-//             * @var $quantity
-//             * */
-//            $quantity = ($checkIfExist > 0) ? $quantity + 1 : 1;
-//
-//            #conditional statement for comparing ordered quantity to the current product quantity
-//            if( $quantity <= $this->checkProductQuantity($productId[1]))
-//            {
-//                if($cart->save()){
-//                    $message = ["success" => true, "quantity" => Cart::where('user_id',auth()->user()->id)->count()];
-//                }else{
-//                    $message = ["success" => false];
-//                }
-//            }else{
-//                $message = ["success" => false, "message" => "quantity must not be greater than the available stock!"];
-//            }
-//
-//            /**
-//             * this response will be retrieved by addToCart.js
-//             * */
-//        return response()->json($message);
+        $productId = explode("product-",$request->value);
+
+        /**
+         * check if product exist or not to determine if it will insert new product or update product quantity
+         * db table: product_user_table
+         * @var $checkIfExist
+         * */
+        $checkIfExist = Cart::where([
+            ["user_id","=",auth()->user()->id],
+            ["product_id","=",$productId[1]],
+        ])->count();
+
+            if($checkIfExist > 0)
+            {
+                /**
+                 * retrieve the previous product quantity before updating it
+                 * @var $oldCart
+                 * @var $quantity
+                 * */
+                $oldCart = Cart::where([
+                    ['user_id','=',auth()->user()->id],
+                    ['product_id','=',$productId[1]],
+                ])->first();
+                $quantity = $oldCart->quantity;
+
+                /**
+                 * this will get the product_user table id to be use in retrieving cart
+                 * @var $id
+                 * */
+                $id = $oldCart->id;
+            }
+
+            /**
+             * if the action use was click the quantity field will return 1 else the quantity field will return the value set in the input
+             * @var $qty
+             * */
+            $qty = is_null($request->action) ? $request->quantity : 1;
+
+            /**
+             * this will save or update the product data to the product_user table
+             * @var $cart
+             * */
+            $cart = ($checkIfExist > 0) ? Cart::find($id) : new Cart();
+            $cart->user_id = auth()->user()->id;
+            $cart->product_id = $productId[1];
+            $cart->quantity = ($checkIfExist > 0) ? $quantity + $qty : $qty;
+            $cart->status = "pending";
+
+
+            /**
+             * this will get the total quantity of ordered items to be compared in the current product stock
+             * @var $quantity
+             * */
+            $quantity = ($checkIfExist > 0) ? $quantity + 1 : 1;
+
+            #if the request action is null means the event used was submit
+            #the event is triggered using addToCart.js file
+            if(is_null($request->action))
+            {
+                $validator = Validator::make($request->all(),[
+                    'quantity'  => 'required|numeric'
+                ]);
+
+                if($validator->passes())
+                {
+                    if($cart->save()){
+                        $message = ["success" => true, "quantity" => Cart::where('user_id',auth()->user()->id)->count()];
+                    }else{
+                        $message = ["success" => false];
+                    }
+                    return response()->json($message);
+                }
+                return response()->json($validator->errors());
+
+                #else the event used was click
+            }else{
+                #conditional statement for comparing ordered quantity to the current product quantity
+                if( $quantity <= $this->checkProductQuantity($productId[1]))
+                {
+                    if($cart->save()){
+                        $message = ["success" => true, "quantity" => Cart::where('user_id',auth()->user()->id)->count()];
+                    }else{
+                        $message = ["success" => false];
+                    }
+                    return response()->json($message);
+                }else{
+                    $message = ["success" => false, "message" => "quantity must not be greater than the available stock!"];
+                    return response()->json($message);
+                }
+            }
+
     }
 
     /**

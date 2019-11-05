@@ -44,6 +44,9 @@
             color:red;
             font-size: 12px;
         }
+        .text-danger{
+            font-size: 12px;
+        }
     </style>
 
 </head>
