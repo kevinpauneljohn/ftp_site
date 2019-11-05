@@ -115,7 +115,7 @@ class OrdersController extends Controller
             $productCurrentStock = Product::find($productId[1])->quantity;
 
             /**
-             * set the maximum item quantity a buyer can order
+             * set the maximum item quantity which the buyer can order
              * @var $maxValue
              * */
             $maxValue = $productCurrentStock - $oldCart->quantity;
