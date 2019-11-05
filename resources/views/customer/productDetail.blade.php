@@ -239,8 +239,8 @@
                                                                 @csrf
                                                             <div class="aa-prod-quantity">
                                                                 <div class="row">
-                                                                    <div class="col-lg-3 quantity">
-                                                                        <input type="number" name="quantity" class="form-control qty_input" min="1" id="quantity" />
+                                                                    <div class="col-lg-3 orderQuantity">
+                                                                        <input type="number" name="orderQuantity" class="form-control qty_input" min="1" id="orderQuantity" />
                                                                     </div>
                                                                     <div class="col-lg-9">
                                                                         <p class="aa-prod-category">

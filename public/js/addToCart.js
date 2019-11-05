@@ -24,7 +24,7 @@ $(document).on('submit','.quick-view-modal-form',function (form) {
     let data = $('.quick-view-modal-form').serialize();
 
     addToCart("/add-to-cart" , data)
-    check_value('quantity');
+    check_value('orderQuantity');
     return false;
 });
 

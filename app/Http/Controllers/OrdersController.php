@@ -89,7 +89,7 @@ class OrdersController extends Controller
              * if the action use was click the quantity field will return 1 else the quantity field will return the value set in the input
              * @var $qty
              * */
-            $qty = is_null($request->action) ? $request->quantity : 1;
+            $qty = is_null($request->action) ? $request->orderQuantity : 1;
 
             /**
              * this will save or update the product data to the product_user table
@@ -113,7 +113,7 @@ class OrdersController extends Controller
             if(is_null($request->action))
             {
                 $validator = Validator::make($request->all(),[
-                    'quantity'  => 'required|numeric'
+                    'orderQuantity'  => 'required|numeric'
                 ]);
 
                 if($validator->passes())
