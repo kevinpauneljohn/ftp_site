@@ -219,8 +219,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Modal view content -->
-                                                <form class="add-to-cart-form">
-                                                    @csrf
+
                                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                                         <div class="aa-product-view-content">
                                                             <h3 class="title"></h3>
@@ -236,21 +235,30 @@
                                                                 <a href="#">L</a>
                                                                 <a href="#">XL</a>
                                                             </div>
+                                                            <form class="quick-view-modal-form">
+                                                                @csrf
                                                             <div class="aa-prod-quantity">
-                                                                    <input type="number" class="form-control qty_input" value="">
-
-                                                                <p class="aa-prod-category">
-                                                                    Category: <a href="#" class="category-link"></a>
-                                                                </p>
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 quantity">
+                                                                        <input type="number" name="quantity" class="form-control qty_input" min="1" id="quantity" />
+                                                                    </div>
+                                                                    <div class="col-lg-9">
+                                                                        <p class="aa-prod-category">
+                                                                            Category: <a href="#" class="category-link"></a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
+                                                            <input type="hidden" name="value" id="product">
                                                             <div class="aa-prod-view-bottom">
                                                                {{-- <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>--}}
                                                                 <button type="submit" class="aa-add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add To Cart</button>
                                                                 <a href="#" class="aa-add-to-cart-btn">View Details</a>
                                                             </div>
+                                                            </form>
                                                         </div>
                                                     </div>
-                                                </form>
+
                                             </div>
                                         </div>
                                     </div><!-- /.modal-content -->

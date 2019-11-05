@@ -58,7 +58,7 @@ class CustomerController extends Controller
             'product'               => $product,
             'allProduct'            => Product::all(),
             'category'              => category::find($product->category_id),
-            'productId'             => $id
+            'productId'             => $id,
         ]);
     }
 
