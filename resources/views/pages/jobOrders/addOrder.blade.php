@@ -25,6 +25,9 @@
     <div class="box">
         <div class="box-body">
             <form role="form" method="post" action="{{route('job.orders.create')}}">
+                @if(session('success') == true)
+                    <div class="alert alert-success">Job Order Successfully created</div>
+                    @endif
                 @csrf
             <div class="row">
                 <div class="col-lg-6">
@@ -178,7 +181,8 @@
             $('[data-mask]').inputmask();
             //Date picker
             $('#datepicker').datepicker({
-                autoclose: true
+                autoclose: true,
+                format: 'yyyy-mm-dd'
             });
             //Timepicker
             $('.timepicker').timepicker({
