@@ -33,11 +33,11 @@ class JobOrderController extends Controller
      * Nov. 07, 2019
      * @author john kevin paunel
      * Job order datatables to be viewed on job order page
+     * Yajra data tables
      * */
     public function jobOrdersData()
     {
         $jobOrders = JobOrder::all();
-
 
         return Datatables::of($jobOrders)
             ->addColumn('action', function ($jobOrder) {
