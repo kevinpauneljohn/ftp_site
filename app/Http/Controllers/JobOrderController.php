@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\category;
 use App\JobOrder;
+use App\User;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Mixed_;
+use Yajra\Datatables\Datatables;
 
 class JobOrderController extends Controller
 {
@@ -23,9 +26,7 @@ class JobOrderController extends Controller
      * */
     public function jobOrderPage()
     {
-        return view('pages.jobOrders.order')->with([
-            'jobOrders' => JobOrder::all(),
-        ]);
+        return view('pages.jobOrders.order');
     }
 
     /**
@@ -35,7 +36,20 @@ class JobOrderController extends Controller
      * */
     public function jobOrdersData()
     {
-        return Datatables::of(JobOrder::all())->make(true);
+        $jobOrders = JobOrder::all();
+
+
+        return Datatables::of($jobOrders)
+            ->addColumn('action', function ($jobOrder) {
+                return '<a href="#edit-'.$jobOrder->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+            })
+            ->editColumn('category_id', function($jobOrder) {
+                return category::find($jobOrder->category_id)->name;
+            })
+            ->editColumn('created_by', function($jobOrder) {
+                return User::find($jobOrder->created_by)->username;
+            })
+            ->make(true);
     }
 
     /**

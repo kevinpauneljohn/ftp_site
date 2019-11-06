@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" afterDir="false" />
+    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="job orders module">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +38,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.69551533">
+    <splitter split-orientation="horizontal" split-proportion="0.29976398">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -48,32 +50,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="488">
-                  <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="51" />
-                  <folding>
-                    <element signature="e#40#57#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php">
+            <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="84" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="84" />
+                <state relative-caret-position="406">
+                  <caret line="76" column="39" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/pages/product/addProduct.blade.php">
+            <entry file="file://$PROJECT_DIR$/routes/web.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1037">
-                  <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="75" selection-end-column="25" />
+                <state relative-caret-position="114">
+                  <caret line="48" column="97" lean-forward="true" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="97" />
                 </state>
               </provider>
             </entry>
@@ -85,20 +75,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="74" column="43" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="43" />
+                <state relative-caret-position="357">
+                  <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
                   <folding>
                     <element signature="e#40#57#0#PHP" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/web.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="447">
-                  <caret line="55" column="97" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="97" />
                 </state>
               </provider>
             </entry>
@@ -196,15 +177,15 @@
         <option value="$PROJECT_DIR$/public/js/addToCart.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_06_021332_create_job_orders_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_06_021358_create_tasks_table.php" />
         <option value="D:/admin lte/AdminLTE/pages/forms/advanced.html" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_06_181916_change_pick_up_time_attribute_to_varchar_from_job_orders_table.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" />
       </list>
     </option>
   </component>
@@ -347,12 +328,6 @@
             <path>
               <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
               <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,7 +341,15 @@
               <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="jobOrders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -449,28 +432,7 @@
       <workItem from="1572989266657" duration="661000" />
       <workItem from="1572997741818" duration="10833000" />
       <workItem from="1573050334781" duration="171000" />
-      <workItem from="1573054783943" duration="8778000" />
-    </task>
-    <task id="LOCAL-00029" summary="daily shop themes integration">
-      <created>1571858775154</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1571858775154</updated>
-    </task>
-    <task id="LOCAL-00030" summary="daily shop themes integration">
-      <created>1571859387672</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1571859387672</updated>
-    </task>
-    <task id="LOCAL-00031" summary="daily shop themes integration">
-      <created>1572158484630</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1572158484630</updated>
+      <workItem from="1573054783943" duration="16030000" />
     </task>
     <task id="LOCAL-00032" summary="daily shop themes integration">
       <created>1572159779370</created>
@@ -794,11 +756,32 @@
       <option name="project" value="LOCAL" />
       <updated>1573063851674</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="job orders module">
+      <created>1573064823606</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1573064823606</updated>
+    </task>
+    <task id="LOCAL-00079" summary="job orders module">
+      <created>1573064923965</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1573064923965</updated>
+    </task>
+    <task id="LOCAL-00080" summary="job orders module">
+      <created>1573070651689</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1573070651689</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240961000" />
+    <option name="totallyTimeSpent" value="248213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -845,13 +828,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="job orders module" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_03_082207_create_product_user_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1131,13 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/admin lte/AdminLTE/pages/forms/advanced.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1152,17 +1121,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="55" column="97" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
           <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_181916_change_pick_up_time_attribute_to_varchar_from_job_orders_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1176,27 +1152,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_181916_change_pick_up_time_attribute_to_varchar_from_job_orders_table.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/users.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="218">
+          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="166" selection-end-column="28" />
+          <folding>
+            <element signature="e#6676#8808#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="48" column="97" lean-forward="true" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="76" column="39" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="74" column="43" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="43" />
+        <state relative-caret-position="357">
+          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="84" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="84" />
         </state>
       </provider>
     </entry>

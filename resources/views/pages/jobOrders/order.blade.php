@@ -17,7 +17,7 @@
 @section('main_content')
     <div class="box">
         <div class="box-body">
-            <table id="job-order-list" class="table table-bordered table-hover">
+            <table class="table table-bordered" id="job-orders-table">
                 <thead>
                 <tr>
                     <th>Date Created</th>
@@ -32,24 +32,6 @@
                     <th>Action</th>
                 </tr>
                 </thead>
-                <tbody>
-                @foreach($jobOrders as $jobOrder)
-                    <tr>
-                        <td>{{$jobOrder->created_at}}</td>
-                        <td>{{\App\category::find($jobOrder->category_id)->name}}</td>
-                        <td>{{$jobOrder->title}}</td>
-                        <td>{{$jobOrder->customer_name}}</td>
-                        <td>{{$jobOrder->customer_contact_number}}</td>
-                        <td>{{$jobOrder->pickup_date}}</td>
-                        <td>{{$jobOrder->pickup_time}}</td>
-                        <td>{{\App\User::find($jobOrder->created_by)->username}}</td>
-                        <td>{{$jobOrder->status}}</td>
-                        <td>
-                            <a><button type="button" class="btn btn-primary" title="view"><i class="fa fa-eye"></i></button></a>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
             </table>
         </div>
     </div>
@@ -77,6 +59,27 @@
             $('#job-order-list').DataTable()
             $('.role-assign').select2()
         })
+    </script>
+    <script>
+        $(function() {
+            $('#job-orders-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('job.orders.datatables') !!}',
+                columns: [
+                    { data: 'created_at', name: 'created_at'},
+                    { data: 'category_id', name: 'category_id'},
+                    { data: 'title', name: 'title' },
+                    { data: 'customer_name', name: 'customer_name'},
+                    { data: 'customer_contact_number', name: 'customer_contact_number'},
+                    { data: 'pickup_date', name: 'pickup_date'},
+                    { data: 'pickup_time', name: 'pickup_time'},
+                    { data: 'created_by', name: 'created_by'},
+                    { data: 'status', name: 'status'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
+                ]
+            });
+        });
     </script>
 
 @endsection
