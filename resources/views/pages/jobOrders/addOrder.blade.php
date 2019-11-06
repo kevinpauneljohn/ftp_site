@@ -27,6 +27,32 @@
             <form role="form">
             <div class="row">
                 <div class="col-lg-6">
+                    <div class="form-group {{$errors->has('title') ? 'has-error' : ''}}">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" class="form-control" value="{{old('title')}}" />
+                        @error('title')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                    <div class="form-group description {{$errors->has('description') ? 'has-error' : ''}}">
+                        <label for="description">Description</label>
+                        <div class="box-body pad">
+
+                            <textarea name="description" id="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                {{old('description')}}
+                            </textarea>
+
+                        </div>
+                        @error('description')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-6">
                         <div class="form-group {{$errors->has('category') ? 'has-error' : ''}}">
                             <label for="category">Category</label>
                             {{old('$category')}}
@@ -42,70 +68,72 @@
                                     </span>
                             @enderror
                         </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('customer_name') ? 'has-error' : ''}}">
                         <label for="customer_name">Customer Name</label>
                         <input type="text" name="customer_name" value="{{old('customer_name')}}" class="form-control" id="customer_name" />
+                        @error('customer_name')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('contact_number') ? 'has-error' : ''}}">
                         <label>Customer Contact Number</label>
 
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-phone"></i>
                             </div>
-                            <input type="text" name="contact_number" class="form-control" data-inputmask='"mask": "(9999) 999-9999"' data-mask>
+                            <input type="text" name="contact_number" class="form-control" data-inputmask='"mask": "(9999) 999-9999"' data-mask value="{{old('contact_number')}}">
                         </div>
+                        @error('contact_number')
+                        <span class="invalid-feedback" role="alert">
+                             <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         <!-- /.input group -->
                     </div>
-                </div>
-                <div class="col-lg-6">
                     <!-- Date -->
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('pickup_date') ? 'has-error' : ''}}">
                         <label>Pickup Date</label>
 
                         <div class="input-group date">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" name="pickup_date" class="form-control pull-right" id="datepicker">
+                            <input type="text" name="pickup_date" class="form-control pull-right" id="datepicker" value="{{old('pickup_date')}}">
                         </div>
                         <!-- /.input group -->
+                        @error('pickup_date')
+                        <span class="invalid-feedback" role="alert">
+                             <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <!-- time Picker -->
                     <div class="bootstrap-timepicker">
-                        <div class="form-group">
+                        <div class="form-group {{$errors->has('pickup_time') ? 'has-error' : ''}}">
                             <label>Pick Up Time</label>
 
                             <div class="input-group">
-                                <input type="text" name="pickup_time" class="form-control timepicker">
+                                <input type="text" name="pickup_time" class="form-control timepicker" value="{{old('pickup_time')}}">
 
                                 <div class="input-group-addon">
                                     <i class="fa fa-clock-o"></i>
                                 </div>
                             </div>
                             <!-- /.input group -->
+                            @error('pickup_time')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <!-- /.form group -->
                     </div>
+                    <button type="submit" class="btn btn-primary">Add Job Order</button>
                 </div>
             </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" name="title" class="form-control" />
-                        </div>
-                        <div class="form-group description">
-                            <label for="description">Description</label>
-                            <div class="box-body pad">
-
-                                <textarea name="description" id="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Add Job Order</button>
-                    </div>
-                </div>
             </form>
         </div>
     </div>
