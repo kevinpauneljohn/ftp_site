@@ -56,7 +56,8 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::get('/remove-item/{rowId}','OrdersController@removeItemFromCart')->name('cart.remove');
     Route::post('/update-cart','OrdersController@updateCart')->name('cart.update');
     Route::post('/ajax-login','Auth\AjaxLoginController@authenticate')->name('ajax.login');
-
+    Route::get('/job-order/orders','JobOrderController@jobOrderPage')->name('job.orders');
+    Route::get('/job-order/add-job-order','JobOrderController@addJobOrderPage')->name('job.orders.add');
 
 Route::get('/test',function (){
     return view('layouts.customer_template');

@@ -258,6 +258,21 @@
                     </a>
                 </li>
                 @endhasanyrole
+
+                @hasanyrole('super admin|admin|graphic artist')
+                <li class="{{(Request::segment(1) == 'job-order') ? 'active ' : ' '}}treeview">
+                    <a href="#">
+                        <i class="fa fa-tasks"></i><span>Job Orders</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                        <ul class="treeview-menu">
+                            <li{{(Request::segment(2) == 'orders') ? ' class=active' : ''}}><a href="{{route('job.orders')}}">Orders</a></li>
+                            <li{{(Request::segment(2) == 'add-job-order') ? ' class=active' : ''}}><a href="{{route('job.orders.add')}}">Add Orders</a></li>
+                        </ul>
+                    </a>
+                </li>
+                @endhasanyrole
             </ul>
             <!-- /.sidebar-menu -->
         </section>
