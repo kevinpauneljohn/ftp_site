@@ -15,8 +15,46 @@
 @endsection
 
 @section('main_content')
-    asdf
+    <div class="box">
+        <div class="box-body">
+            <table id="job-order-list" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Date Created</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Customer Name</th>
+                    <th>Customer Contact Number</th>
+                    <th>Pick Up Date</th>
+                    <th>Pick Up Time</th>
+                    <th>Created by</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($jobOrders as $jobOrder)
+                    <tr>
+                        <td>{{$jobOrder->created_at}}</td>
+                        <td>{{\App\category::find($jobOrder->category_id)->name}}</td>
+                        <td>{{$jobOrder->title}}</td>
+                        <td>{{$jobOrder->customer_name}}</td>
+                        <td>{{$jobOrder->customer_contact_number}}</td>
+                        <td>{{$jobOrder->pickup_date}}</td>
+                        <td>{{$jobOrder->pickup_time}}</td>
+                        <td>{{\App\User::find($jobOrder->created_by)->username}}</td>
+                        <td>{{$jobOrder->status}}</td>
+                        <td>
+                            <a><button type="button" class="btn btn-primary" title="view"><i class="fa fa-eye"></i></button></a>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection
+
 @section('extra_script')
     <!-- DataTables -->
     <script src="{{asset('/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
@@ -36,8 +74,9 @@
 
     <script>
         $(function () {
-            $('#product-list').DataTable()
+            $('#job-order-list').DataTable()
             $('.role-assign').select2()
         })
     </script>
+
 @endsection

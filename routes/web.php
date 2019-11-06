@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::post('/user-create','UserController@userForm')->name('users.create');
 
     Route::get('/job-order/orders','JobOrderController@jobOrderPage')->name('job.orders');
+    Route::get('/job-order/data','JobOrderController@jobOrdersData')->name('job.orders.datatables');
 });
 
 Route::group(['middleware' => ['auth','permission:view job orders']], function (){

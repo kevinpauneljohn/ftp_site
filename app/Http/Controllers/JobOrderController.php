@@ -23,7 +23,19 @@ class JobOrderController extends Controller
      * */
     public function jobOrderPage()
     {
-        return view('pages.jobOrders.order');
+        return view('pages.jobOrders.order')->with([
+            'jobOrders' => JobOrder::all(),
+        ]);
+    }
+
+    /**
+     * Nov. 07, 2019
+     * @author john kevin paunel
+     * Job order datatables to be viewed on job order page
+     * */
+    public function jobOrdersData()
+    {
+        return Datatables::of(JobOrder::all())->make(true);
     }
 
     /**
@@ -72,7 +84,7 @@ class JobOrderController extends Controller
 
         if($jobOrder->save())
         {
-            $result = back()->with('success',false);
+            $result = back()->with('success',true);
         }else{
             $result = back()->with('success',false);
         }
