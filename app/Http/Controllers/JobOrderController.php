@@ -11,11 +11,6 @@ use Yajra\Datatables\Datatables;
 
 class JobOrderController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware(['permission:view job orders']);
-//    }
-
 
     /**
      * Nov. 06, 2019
