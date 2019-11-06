@@ -24,11 +24,12 @@
 @section('main_content')
     <div class="box">
         <div class="box-body">
-            <form role="form">
+            <form role="form" method="post" action="{{route('job.orders.create')}}">
+                @csrf
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group {{$errors->has('title') ? 'has-error' : ''}}">
-                        <label for="title">Title</label>
+                        <label for="title">Title</label><span class="required">*</span>
                         <input type="text" name="title" class="form-control" value="{{old('title')}}" />
                         @error('title')
                         <span class="invalid-feedback" role="alert">
@@ -37,7 +38,7 @@
                         @enderror
                     </div>
                     <div class="form-group description {{$errors->has('description') ? 'has-error' : ''}}">
-                        <label for="description">Description</label>
+                        <label for="description">Description</label><span class="required">*</span>
                         <div class="box-body pad">
 
                             <textarea name="description" id="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
@@ -54,7 +55,7 @@
                 </div>
                 <div class="col-lg-6">
                         <div class="form-group {{$errors->has('category') ? 'has-error' : ''}}">
-                            <label for="category">Category</label>
+                            <label for="category">Category</label><span class="required">*</span>
                             {{old('$category')}}
                             <select name="category" class="form-control">
                                 <option></option>
@@ -69,7 +70,7 @@
                             @enderror
                         </div>
                     <div class="form-group {{$errors->has('customer_name') ? 'has-error' : ''}}">
-                        <label for="customer_name">Customer Name</label>
+                        <label for="customer_name">Customer Name</label><span class="required">*</span>
                         <input type="text" name="customer_name" value="{{old('customer_name')}}" class="form-control" id="customer_name" />
                         @error('customer_name')
                         <span class="invalid-feedback" role="alert">
@@ -78,7 +79,7 @@
                         @enderror
                     </div>
                     <div class="form-group {{$errors->has('contact_number') ? 'has-error' : ''}}">
-                        <label>Customer Contact Number</label>
+                        <label>Customer Contact Number</label><span class="required">*</span>
 
                         <div class="input-group">
                             <div class="input-group-addon">
@@ -95,7 +96,7 @@
                     </div>
                     <!-- Date -->
                     <div class="form-group {{$errors->has('pickup_date') ? 'has-error' : ''}}">
-                        <label>Pickup Date</label>
+                        <label>Pickup Date</label><span class="required">*</span>
 
                         <div class="input-group date">
                             <div class="input-group-addon">
@@ -113,7 +114,7 @@
                     <!-- time Picker -->
                     <div class="bootstrap-timepicker">
                         <div class="form-group {{$errors->has('pickup_time') ? 'has-error' : ''}}">
-                            <label>Pick Up Time</label>
+                            <label>Pick Up Time</label><span class="required">*</span>
 
                             <div class="input-group">
                                 <input type="text" name="pickup_time" class="form-control timepicker" value="{{old('pickup_time')}}">

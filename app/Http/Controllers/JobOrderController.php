@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\category;
+use App\JobOrder;
 use Illuminate\Http\Request;
 
 class JobOrderController extends Controller
@@ -34,9 +35,47 @@ class JobOrderController extends Controller
      * */
     public function addJobOrderPage()
     {
-
         return view('pages.jobOrders.addOrder')->with([
             'categories' => category::all()
         ]);
+    }
+
+    /**
+     * Nov. 07, 2019
+     * @author john kevin paunel
+     * create job orders
+     * @param Request $request
+     * @return mixed
+     * */
+    public function createJobOrder(Request $request)
+    {
+        $request->validate([
+            'title'             => ['required','max:256'],
+            'description'       => ['required'],
+            'category'          => ['required'],
+            'customer_name'     => ['required'],
+            'contact_number'    => ['required'],
+            'pickup_date'       => ['required','date'],
+            'pickup_time'       => ['required'],
+        ]);
+
+        $jobOrder = new JobOrder();
+        $jobOrder->created_by               = auth()->user()->id;
+        $jobOrder->category_id              = $request->category;
+        $jobOrder->title                    = $request->title;
+        $jobOrder->description              = $request->description;
+        $jobOrder->customer_name            = $request->customer_name;
+        $jobOrder->customer_contact_number  = $request->contact_number;
+        $jobOrder->pickup_date              = $request->pickup_date;
+        $jobOrder->pickup_time              = $request->pickup_time;
+        $jobOrder->status                   = "pending";
+
+        if($jobOrder->save())
+        {
+            $result = back()->with('success',false);
+        }else{
+            $result = back()->with('success',false);
+        }
+        return $result;
     }
 }

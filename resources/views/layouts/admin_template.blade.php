@@ -37,6 +37,9 @@
             color:red;
             font-size:12px;
         }
+        .required{
+            color:Red;
+        }
     </style>
 </head>
 <body class="hold-transition skin-purple sidebar-mini">

@@ -48,8 +48,12 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::get('/job-order/orders','JobOrderController@jobOrderPage')->name('job.orders');
 });
 
-Route::group(['middleware' => ['permission:view job orders']], function (){
+Route::group(['middleware' => ['auth','permission:view job orders']], function (){
     Route::get('/job-order/add-job-order','JobOrderController@addJobOrderPage')->name('job.orders.add');
+});
+
+Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
+    Route::post('/create-job-order','JobOrderController@createJobOrder')->name('job.orders.create');
 });
 
     Route::get('/','customer\CustomerController@index')->name('customer.index');
