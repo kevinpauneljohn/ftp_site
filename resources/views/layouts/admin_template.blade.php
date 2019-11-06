@@ -268,7 +268,9 @@
                 </span>
                         <ul class="treeview-menu">
                             <li{{(Request::segment(2) == 'orders') ? ' class=active' : ''}}><a href="{{route('job.orders')}}">Orders</a></li>
+                            @can('view job orders')
                             <li{{(Request::segment(2) == 'add-job-order') ? ' class=active' : ''}}><a href="{{route('job.orders.add')}}">Add Orders</a></li>
+                                @endcan
                         </ul>
                     </a>
                 </li>

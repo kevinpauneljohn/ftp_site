@@ -44,6 +44,12 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
 
     Route::get('/users','UserController@users')->name('users');
     Route::post('/user-create','UserController@userForm')->name('users.create');
+
+    Route::get('/job-order/orders','JobOrderController@jobOrderPage')->name('job.orders');
+});
+
+Route::group(['middleware' => ['permission:view job orders']], function (){
+    Route::get('/job-order/add-job-order','JobOrderController@addJobOrderPage')->name('job.orders.add');
 });
 
     Route::get('/','customer\CustomerController@index')->name('customer.index');
@@ -56,8 +62,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::get('/remove-item/{rowId}','OrdersController@removeItemFromCart')->name('cart.remove');
     Route::post('/update-cart','OrdersController@updateCart')->name('cart.update');
     Route::post('/ajax-login','Auth\AjaxLoginController@authenticate')->name('ajax.login');
-    Route::get('/job-order/orders','JobOrderController@jobOrderPage')->name('job.orders');
-    Route::get('/job-order/add-job-order','JobOrderController@addJobOrderPage')->name('job.orders.add');
+
 
 Route::get('/test',function (){
     return view('layouts.customer_template');
