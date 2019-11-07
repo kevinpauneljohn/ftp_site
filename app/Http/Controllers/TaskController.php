@@ -42,7 +42,7 @@ class TaskController extends Controller
         $tasks = User::find(auth()->user()->id)->tasks;
         return Datatables::of($tasks)
             ->addColumn('action', function ($task) {
-                return '<a href="'.route("job.order.profile",["jobOrderId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View</a>';
+                return '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View</a>';
             })
             ->editColumn('job_order_id', function($task) {
                 $jobOrderLink = '<a href="'.route("job.order.profile",["jobOrderId" => $task->job_order_id]).'">'.JobOrder::find($task->job_order_id)->title.'</a>';
@@ -50,5 +50,15 @@ class TaskController extends Controller
             })
             ->rawColumns(['action', 'job_order_id'])
             ->make(true);
+    }
+
+    public function taskProfile($taskId)
+    {
+
+        $task = task::find($taskId);
+        return view('pages.task.taskProfile')->with([
+            'profile'   => $task->jobOrder,
+            'task'      => $task,
+        ]);
     }
 }
