@@ -36,11 +36,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
     Route::post('/roles-create','RolesController@rolesForm')->name('roles');
     Route::post('/permission','PermissionController@permission')->name('permissions');
 
-    Route::get('/product/add-product','ProductController@addProduct')->name('product.add');
-    Route::get('/product/edit-product/{id}','ProductController@editProduct')->name('product.edit');
-    Route::get('/product/products','ProductController@products')->name('products');
-    Route::post('/product/create','ProductController@createProduct')->name('product.create');
-    Route::post('/product/update','ProductController@updateProduct')->name('product.update');
+
 
     Route::get('/users','UserController@users')->name('users');
     Route::post('/user-create','UserController@userForm')->name('users.create');
@@ -56,6 +52,12 @@ Route::group(['middleware' => ['auth','permission:view job orders']], function (
 
 Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/create-job-order','JobOrderController@createJobOrder')->name('job.orders.create');
+
+    Route::get('/product/add-product','ProductController@addProduct')->name('product.add');
+    Route::get('/product/edit-product/{id}','ProductController@editProduct')->name('product.edit');
+    Route::get('/product/products','ProductController@products')->name('products');
+    Route::post('/product/create','ProductController@createProduct')->name('product.create');
+    Route::post('/product/update','ProductController@updateProduct')->name('product.update');
 });
 
     Route::get('/','customer\CustomerController@index')->name('customer.index');
@@ -68,6 +70,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/remove-item/{rowId}','OrdersController@removeItemFromCart')->name('cart.remove');
     Route::post('/update-cart','OrdersController@updateCart')->name('cart.update');
     Route::post('/ajax-login','Auth\AjaxLoginController@authenticate')->name('ajax.login');
+    Route::get('/task','TaskController@taskPage')->name('task');
 
 
 Route::get('/test',function (){

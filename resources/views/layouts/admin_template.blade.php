@@ -278,6 +278,10 @@
                     </a>
                 </li>
                 @endhasanyrole
+
+                @hasanyrole('super admin|admin|graphic artist|reseller|sales')
+                <li{{(Request::segment(1) == 'task') ? ' class=active' : ''}}><a href="{{route('task')}}"><i class="fa fa-list-ul"></i> <span>Tasks</span></a></li>
+                @endhasanyrole
             </ul>
             <!-- /.sidebar-menu -->
         </section>
