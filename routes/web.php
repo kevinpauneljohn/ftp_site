@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],
 
     Route::get('/job-order/orders','JobOrderController@jobOrderPage')->name('job.orders');
     Route::get('/job-order/data','JobOrderController@jobOrdersData')->name('job.orders.datatables');
+    Route::get('/job-order/profile/{jobOrderId}','JobOrderController@jobOrderProfile')->name('job.order.profile');
 });
 
 Route::group(['middleware' => ['auth','permission:view job orders']], function (){

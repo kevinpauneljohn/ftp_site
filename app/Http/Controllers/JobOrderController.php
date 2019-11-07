@@ -36,7 +36,7 @@ class JobOrderController extends Controller
 
         return Datatables::of($jobOrders)
             ->addColumn('action', function ($jobOrder) {
-                return '<a href="#edit-'.$jobOrder->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                return '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View</a>';
             })
             ->editColumn('category_id', function($jobOrder) {
                 return category::find($jobOrder->category_id)->name;
@@ -98,5 +98,21 @@ class JobOrderController extends Controller
             $result = back()->with('success',false);
         }
         return $result;
+    }
+
+
+    /**
+     * Nov. 07, 2019
+     * @author john kevin paunel
+     * Job Order Profile Page
+     * url: /job-order/profile/{$jobOrderId}
+     * @param int $jobOrderId
+     * @return mixed
+     * */
+    public function jobOrderProfile($jobOrderId)
+    {
+        return view('pages.jobOrders.jobOrderProfile')->with([
+            'profile'       => JobOrder::find($jobOrderId),
+        ]);
     }
 }
