@@ -6,7 +6,6 @@ use App\category;
 use App\JobOrder;
 use App\User;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Mixed_;
 use Yajra\Datatables\Datatables;
 
 class JobOrderController extends Controller
