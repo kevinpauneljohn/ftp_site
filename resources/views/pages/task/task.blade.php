@@ -21,7 +21,7 @@
                 <thead>
                 <tr>
                     <th>Date Created</th>
-                    <th>Job Order ID</th>
+                    <th>Job Order</th>
                     <th>Title</th>
                     <th>Deadline</th>
                     <th>Status</th>

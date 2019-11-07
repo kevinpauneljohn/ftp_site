@@ -34,6 +34,7 @@ class TaskController extends Controller
      * Nov. 08, 2019
      * @author john kevin paunel
      * url: /user-task
+     * route: task.list
      * user task data table display
      * */
     public function userTask()
