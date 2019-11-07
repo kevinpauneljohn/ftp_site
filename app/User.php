@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Product::class);
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(task::class,'assigned_to');
+    }
 }

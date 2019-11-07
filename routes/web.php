@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/update-cart','OrdersController@updateCart')->name('cart.update');
     Route::post('/ajax-login','Auth\AjaxLoginController@authenticate')->name('ajax.login');
     Route::get('/task','TaskController@taskPage')->name('task');
+    Route::get('/user-task','TaskController@userTask')->name('task.list');
 
 
 Route::get('/test',function (){

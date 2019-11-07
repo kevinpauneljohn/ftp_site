@@ -15,7 +15,22 @@
 @endsection
 
 @section('main_content')
-
+    <div class="box">
+        <div class="box-body">
+            <table class="table table-bordered" id="job-orders-table">
+                <thead>
+                <tr>
+                    <th>Date Created</th>
+                    <th>Job Order ID</th>
+                    <th>Title</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
 @endsection
 
 @section('extra_script')
@@ -42,5 +57,21 @@
         })
     </script>
 
-
+    <script>
+        $(function() {
+            $('#job-orders-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('task.list') !!}',
+                columns: [
+                    { data: 'created_at', name: 'created_at'},
+                    { data: 'job_order_id', name: 'job_order_id'},
+                    { data: 'title', name: 'title' },
+                    { data: 'deadline_date', name: 'deadline_date'},
+                    { data: 'status', name: 'status'},
+                    { data: 'action', name: 'action', orderable: false, searchable: false}
+                ]
+            });
+        });
+    </script>
 @endsection
