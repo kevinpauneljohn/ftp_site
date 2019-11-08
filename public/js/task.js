@@ -42,10 +42,19 @@ $(document).on('submit','#create-task-form', function (form) {
         success: function (result) {
             console.log(result);
 
-            /*if(result.success === true)
+            if(result.success === true)
             {
                 location.reload();
-            }*/
+                /*setTimeout(function(){
+                    $('#create-task-form').trigger('reset');
+                    $('#create-task').modal('toggle');
+
+
+                    setTimeout(function(){
+                        location.reload();
+                    },1500);
+                });*/
+            }
 
             $.each(result, function (key, value) {
                 var element = $('#'+key);

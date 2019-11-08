@@ -117,6 +117,7 @@ class TaskController extends Controller
             'description'       => 'required',
             'deadline_date'     => 'required',
             'deadline_time'     => 'required',
+            'assignTo'          => 'required',
         ]);
 
         if($validator->passes())
@@ -128,6 +129,17 @@ class TaskController extends Controller
             $task->description = $request->description;
             $task->deadline_date = $request->deadline_date;
             $task->deadline_time = $request->deadline_time;
+            $task->assigned_to = $request->assignTo;
+            $task->status = "pending";
+
+            if($task->save())
+            {
+                $message = ["success" => true];
+            }else{
+                $message = ["success" => false];
+            }
+
+            return response()->json($message);
         }
 
         return response()->json($validator->errors());
