@@ -15,7 +15,6 @@
 @endsection
 
 @section('main_content')
-    <section class="content">
 
         <div class="row">
             <div class="col-md-3">
@@ -81,15 +80,18 @@
             </div>
             <!-- /.col -->
             <div class="col-md-9">
+                    <div class="box">
+                        <div class="box-body">
+                            <button type="button" class="btn btn-primary operation" @if($task->status == "on-going" || $task->status == 'for-approval') disabled="disabled" @endif value="start-{{$task->id}}">Start</button>
+                            <button type="button" class="btn btn-warning operation" @if($task->status == "pending" || $task->status == 'for-approval') disabled="disabled" @endif value="end-{{$task->id}}">stop</button>
+                            <span class="pull-right"><strong>Status:</strong> {{$task->status}} </span>
+                        </div>
+                    </div>
                 <div class="box">
                     <div class="box-header">
-                        <h2 align="center">{{ucfirst($task->title)}}</h2>
-                        <table class="table">
-                            <tr>
-                                <td>Deadline: <strong>{{$task->deadline_date}}</strong></td>
-                                <td>Time: <strong>{{$task->deadline_time}}</strong></td>
-                            </tr>
-                        </table>
+                        <h2 class="page-header">{{ucfirst($task->title)}}
+                            <small class="pull-right"><strong>Deadline:</strong> {{$task->deadline_date}} {{$task->deadline_time}}</small></h2>
+
                     </div>
                     <div class="box-body">
                         {!! $task->description !!}
@@ -103,7 +105,6 @@
         </div>
         <!-- /.row -->
 
-    </section>
 @endsection
 
 @section('extra_script')
@@ -121,7 +122,7 @@
     <!-- Select2 -->
     <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-    {{--    <script src="{{asset('/js/rolesPermissions.js')}}"></script>--}}
+        <script src="{{asset('/js/task.js')}}"></script>
 
     <script>
         $(function () {

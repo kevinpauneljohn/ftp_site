@@ -73,6 +73,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/ajax-login','Auth\AjaxLoginController@authenticate')->name('ajax.login');
     Route::get('/task','TaskController@taskPage')->name('task');
     Route::get('/user-task','TaskController@userTask')->name('task.list');
+    Route::post('/status-action','TaskController@statusAction')->name('task.status.action');
 
 
 Route::get('/test',function (){

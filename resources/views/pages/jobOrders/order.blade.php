@@ -76,7 +76,7 @@
                     { data: 'pickup_time', name: 'pickup_time'},
                     { data: 'created_by', name: 'created_by'},
                     { data: 'status', name: 'status'},
-                    {data: 'action', name: 'action', orderable: false, searchable: false}
+                    { data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });
