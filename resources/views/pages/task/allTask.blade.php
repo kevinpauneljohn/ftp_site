@@ -1,7 +1,7 @@
 @extends('layouts.admin_template')
 
 @section('title')
-    Tasks
+    Tasks | All Tasks
 @endsection
 @section('extra_stylesheet')
     <!-- DataTables -->
@@ -11,7 +11,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
 @endsection
 @section('page_header')
-    My Tasks
+    All Tasks
 @endsection
 
 @section('main_content')
@@ -24,6 +24,7 @@
                     <th>Job Order</th>
                     <th>Title</th>
                     <th>Deadline</th>
+                    <th>Assigned To</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -56,18 +57,18 @@
             $('.role-assign').select2()
         })
     </script>
-
     <script>
         $(function() {
             $('#job-orders-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{!! route('task.list') !!}',
+                ajax: '{!! route('task.all.list') !!}',
                 columns: [
                     { data: 'created_at', name: 'created_at'},
                     { data: 'job_order_id', name: 'job_order_id'},
                     { data: 'title', name: 'title' },
                     { data: 'deadline_date', name: 'deadline_date'},
+                    { data: 'assigned_to', name: 'assigned_to'},
                     { data: 'status', name: 'status'},
                     { data: 'action', name: 'action', orderable: false, searchable: false}
                 ]

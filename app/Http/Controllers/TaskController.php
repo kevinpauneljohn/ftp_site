@@ -51,7 +51,31 @@ class TaskController extends Controller
                 $jobOrderLink = '<a href="'.route("job.order.profile",["jobOrderId" => $task->job_order_id]).'">'.ucfirst(JobOrder::find($task->job_order_id)->title).'</a>';
                 return $jobOrderLink;
             })
-            ->rawColumns(['action', 'job_order_id'])
+            ->editColumn('status', function($task) {
+                return $this->taskStatusLabel($task->status);
+            })
+            ->rawColumns(['action', 'job_order_id','status'])
+            ->make(true);
+    }
+
+    public function allTaskData()
+    {
+        $tasks = task::all();
+        return Datatables::of($tasks)
+            ->addColumn('action', function ($task) {
+                return '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View</a>';
+            })
+            ->editColumn('job_order_id', function($task) {
+                $jobOrderLink = '<a href="'.route("job.order.profile",["jobOrderId" => $task->job_order_id]).'">'.ucfirst(JobOrder::find($task->job_order_id)->title).'</a>';
+                return $jobOrderLink;
+            })
+            ->editColumn('assigned_to', function($task) {
+                return User::find($task->assigned_to)->username;
+            })
+            ->editColumn('status', function($task) {
+                return $this->taskStatusLabel($task->status);
+            })
+            ->rawColumns(['action', 'job_order_id','status'])
             ->make(true);
     }
 
@@ -91,6 +115,8 @@ class TaskController extends Controller
         }elseif ($statusOperation[0] == 'end'){
             $status->status = 'for-approval';
             $status->end_time = Carbon::now();
+        }elseif ($statusOperation[0] == 'completed'){
+            $status->status = 'completed';
         }
 
         if($status->save())
@@ -143,5 +169,42 @@ class TaskController extends Controller
         }
 
         return response()->json($validator->errors());
+    }
+
+
+    /**
+     * Nov. 09, 2019
+     * @author john kevin paunel
+     * all task view page
+     * route: task.all
+     * url: /task/all-task
+     * @return mixed
+     * */
+    public function allTasks()
+    {
+        return view('pages.task.allTask')->with([
+            'status'    => $this,
+        ]);
+    }
+
+    public function taskStatusLabel($status)
+    {
+        switch ($status) {
+            case 'pending':
+                return '<small class="label label-warning">'.$status.'</small>';
+                break;
+            case 'on-going':
+                return '<small class="label label-primary">'.$status.'</small>';
+                break;
+            case 'for-approval':
+                return '<small class="label label-info">'.$status.'</small>';
+                break;
+            case 'completed':
+                return '<small class="label label-success">'.$status.'</small>';
+                break;
+            default:
+                return '';
+                break;
+        }
     }
 }

@@ -115,4 +115,5 @@ class JobOrderController extends Controller
             'profile'       => JobOrder::find($jobOrderId),
         ]);
     }
+
 }

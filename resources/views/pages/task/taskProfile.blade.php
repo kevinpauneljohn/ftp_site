@@ -82,8 +82,11 @@
             <div class="col-md-9">
                     <div class="box">
                         <div class="box-body">
-                            <button type="button" class="btn btn-primary operation" @if($task->status == "on-going" || $task->status == 'for-approval') disabled="disabled" @endif value="start-{{$task->id}}">Start</button>
-                            <button type="button" class="btn btn-warning operation" @if($task->status == "pending" || $task->status == 'for-approval') disabled="disabled" @endif value="end-{{$task->id}}">stop</button>
+                            <button type="button" class="btn btn-{{($task->status == 'pending') ? 'primary' : 'default'}} operation" @if($task->status == "on-going" || $task->status == 'for-approval' || $task->status == 'completed') disabled="disabled" @endif value="start-{{$task->id}}">Start</button>
+                            <button type="button" class="btn btn-{{($task->status == 'on-going') ? 'warning' : 'default'}} operation" @if($task->status == "pending" || $task->status == 'for-approval' || $task->status == 'completed') disabled="disabled" @endif value="end-{{$task->id}}">stop</button>
+                            @if($task->status == 'for-approval' || $task->status == 'completed')
+                                <button type="button" class="btn btn-{{($task->status == 'for-approval') ? 'success' : 'default'}} operation" @if($task->status == "completed") disabled="disabled" @endif value="completed-{{$task->id}}">completed</button>
+                                @endif
                             <span class="pull-right"><strong>Status:</strong> {{$task->status}} </span>
                         </div>
                     </div>

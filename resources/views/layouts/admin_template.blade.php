@@ -280,7 +280,20 @@
                 @endhasanyrole
 
                 @hasanyrole('super admin|admin|graphic artist|reseller|sales')
-                <li{{(Request::segment(1) == 'task') ? ' class=active' : ''}}><a href="{{route('task')}}"><i class="fa fa-list-ul"></i> <span>Tasks</span></a></li>
+                <li class="{{(Request::segment(1) == 'task') ? 'active ' : ' '}}treeview">
+                    <a href="#">
+                        <i class="fa fa-tasks"></i><span>Task</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                        <ul class="treeview-menu">
+                            @can('view all tasks')
+                            <li{{(Request::segment(2) == 'all-task') ? ' class=active' : ''}}><a href="{{route('task.all')}}">All Tasks</a></li>
+                            @endcan
+                            <li{{(Request::segment(2) == 'my-task') ? ' class=active' : ''}}><a href="{{route('task.mine')}}">My Tasks</a></li>
+                        </ul>
+                    </a>
+                </li>
                 @endhasanyrole
             </ul>
             <!-- /.sidebar-menu -->

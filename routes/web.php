@@ -30,13 +30,13 @@ Route::get('/home', function(){
 /*Auth::routes();*/
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist']],function (){
+Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist|sales']],function (){
     Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
     Route::get('/roles/roles','RolesController@roles');
     Route::post('/roles-create','RolesController@rolesForm')->name('roles');
     Route::post('/permission','PermissionController@permission')->name('permissions');
 
-
+    Route::post('/create-job-order','JobOrderController@createJobOrder')->name('job.orders.create');
 
     Route::get('/users','UserController@users')->name('users');
     Route::post('/user-create','UserController@userForm')->name('users.create');
@@ -52,7 +52,6 @@ Route::group(['middleware' => ['auth','permission:view job orders']], function (
 });
 
 Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
-    Route::post('/create-job-order','JobOrderController@createJobOrder')->name('job.orders.create');
 
     Route::get('/product/add-product','ProductController@addProduct')->name('product.add');
     Route::get('/product/edit-product/{id}','ProductController@editProduct')->name('product.edit');
@@ -71,8 +70,10 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/remove-item/{rowId}','OrdersController@removeItemFromCart')->name('cart.remove');
     Route::post('/update-cart','OrdersController@updateCart')->name('cart.update');
     Route::post('/ajax-login','Auth\AjaxLoginController@authenticate')->name('ajax.login');
-    Route::get('/task','TaskController@taskPage')->name('task');
+    Route::get('/task/my-task','TaskController@taskPage')->name('task.mine');
+    Route::get('/task/all-task','TaskController@allTasks')->name('task.all');
     Route::get('/user-task','TaskController@userTask')->name('task.list');
+    Route::get('/all-task-data','TaskController@allTaskData')->name('task.all.list');
     Route::post('/status-action','TaskController@statusAction')->name('task.status.action');
     Route::post('/create-task','TaskController@createTask')->name('task.create');
 
