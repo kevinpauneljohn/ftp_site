@@ -187,6 +187,13 @@ class TaskController extends Controller
         ]);
     }
 
+    /**
+     * Nov. 09, 2019
+     * @author john kevin paunel
+     * callback method for status label
+     * @param int $status
+     * @return string
+     * */
     public function taskStatusLabel($status)
     {
         switch ($status) {

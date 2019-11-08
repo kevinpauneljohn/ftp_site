@@ -34,6 +34,9 @@ class JobOrderController extends Controller
         $jobOrders = JobOrder::all();
 
         return Datatables::of($jobOrders)
+            ->addColumn('task_count', function ($jobOrder) {
+                return JobOrder::find($jobOrder->id)->tasks()->count();
+            })
             ->addColumn('action', function ($jobOrder) {
                 return '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View</a>';
             })
@@ -43,6 +46,18 @@ class JobOrderController extends Controller
             ->editColumn('created_by', function($jobOrder) {
                 return User::find($jobOrder->created_by)->username;
             })
+            ->editColumn('status', function($jobOrder) {
+                return $this->taskStatusLabel($jobOrder->status);
+            })
+            ->editColumn('created_at', function($jobOrder) {
+                $date=date_create($jobOrder->created_at);
+                return date_format($date,"d/M/Y h:i:s");;
+            })
+            ->editColumn('pickup_date', function($jobOrder) {
+                $date=date_create($jobOrder->deadline_date);
+                return date_format($date,"d/M/Y");;
+            })
+            ->rawColumns(['action','status'])
             ->make(true);
     }
 
@@ -114,6 +129,28 @@ class JobOrderController extends Controller
             'users'         => User::all(),
             'profile'       => JobOrder::find($jobOrderId),
         ]);
+    }
+
+    /**
+     * Nov. 09, 2019
+     * @author john kevin paunel
+     * callback method for status label
+     * @param int $status
+     * @return string
+     * */
+    public function taskStatusLabel($status)
+    {
+        switch ($status) {
+            case 'pending':
+                return '<small class="label label-warning">'.$status.'</small>';
+                break;
+            case 'completed':
+                return '<small class="label label-success">'.$status.'</small>';
+                break;
+            default:
+                return '';
+                break;
+        }
     }
 
 }
