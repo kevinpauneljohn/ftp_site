@@ -9,6 +9,9 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('/bower_components/select2/dist/css/select2.min.css')}}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
 @endsection
 @section('page_header')
     Job Order Profile
@@ -81,6 +84,12 @@
             </div>
             <!-- /.col -->
             <div class="col-md-9">
+                <div class="box">
+                    <div class="box-body">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-task">Create task</button>
+                    </div>
+                </div>
+
                 <div class="box">
                     <div class="box-body">
                         <!-- The timeline -->
@@ -183,6 +192,78 @@
         <!-- /.row -->
 
     </section>
+
+    {{--create task--}}
+    <div class="modal fade" id="create-task">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="add-announcement-form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Create task</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        @csrf
+                        <input type="hidden" name="job-order-id" value="{{$profile->id}}"/>
+                        <input type="hidden" name="author" value="{{auth()->user()->id}}"/>
+                        <div class="form-group title">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" class="form-control" id="title" value=""/>
+                        </div>
+                        <div class="form-group description">
+                            <label for="description">Description</label><span class="required">*</span>
+                            <div class="box-body pad">
+
+                            <textarea name="description" id="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- Date -->
+                                <div class="form-group deadline_date">
+                                    <label>Deadline</label><span class="required">*</span>
+
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" name="deadline_date" id="deadline_date" class="form-control pull-right" id="datepicker">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <!-- time Picker -->
+                                <div class="bootstrap-timepicker">
+                                    <div class="form-group">
+                                        <label>Time</label><span class="required">*</span>
+
+                                        <div class="input-group deadline_time">
+                                            <input type="text" name="deadline_time" id="deadline_time" class="form-control timepicker" value="">
+
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-clock-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.form group -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn bg-purple"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{--end create task--}}
 @endsection
 
 @section('extra_script')
@@ -201,11 +282,13 @@
     <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
     {{--    <script src="{{asset('/js/rolesPermissions.js')}}"></script>--}}
+    <script src="{{asset('bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 
     <script>
         $(function () {
             $('#job-order-list').DataTable()
-            $('.role-assign').select2()
+            $('.role-assign').select2();
+            $('.textarea').wysihtml5();
         })
     </script>
 

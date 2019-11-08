@@ -158,7 +158,6 @@
     <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
     {{--    <script src="{{asset('/js/rolesPermissions.js')}}"></script>--}}
-
     <script src="{{asset('bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 
     <!-- InputMask -->
