@@ -169,9 +169,7 @@
     <script src="{{asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
     <!-- bootstrap time picker -->
     <script src="{{asset('/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
-{{--    <script src="../../plugins/input-mask/jquery.inputmask.js"></script>--}}
-{{--    <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>--}}
-{{--    <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>--}}
+
     <script>
         $(function () {
             $('#product-list').DataTable();

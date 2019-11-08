@@ -111,6 +111,7 @@ class JobOrderController extends Controller
     public function jobOrderProfile($jobOrderId)
     {
         return view('pages.jobOrders.jobOrderProfile')->with([
+            'users'         => User::all(),
             'profile'       => JobOrder::find($jobOrderId),
         ]);
     }

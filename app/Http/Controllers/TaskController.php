@@ -10,6 +10,7 @@ use http\Env\Response;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class TaskController extends Controller
 {
@@ -100,5 +101,35 @@ class TaskController extends Controller
         }
 
         return response()->json($result);
+    }
+
+    /**
+     * Nov. 08, 2019
+     * @author john kevin paunel
+     * create task callback
+     * @param Request $request
+     * @return Response
+     * */
+    public function createTask(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'title'             => 'required',
+            'description'       => 'required',
+            'deadline_date'     => 'required',
+            'deadline_time'     => 'required',
+        ]);
+
+        if($validator->passes())
+        {
+            $task = new task();
+            $task->job_order_id = $request->job_order_id;
+            $task->created_by = $request->created_by;
+            $task->title = $request->title;
+            $task->description = $request->description;
+            $task->deadline_date = $request->deadline_date;
+            $task->deadline_time = $request->deadline_time;
+        }
+
+        return response()->json($validator->errors());
     }
 }

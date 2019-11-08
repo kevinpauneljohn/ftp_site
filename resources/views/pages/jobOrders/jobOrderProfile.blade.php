@@ -12,6 +12,10 @@
 
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{asset('/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min.css')}}">
 @endsection
 @section('page_header')
     Job Order Profile
@@ -195,9 +199,9 @@
 
     {{--create task--}}
     <div class="modal fade" id="create-task">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg">create-task-form
             <div class="modal-content">
-                <form id="add-announcement-form">
+                <form id="create-task-form">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span></button>
@@ -207,8 +211,8 @@
                     <div class="modal-body">
 
                         @csrf
-                        <input type="hidden" name="job-order-id" value="{{$profile->id}}"/>
-                        <input type="hidden" name="author" value="{{auth()->user()->id}}"/>
+                        <input type="hidden" name="job_order_id" value="{{$profile->id}}"/>
+                        <input type="hidden" name="created_by" value="{{auth()->user()->id}}"/>
                         <div class="form-group title">
                             <label for="title">Title</label>
                             <input type="text" name="title" class="form-control" id="title" value=""/>
@@ -227,7 +231,7 @@
                                 <div class="form-group deadline_date">
                                     <label>Deadline</label><span class="required">*</span>
 
-                                    <div class="input-group date">
+                                    <div class="input-group deadline_date">
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
@@ -237,11 +241,11 @@
                             </div>
                             <div class="col-lg-6">
                                 <!-- time Picker -->
-                                <div class="bootstrap-timepicker">
+                                <div class="bootstrap-timepicker deadline_time">
                                     <div class="form-group">
                                         <label>Time</label><span class="required">*</span>
 
-                                        <div class="input-group deadline_time">
+                                        <div class="input-group">
                                             <input type="text" name="deadline_time" id="deadline_time" class="form-control timepicker" value="">
 
                                             <div class="input-group-addon">
@@ -254,6 +258,19 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group assignTo">
+                                    <label for="assignTo">Assign To</label>
+                                    <select class="form-control" name="assignTo" id="assignTo">
+                                        <option></option>
+                                        @foreach($users as $user)
+                                            <option value="{{$user->id}}">{{$user->username}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
@@ -281,14 +298,37 @@
     <!-- Select2 -->
     <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-    {{--    <script src="{{asset('/js/rolesPermissions.js')}}"></script>--}}
     <script src="{{asset('bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+
+    <script src="{{asset('/js/task.js')}}"></script>
+
+    <!-- InputMask -->
+    <script src="{{asset('bower_components/admin-lte/plugins/input-mask/jquery.inputmask.js')}}"></script>
+    <script src="{{asset('bower_components/admin-lte/plugins/input-mask/jquery.inputmask.date.extensions.js')}}"></script>
+    <script src="{{asset('bower_components/admin-lte/plugins/input-mask/jquery.inputmask.extensions.js')}}"></script>
+
+    <!-- bootstrap datepicker -->
+    <script src="{{asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <!-- bootstrap time picker -->
+    <script src="{{asset('/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
 
     <script>
         $(function () {
             $('#job-order-list').DataTable()
             $('.role-assign').select2();
             $('.textarea').wysihtml5();
+
+            $('[data-mask]').inputmask();
+            //Date picker
+            $('#deadline_date').datepicker({
+                autoclose: true,
+                format: 'yyyy-mm-dd'
+            });
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false,
+                defaultTime: false,
+            });
         })
     </script>
 

@@ -74,6 +74,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/task','TaskController@taskPage')->name('task');
     Route::get('/user-task','TaskController@userTask')->name('task.list');
     Route::post('/status-action','TaskController@statusAction')->name('task.status.action');
+    Route::post('/create-task','TaskController@createTask')->name('task.create');
 
 
 Route::get('/test',function (){
