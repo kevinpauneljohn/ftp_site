@@ -92,6 +92,10 @@ class JobOrderController extends Controller
             'contact_number'    => ['required'],
             'pickup_date'       => ['required','date'],
             'pickup_time'       => ['required'],
+            'amount'            => ['required','regex:/^\d*(\.\d{2})?$/','min:0','numeric'],
+            'down_payment'      => ['numeric','regex:/^\d*(\.\d{2})?$/','min:0','max:'.$request->amount],
+        ],[
+            'down_payment.max'  => "max value allowed is ".$request->amount
         ]);
 
         $jobOrder = new JobOrder();
@@ -104,14 +108,31 @@ class JobOrderController extends Controller
         $jobOrder->pickup_date              = $request->pickup_date;
         $jobOrder->pickup_time              = $request->pickup_time;
         $jobOrder->status                   = "pending";
+        $jobOrder->amount                   = $request->amount;
+        $jobOrder->down_payment             = $request->down_payment;
+
 
         if($jobOrder->save())
         {
-            $result = back()->with('success',true);
+            $result = redirect(route('job.order.reference.number', ['jobOrderId' => $jobOrder->id]));
         }else{
             $result = back()->with('success',false);
         }
         return $result;
+    }
+
+    /**
+     * Nov. 09, 2019
+     * @author john kevin paunel
+     * redirect page after add job order submitted
+     * @param int $jobOrderId
+     * @return mixed
+     * */
+    public function referenceNumber($jobOrderId)
+    {
+        return view('pages.jobOrders.jobOrderNumber')->with([
+            'referenceNumber'   => $jobOrderId
+        ]);
     }
 
 

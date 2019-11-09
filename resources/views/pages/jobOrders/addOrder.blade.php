@@ -55,23 +55,24 @@
                                     </span>
                         @enderror
                     </div>
-                </div>
-                <div class="col-lg-6">
-                        <div class="form-group {{$errors->has('category') ? 'has-error' : ''}}">
-                            <label for="category">Category</label><span class="required">*</span>
-                            {{old('$category')}}
-                            <select name="category" class="form-control">
-                                <option></option>
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}"  @if (old('category') == $category->id) {{ 'selected' }} @endif>{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                            @error('category')
-                            <span class="invalid-feedback" role="alert">
+
+                    <div class="form-group {{$errors->has('category') ? 'has-error' : ''}}">
+                        <label for="category">Category</label><span class="required">*</span>
+                        {{old('$category')}}
+                        <select name="category" class="form-control">
+                            <option></option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}"  @if (old('category') == $category->id) {{ 'selected' }} @endif>{{$category->name}}</option>
+                            @endforeach
+                        </select>
+                        @error('category')
+                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                            @enderror
-                        </div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-6">
                     <div class="form-group {{$errors->has('customer_name') ? 'has-error' : ''}}">
                         <label for="customer_name">Customer Name</label><span class="required">*</span>
                         <input type="text" name="customer_name" value="{{old('customer_name')}}" class="form-control" id="customer_name" />
@@ -134,6 +135,25 @@
                             @enderror
                         </div>
                         <!-- /.form group -->
+                    </div>
+                    <div class="form-group {{$errors->has('amount') ? 'has-error' : ''}}">
+                        <label for="amount">Amount</label><span class="required">*</span>
+                        <input type="number" name="amount" class="form-control" value="{{old('amount') ?: 0}}"  step="0.01" min="0"/>
+                        @error('amount')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group {{$errors->has('down_payment') ? 'has-error' : ''}}">
+                        <label for="down_payment">Down Payment</label>
+                        <input type="number" name="down_payment" class="form-control" value="{{old('down_payment') ?: 0}}"  step="0.01" min="0" />
+                        @error('down_payment')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Add Job Order</button>
                 </div>

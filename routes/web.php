@@ -76,6 +76,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/all-task-data','TaskController@allTaskData')->name('task.all.list');
     Route::post('/status-action','TaskController@statusAction')->name('task.status.action');
     Route::post('/create-task','TaskController@createTask')->name('task.create');
+    Route::get('/job-order/reference-number/{jobOrderId}','JobOrderController@referenceNumber')->name('job.order.reference.number');
 
 
 Route::get('/test',function (){
