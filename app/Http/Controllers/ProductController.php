@@ -262,6 +262,13 @@ class ProductController extends Controller
             ->make(true);
     }
 
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * save edited data
+     * @param Request $request
+     * @return Response
+     * */
     public function editCategory(Request $request)
     {
         $validator = Validator::make($request->all(),[

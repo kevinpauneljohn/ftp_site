@@ -8,6 +8,7 @@ use App\User;
 use Carbon\Carbon;
 use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Spatie\Permission\Traits\HasRoles;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Validator;
@@ -58,9 +59,30 @@ class TaskController extends Controller
             ->make(true);
     }
 
-    public function allTaskData()
+    public function setSession(Request $request)
     {
-        $tasks = task::all();
+        if($request->status !== 'all')
+        {
+            Session::put('status', $request->status);
+        }
+        else{
+            $request->session()->forget('status');
+        }
+    }
+    /**
+     * nov. 10, 2019
+     * @author john kevin paunel
+     * display all task
+     * */
+    public function allTaskData(Request $request)
+    {
+        if(Session::has('status'))
+        {
+            $query = task::where("status",Session::get('status'))->get();
+        }else{
+            $query = task::all();
+        }
+        $tasks = $query;
         return Datatables::of($tasks)
             ->addColumn('action', function ($task) {
                 return '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View</a>';

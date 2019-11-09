@@ -71,3 +71,20 @@ $(document).on('submit','#create-task-form', function (form) {
         }
     });
 });
+
+$('.status-display').change(function() {
+
+    let value = $('.status-display').val();
+    $.ajax({
+        'url'   : '/set-status',
+        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        'type'  : 'POST',
+        'data'  : {'status' : value},
+        'cache' : false,
+        success: function (result) {
+            location.reload();
+        },error: function (result) {
+            console.log(result.status);
+        }
+    });
+});
