@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\category;
 use App\Product;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
+use Yajra\DataTables\DataTables;
 
 class ProductController extends Controller
 {
@@ -192,8 +191,65 @@ class ProductController extends Controller
         return $data;
     }
 
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * category page and form
+     * url: product/category
+     * route:category
+     * */
     public function category()
     {
         return view('pages.product.category');
+    }
+
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * category saving
+     * @param Request $request
+     * @return mixed
+     * */
+    public function addCategory(Request $request)
+    {
+        $request->validate([
+            'name'       => ['required'],
+            'permalink'  => ['required'],
+        ]);
+
+        $find = array(" ","_","!","?","''","'",",",".","/","`");
+        $replace = "-";
+        $permalink = str_replace($find,$replace,$request->permalink);
+
+        $category = new category();
+        $category->name = $request->name;
+        $category->permalink = strtolower($permalink);
+
+        if($category->save())
+        {
+            $result = back()->with(['success' => true]);
+        }else{
+            $result = back()->with(['success' => false]);
+        }
+
+        return $result;
+    }
+
+    public function categoryData()
+    {
+        $categories = category::all();
+
+        return Datatables::of($categories)
+            ->addColumn('action', function ($category) {
+                return '<a href="#" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#edit-category"><i class="fa fa-edit"></i> Edit</a>';
+            })
+            ->editColumn('name', function($category) {
+                return $category->name;
+            })
+            ->editColumn('permalink', function($category) {
+                return $category->permalink;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
 }

@@ -199,7 +199,7 @@
 
     {{--create task--}}
     <div class="modal fade" id="create-task">
-        <div class="modal-dialog modal-lg">create-task-form
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form id="create-task-form">
                     <div class="modal-header">

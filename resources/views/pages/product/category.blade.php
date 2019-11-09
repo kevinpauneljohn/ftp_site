@@ -30,7 +30,10 @@ Category
                     {{--<h1 align="center" class="reference-number"><strong>{{str_pad($referenceNumber, 5, '0', STR_PAD_LEFT)}}</strong></h1>--}}
                 </div>
                 <div class="box-body">
-                    <form role="form">
+                    @if(session('success') == true)
+                        <div class="alert alert-success">Category Successfully Added!</div>
+                        @endif
+                    <form role="form" method="post" action="{{route('category.add')}}">
                         @csrf
                         <div class="form-group {{$errors->has('name') ? 'has-error' : ''}}">
                             <label for="name">Name</label><span class="required">*</span>
@@ -58,7 +61,7 @@ Category
         <div class="col-lg-8">
             <div class="box">
                 <div class="box-body">
-                    <table class="table table-bordered" id="job-orders-table">
+                    <table class="table table-bordered" id="category-table">
                         <thead>
                         <tr>
                             <th>Date Created</th>
@@ -72,6 +75,42 @@ Category
             </div>
         </div>
     </div>
+
+    {{--edit category--}}
+    <div class="modal fade" id="edit-category">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <form id="edit-category-form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Edit Category</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        @csrf
+                        <input type="hidden" name="category_id" />
+                        <div class="form-group category_name">
+                            <label for="category_name">Name</label>
+                            <input type="text" name="category_name" class="form-control" id="category_name" value=""/>
+                        </div>
+
+                        <div class="form-group permalink">
+                            <label for="permalink">Permalink</label>
+                            <input type="text" name="permalink" class="form-control" id="permalink" value=""/>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn bg-purple"><i class="fa fa-check"></i> Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{--end edit category--}}
 @endsection
 @section('extra_script')
     <!-- DataTables -->
@@ -118,5 +157,21 @@ Category
                 defaultTime: false,
             });
         })
+    </script>
+
+    <script>
+        $(function() {
+            $('#category-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('category.data') !!}',
+                columns: [
+                    { data: 'created_at', name: 'created_at'},
+                    { data: 'name', name: 'name'},
+                    { data: 'permalink', name: 'permalink'},
+                    { data: 'action', name: 'action', orderable: false, searchable: false}
+                ]
+            });
+        });
     </script>
 @endsection

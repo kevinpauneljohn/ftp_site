@@ -79,6 +79,8 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/job-order/reference-number/{jobOrderId}','JobOrderController@referenceNumber')->name('job.order.reference.number');
 
     Route::get('/product/category','ProductController@category')->name('category')->middleware(['auth','role:admin|super admin']);
+    Route::post('/add-category','ProductController@addCategory')->name('category.add')->middleware(['auth','role:admin|super admin']);
+    Route::get('/category-data','ProductController@categoryData')->name('category.data')->middleware(['auth','role:admin|super admin']);
 
 Route::get('/test',function (){
     return view('layouts.customer_template');
