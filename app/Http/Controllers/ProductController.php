@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\category;
 use App\Product;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Validator;
@@ -299,6 +300,22 @@ class ProductController extends Controller
         $category = category::find($id[1]);
 
         return $category;
+    }
+
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * remove category used in products.js
+     * @param Request $request
+     * @return Response
+     * */
+    public function deleteCategory(Request $request)
+    {
+        $category = category::find($request->category_id);
+
+        $category->delete();
+
+        return response()->json(['success' => true]);
     }
 
 }

@@ -75,6 +75,29 @@ $(document).on('click','.delete-btn',function (link) {
     });
 });
 
+
+$(document).on('submit','#delete-category-form',function (form) {
+    form.preventDefault();
+    let data = $('#delete-category-form').serialize();
+
+    $.ajax({
+        'url'   : '/delete-category',
+        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        'type'  : 'POST',
+        'data'  : data,
+        'cache' : false,
+        success: function (result) {
+            if(result.success == true)
+            {
+                location.reload();
+            }
+
+        },error: function (result) {
+            console.log(result.status);
+        }
+    });
+});
+
 $(document).on('submit','#edit-category-form',function (form) {
     form.preventDefault();
 

@@ -119,7 +119,7 @@ Category
                     <span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-content">
-                <form id="edit-category-form">
+                <form id="delete-category-form">
                     <div class="modal-body">
 
                         @csrf
