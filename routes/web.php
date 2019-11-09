@@ -78,6 +78,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/create-task','TaskController@createTask')->name('task.create');
     Route::get('/job-order/reference-number/{jobOrderId}','JobOrderController@referenceNumber')->name('job.order.reference.number');
 
+    Route::get('/product/category','ProductController@category')->name('category')->middleware(['auth','role:admin|super admin']);
 
 Route::get('/test',function (){
     return view('layouts.customer_template');

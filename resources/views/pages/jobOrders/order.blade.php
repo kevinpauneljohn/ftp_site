@@ -85,6 +85,7 @@
                 <thead>
                 <tr>
                     <th>Date Created</th>
+                    <th>Job Order No.</th>
                     <th>Category</th>
                     <th>Title</th>
                     <th>Customer Name</th>
@@ -133,6 +134,7 @@
                 ajax: '{!! route('job.orders.datatables') !!}',
                 columns: [
                     { data: 'created_at', name: 'created_at'},
+                    { data: 'id', name: 'id'},
                     { data: 'category_id', name: 'category_id'},
                     { data: 'title', name: 'title' },
                     { data: 'customer_name', name: 'customer_name'},

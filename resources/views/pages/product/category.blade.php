@@ -1,7 +1,7 @@
 @extends('layouts.admin_template')
 
 @section('title')
-    Job Orders | Reference Number
+    Products | Categories
 @endsection
 @section('extra_stylesheet')
     <!-- DataTables -->
@@ -16,30 +16,60 @@
     <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min.css')}}">
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
-    <style type="text/css">
-        .col-form-label-sm{
-            text-align: center;
-            font-size: 20px;
-            color: #73706f;
-        }
-        .reference-number{
-            font-size:50px;
-        }
-    </style>
 @endsection
 @section('page_header')
-
+Category
 @endsection
 
 @section('main_content')
-    <br/><br/>
-    <div class="box">
-        <div class="page-header">
-            <h1 align="center" class="reference-number"><strong>{{str_pad($referenceNumber, 5, '0', STR_PAD_LEFT)}}</strong></h1>
-            <div class="col-form-label-sm">Job Order Number</div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="box">
+                <div class="page-header">
+                    <h4 align="center"><strong>Add Category</strong></h4>
+                    {{--<h1 align="center" class="reference-number"><strong>{{str_pad($referenceNumber, 5, '0', STR_PAD_LEFT)}}</strong></h1>--}}
+                </div>
+                <div class="box-body">
+                    <form role="form">
+                        @csrf
+                        <div class="form-group {{$errors->has('name') ? 'has-error' : ''}}">
+                            <label for="name">Name</label><span class="required">*</span>
+                            <input type="text" name="name" class="form-control" value="{{old('name')}}" />
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <div class="form-group {{$errors->has('permalink') ? 'has-error' : ''}}">
+                            <label for="permalink">Permalink</label><span class="required">*</span>
+                            <input type="text" name="permalink" class="form-control" value="{{old('permalink')}}" />
+                            @error('permalink')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="box-body">
-            <div align="center"><button class="btn btn-default print"><i class="fa fa-print"></i> Print</button></div>
+        <div class="col-lg-8">
+            <div class="box">
+                <div class="box-body">
+                    <table class="table table-bordered" id="job-orders-table">
+                        <thead>
+                        <tr>
+                            <th>Date Created</th>
+                            <th>Category</th>
+                            <th>Permalink</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

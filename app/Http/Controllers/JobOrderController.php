@@ -51,11 +51,14 @@ class JobOrderController extends Controller
             })
             ->editColumn('created_at', function($jobOrder) {
                 $date=date_create($jobOrder->created_at);
-                return date_format($date,"d/M/Y h:i:s");;
+                return date_format($date,"d/M/Y h:i:s");
             })
             ->editColumn('pickup_date', function($jobOrder) {
                 $date=date_create($jobOrder->deadline_date);
-                return date_format($date,"d/M/Y");;
+                return date_format($date,"d/M/Y");
+            })
+            ->editColumn('id', function($jobOrder) {
+                return str_pad($jobOrder->id, 5, '0', STR_PAD_LEFT);
             })
             ->rawColumns(['action','status'])
             ->make(true);

@@ -191,4 +191,9 @@ class ProductController extends Controller
         ];
         return $data;
     }
+
+    public function category()
+    {
+        return view('pages.product.category');
+    }
 }

@@ -257,6 +257,7 @@
                         <ul class="treeview-menu">
                             <li{{(Request::segment(2) == 'products') ? ' class=active' : ''}}><a href="{{url('/product/products')}}">Products</a></li>
                             <li{{(Request::segment(2) == 'add-product') ? ' class=active' : ''}}><a href="{{url('/product/add-product')}}">Add Product</a></li>
+                            <li{{(Request::segment(2) == 'category') ? ' class=active' : ''}}><a href="{{route('category')}}">Category</a></li>
                         </ul>
                     </a>
                 </li>
