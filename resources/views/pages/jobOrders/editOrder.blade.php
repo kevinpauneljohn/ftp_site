@@ -156,7 +156,7 @@
                                     </span>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Job Order</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </form>

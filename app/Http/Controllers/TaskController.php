@@ -125,7 +125,7 @@ class TaskController extends Controller
                 return date_format($date,"d/M/Y");
             })
             ->editColumn('created_at', function($task) {
-                $date=date_create($task->deadline_date);
+                $date=date_create($task->created_at);
                 return date_format($date,"d/M/Y");
             })
             ->rawColumns(['action', 'job_order_id','status'])
@@ -214,7 +214,7 @@ class TaskController extends Controller
         if($countJobOrderTask == $countTaskCompleted)
         {
             $jobOrder = JobOrder::find($jobOrderId);
-            $jobOrder->status = "for-pick-up";
+            $jobOrder->status = "for-pickup";
             $jobOrder->save();
         }
     }

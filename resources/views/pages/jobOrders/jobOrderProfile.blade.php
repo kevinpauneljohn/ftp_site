@@ -90,7 +90,16 @@
             <div class="col-md-9">
                 <div class="box">
                     <div class="box-body">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-task">Create task</button>
+                        @php
+                            $status = \App\JobOrder::find($profile->id);
+                         @endphp
+                        @if($status !== 'completed')
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-task">Create task</button>
+                            @else
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-task">Completed</button>
+                        @endif
+
+
                     </div>
                 </div>
 

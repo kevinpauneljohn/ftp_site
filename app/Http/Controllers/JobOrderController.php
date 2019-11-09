@@ -73,8 +73,9 @@ class JobOrderController extends Controller
                 return date_format($date,"d/M/Y h:i:s");
             })
             ->editColumn('pickup_date', function($jobOrder) {
-                $date=date_create($jobOrder->deadline_date);
+                $date=date_create($jobOrder->pickup_date);
                 return date_format($date,"d/M/Y");
+//                return $jobOrder->pickup_date;
             })
             ->editColumn('id', function($jobOrder) {
                 return str_pad($jobOrder->id, 5, '0', STR_PAD_LEFT);
