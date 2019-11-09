@@ -59,6 +59,13 @@ class TaskController extends Controller
             ->make(true);
     }
 
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * set the status session for all task display
+     * @param Request $request
+     * @return void
+     * */
     public function setSession(Request $request)
     {
         if($request->status !== 'all')
