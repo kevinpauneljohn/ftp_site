@@ -90,7 +90,7 @@ Category
                     <div class="modal-body">
 
                         @csrf
-                        <input type="hidden" name="category_id" />
+                        <input type="hidden" name="category_id" id="category-id" />
                         <div class="form-group category_name">
                             <label for="category_name">Name</label>
                             <input type="text" name="category_name" class="form-control" id="category_name" value=""/>
@@ -139,6 +139,7 @@ Category
     <script src="{{asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
     <!-- bootstrap time picker -->
     <script src="{{asset('/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{asset('/js/product.js')}}"></script>
 
     <script>
         $(function () {

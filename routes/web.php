@@ -81,6 +81,8 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/product/category','ProductController@category')->name('category')->middleware(['auth','role:admin|super admin']);
     Route::post('/add-category','ProductController@addCategory')->name('category.add')->middleware(['auth','role:admin|super admin']);
     Route::get('/category-data','ProductController@categoryData')->name('category.data')->middleware(['auth','role:admin|super admin']);
+    Route::post('/category-edit-save','ProductController@editCategory')->name('category.save')->middleware(['auth','role:admin|super admin']);
+    Route::post('/category-data-display','ProductController@displayCategoryData')->name('category.data.display')->middleware(['auth','role:admin|super admin']);
 
 Route::get('/test',function (){
     return view('layouts.customer_template');

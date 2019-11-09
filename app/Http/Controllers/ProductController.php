@@ -6,6 +6,7 @@ use App\category;
 use App\Product;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -235,13 +236,19 @@ class ProductController extends Controller
         return $result;
     }
 
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * data tables
+     * route: category.data
+     * */
     public function categoryData()
     {
         $categories = category::all();
 
         return Datatables::of($categories)
             ->addColumn('action', function ($category) {
-                return '<a href="#" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#edit-category"><i class="fa fa-edit"></i> Edit</a>';
+                return '<a href="#" class="btn btn-xs btn-primary edit-btn" data-toggle="modal" data-target="#edit-category" id="category-'.$category->id.'"><i class="fa fa-edit"></i> Edit</a>';
             })
             ->editColumn('name', function($category) {
                 return $category->name;
@@ -252,4 +259,45 @@ class ProductController extends Controller
             ->rawColumns(['action'])
             ->make(true);
     }
+
+    public function editCategory(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'category_name' => 'required',
+            'permalink'     => 'required'
+        ]);
+
+        if($validator->passes())
+        {
+            $category = category::find($request->category_id);
+            $category->name = $request->category_name;
+            $category->permalink = $request->permalink;
+
+            if($category->save())
+            {
+                $message = ['success' => true];
+            }else{
+                $message = ['success' => false];
+            }
+
+            return response()->json($message);
+        }
+        return response()->json($validator->errors());
+    }
+
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * display data for edit modal form used in products.js
+     * @param Request $request
+     * @return object
+     * */
+    public function displayCategoryData(Request $request)
+    {
+        $id = explode("category-",$request->id);
+        $category = category::find($id[1]);
+
+        return $category;
+    }
+
 }
