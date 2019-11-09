@@ -55,6 +55,26 @@ $(document).on('click','.edit-btn',function (link) {
     });
 });
 
+$(document).on('click','.delete-btn',function (link) {
+    link.preventDefault();
+    let id = this.id;
+
+    $.ajax({
+        'url'   : '/category-data-display',
+        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        'type'  : 'POST',
+        'data'  : {'id' : id},
+        'cache' : false,
+        success: function (result) {
+            $('#category-id-delete').val(result.id);
+            $('.category-name').html('<strong>'+result.name+'?</strong>');
+
+        },error: function (result) {
+            console.log(result.status);
+        }
+    });
+});
+
 $(document).on('submit','#edit-category-form',function (form) {
     form.preventDefault();
 

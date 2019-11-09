@@ -111,6 +111,31 @@ Category
         </div>
     </div>
     {{--end edit category--}}
+    {{--delete category--}}
+    <div class="modal modal-danger fade" id="delete-category">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-content">
+                <form id="edit-category-form">
+                    <div class="modal-body">
+
+                        @csrf
+                        <input type="hidden" name="category_id" id="category-id-delete" />
+                        Delete Category: <span class="category-name"></span>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline"><i class="fa fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{--end delete category--}}
 @endsection
 @section('extra_script')
     <!-- DataTables -->

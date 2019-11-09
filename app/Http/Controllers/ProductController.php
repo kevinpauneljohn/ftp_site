@@ -248,7 +248,8 @@ class ProductController extends Controller
 
         return Datatables::of($categories)
             ->addColumn('action', function ($category) {
-                return '<a href="#" class="btn btn-xs btn-primary edit-btn" data-toggle="modal" data-target="#edit-category" id="category-'.$category->id.'"><i class="fa fa-edit"></i> Edit</a>';
+                return '<a href="#" class="btn btn-xs btn-primary edit-btn" data-toggle="modal" data-target="#edit-category" id="category-'.$category->id.'"><i class="fa fa-edit"></i> Edit</a> 
+<a href="#" class="btn btn-xs btn-warning delete-btn" data-toggle="modal" data-target="#delete-category" id="category-'.$category->id.'"><i class="fa fa-trash"></i> Delete</a>';
             })
             ->editColumn('name', function($category) {
                 return $category->name;
