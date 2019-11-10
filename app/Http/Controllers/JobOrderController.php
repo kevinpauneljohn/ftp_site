@@ -83,7 +83,7 @@ class JobOrderController extends Controller
     /**
      * Nov. 07, 2019
      * @author john kevin paunel
-     * create job orders
+     * create or update job orders
      * @param Request $request
      * @return mixed
      * */
@@ -103,6 +103,7 @@ class JobOrderController extends Controller
             'down_payment.max'  => "max value allowed is ".$request->amount
         ]);
 
+        #this will check if the model will be created or updated
         $jobOrder = ($request->jobOrderId == null ) ? new JobOrder() : JobOrder::find($request->jobOrderId);
         $jobOrder->created_by               = auth()->user()->id;
         $jobOrder->category_id              = $request->category;
