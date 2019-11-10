@@ -80,6 +80,16 @@
     </div>
     <!-- /.row -->
     <div class="box">
+        <div class="box-header">
+            <div class="page-header">
+                <h4></h4>
+                <span class="">
+                    <small class="label bg-red">1 day or less</small>
+                  <small class="label bg-yellow">3 days</small>
+                  <small class="label bg-light-blue">4 days to 1 week</small>
+                </span>
+            </div>
+        </div>
         <div class="box-body">
             <table class="table table-bordered" id="job-orders-table">
                 <thead>

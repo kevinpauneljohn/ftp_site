@@ -7,11 +7,13 @@ use App\JobOrder;
 use App\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
+use Spatie\Permission\Traits\HasRoles;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Carbon;
 
 class JobOrderController extends Controller
 {
+    use HasRoles;
 
     private $date;
 
@@ -48,9 +50,13 @@ class JobOrderController extends Controller
                 return JobOrder::find($jobOrder->id)->tasks()->count();
             })
             ->addColumn('action', function ($jobOrder) {
-                return '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
-<a href="'.route("job.orders.edit",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
-<a href="#" class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-'.$jobOrder->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                $action = '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>';
+                $action .= '<a href="'.route("job.orders.edit",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+                if(auth()->user()->hasAnyRole(['super admin','admin']))
+                {
+                    $action .= '<a href="#" class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-'.$jobOrder->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                }
+                return $action;
             })
             ->editColumn('category_id', function($jobOrder) {
                 return category::find($jobOrder->category_id)->name;
@@ -83,6 +89,9 @@ class JobOrderController extends Controller
                     return 'alert-danger';
                 }elseif ($diff <= 3 && $diff > 1){
                     return 'alert-warning';
+                }elseif($diff <= 7 && $diff > 3)
+                {
+                    return 'alert-info';
                 }
 
             })
