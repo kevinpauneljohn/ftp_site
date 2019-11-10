@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,32 +37,35 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.73544973">
+    <splitter split-orientation="horizontal" split-proportion="0.85476553">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="610">
-                  <caret line="107" column="25" lean-forward="true" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="46" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="29" selection-start-line="29" selection-end-line="29" />
+                <state relative-caret-position="539">
+                  <caret line="166" column="68" lean-forward="true" selection-start-line="166" selection-start-column="68" selection-end-line="166" selection-end-column="68" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="32" column="10" selection-start-line="32" selection-start-column="8" selection-end-line="38" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#6#199#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
+                <state relative-caret-position="476">
+                  <caret line="88" column="45" lean-forward="true" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
                   <folding>
                     <element signature="e#40#57#0#PHP" expanded="true" />
                   </folding>
@@ -216,12 +218,12 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_11_10_072041_add_soft_delete_to_task_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/editOrder.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/js/jobOrder.js" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" />
       </list>
     </option>
   </component>
@@ -463,21 +465,7 @@
       <workItem from="1573237214135" duration="3849000" />
       <workItem from="1573244247812" duration="26055000" />
       <workItem from="1573405535592" duration="1801000" />
-      <workItem from="1573412408019" duration="6363000" />
-    </task>
-    <task id="LOCAL-00064" summary="add to cart module">
-      <created>1572906205895</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1572906205895</updated>
-    </task>
-    <task id="LOCAL-00065" summary="add to cart module">
-      <created>1572929031660</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1572929031661</updated>
+      <workItem from="1573412408019" duration="9240000" />
     </task>
     <task id="LOCAL-00066" summary="add to cart module">
       <created>1572934233604</created>
@@ -808,11 +796,25 @@
       <option name="project" value="LOCAL" />
       <updated>1573415651248</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="updated job order module">
+      <created>1573419016984</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1573419016985</updated>
+    </task>
+    <task id="LOCAL-00114" summary="add deadline color coding to job orders table">
+      <created>1573425086542</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1573425086542</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322702000" />
+    <option name="totallyTimeSpent" value="325579000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -859,7 +861,9 @@
     <MESSAGE value="task module" />
     <MESSAGE value="job orders module" />
     <MESSAGE value="set status display all task page" />
-    <option name="LAST_COMMIT_MESSAGE" value="set status display all task page" />
+    <MESSAGE value="updated job order module" />
+    <MESSAGE value="add deadline color coding to job orders table" />
+    <option name="LAST_COMMIT_MESSAGE" value="add deadline color coding to job orders table" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/datatables.php">
@@ -1217,24 +1221,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="107" column="25" lean-forward="true" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="539">
+          <caret line="166" column="68" lean-forward="true" selection-start-line="166" selection-start-column="68" selection-end-line="166" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
+        <state relative-caret-position="476">
+          <caret line="88" column="45" lean-forward="true" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="8" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#199#0" expanded="true" />
           </folding>
         </state>
       </provider>

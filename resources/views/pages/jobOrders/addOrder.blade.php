@@ -30,13 +30,13 @@
             $diff = Carbon::parse($date)->diffForHumans();
 
         echo $diff;*/
-        use Illuminate\Support\Carbon;
+        /*use Illuminate\Support\Carbon;
             $date = Carbon::parse('2019-11-10');
             $now = Carbon::now('Asia/Manila');
 
             $diff = $date->diffInDays($now);
 
-        echo $diff;
+        echo $diff;*/
     @endphp
     <div class="box">
         <div class="box-body">
