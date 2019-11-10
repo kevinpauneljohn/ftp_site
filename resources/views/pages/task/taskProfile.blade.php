@@ -96,7 +96,8 @@
                 <div class="box">
                     <div class="box-header">
                         <h2 class="page-header">{{ucfirst($task->title)}}
-                            <small class="pull-right"><strong>Deadline:</strong> {{$task->deadline_date}} {{$task->deadline_time}}</small></h2>
+                            @php $date=date_create($task->deadline_date); @endphp
+                            <small class="pull-right"><strong>Deadline:</strong> {{date_format($date,"d/M/Y")}} {{$task->deadline_time}}</small></h2>
 
                     </div>
                     <div class="box-body">

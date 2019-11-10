@@ -120,6 +120,14 @@ class TaskController extends Controller
             ->editColumn('status', function($task) {
                 return $this->taskStatusLabel($task->status);
             })
+            ->editColumn('deadline_date', function($task) {
+                $date=date_create($task->deadline_date);
+                return date_format($date,"d/M/Y");
+            })
+            ->editColumn('created_at', function($task) {
+                $date=date_create($task->deadline_date);
+                return date_format($date,"d/M/Y");
+            })
             ->rawColumns(['action', 'job_order_id','status'])
             ->make(true);
     }
