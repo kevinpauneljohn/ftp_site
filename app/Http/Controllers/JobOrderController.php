@@ -39,7 +39,7 @@ class JobOrderController extends Controller
             })
             ->addColumn('action', function ($jobOrder) {
                 return '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
-<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
+<a href="'.route("job.orders.edit",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
 <a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
             })
             ->editColumn('category_id', function($jobOrder) {
@@ -103,7 +103,7 @@ class JobOrderController extends Controller
             'down_payment.max'  => "max value allowed is ".$request->amount
         ]);
 
-        $jobOrder = new JobOrder();
+        $jobOrder = ($request->jobOrderId == null ) ? new JobOrder() : JobOrder::find($request->jobOrderId);
         $jobOrder->created_by               = auth()->user()->id;
         $jobOrder->category_id              = $request->category;
         $jobOrder->title                    = $request->title;
@@ -116,14 +116,20 @@ class JobOrderController extends Controller
         $jobOrder->amount                   = $request->amount;
         $jobOrder->down_payment             = $request->down_payment;
 
-
         if($jobOrder->save())
         {
-            $result = redirect(route('job.order.reference.number', ['jobOrderId' => $jobOrder->id]));
+            if($request->jobOrderId == null )
+            {
+                $result = redirect(route('job.order.reference.number', ['jobOrderId' => $jobOrder->id]));
+            }else{
+                $result = back()->with('success',true);
+            }
+
         }else{
             $result = back()->with('success',false);
         }
         return $result;
+
     }
 
     /**
@@ -177,6 +183,21 @@ class JobOrderController extends Controller
                 return '';
                 break;
         }
+    }
+
+    /**
+     * Nov. 11, 2019
+     * @author john kevin paunel
+     * edit job order page
+     * @param int $jobOrderId
+     * @return mixed
+     * */
+    public function editJobOrderPage($jobOrderId)
+    {
+        return view('pages.jobOrders.editOrder')->with([
+            'jobOrder'   => JobOrder::find($jobOrderId),
+            'categories' => category::all()
+        ]);
     }
 
 }
