@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 use Gloudemans\Shoppingcart\Contracts\Buyable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model implements Buyable
 {
+    use SoftDeletes;
     public function getBuyableIdentifier($options = null) {
         return $this->id;
     }

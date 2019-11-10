@@ -38,7 +38,9 @@ class JobOrderController extends Controller
                 return JobOrder::find($jobOrder->id)->tasks()->count();
             })
             ->addColumn('action', function ($jobOrder) {
-                return '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View</a>';
+                return '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
+<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
+<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
             })
             ->editColumn('category_id', function($jobOrder) {
                 return category::find($jobOrder->category_id)->name;
