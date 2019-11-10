@@ -22,6 +22,15 @@
 @endsection
 
 @section('main_content')
+    @php
+    use Illuminate\Support\Carbon;
+        $date = Carbon::now('Asia/Manila');
+
+        echo date_format($date,"Y/m/d");
+
+
+
+    @endphp
     <div class="box">
         <div class="box-body">
             <form role="form" method="post" action="{{route('job.orders.create')}}">

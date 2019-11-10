@@ -8,6 +8,7 @@ use App\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Carbon;
 
 class JobOrderController extends Controller
 {
@@ -90,13 +91,16 @@ class JobOrderController extends Controller
      * */
     public function createJobOrder(Request $request)
     {
+        $date = Carbon::now('Asia/Manila');
+        $date = date_format($date,"Y-m-d");
+
         $request->validate([
             'title'             => ['required','max:256'],
             'description'       => ['required'],
             'category'          => ['required'],
             'customer_name'     => ['required'],
             'contact_number'    => ['required'],
-            'pickup_date'       => ['required','date'],
+            'pickup_date'       => ['required','date','date_format:Y-m-d','after_or_equal:'.$date],
             'pickup_time'       => ['required'],
             'amount'            => ['required','regex:/^\d*(\.\d{2})?$/','min:0','numeric'],
             'down_payment'      => ['numeric','regex:/^\d*(\.\d{2})?$/','min:0','max:'.$request->amount],
