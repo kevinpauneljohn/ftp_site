@@ -23,13 +23,20 @@
 
 @section('main_content')
     @php
-    use Illuminate\Support\Carbon;
-        $date = Carbon::now('Asia/Manila');
 
-        echo date_format($date,"Y/m/d");
+        /*$date = Carbon::parse('2019-11-09')->format("Y-m-d");
+            $now = Carbon::now('Asia/Manila');
 
+            $diff = Carbon::parse($date)->diffForHumans();
 
+        echo $diff;*/
+        use Illuminate\Support\Carbon;
+            $date = Carbon::parse('2019-11-10');
+            $now = Carbon::now('Asia/Manila');
 
+            $diff = $date->diffInDays($now);
+
+        echo $diff;
     @endphp
     <div class="box">
         <div class="box-body">

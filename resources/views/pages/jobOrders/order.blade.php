@@ -172,7 +172,9 @@
                     { data: 'task_count', name: 'task_count'},
                     { data: 'status', name: 'status'},
                     { data: 'action', name: 'action', orderable: false, searchable: false}
-                ]
+                ],
+                responsive:true,
+                order:[0,'asc']
             });
         });
     </script>

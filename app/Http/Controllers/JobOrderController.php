@@ -13,6 +13,14 @@ use Illuminate\Support\Carbon;
 class JobOrderController extends Controller
 {
 
+    private $date;
+
+    public function __construct()
+    {
+        $this->date = Carbon::now('Asia/Manila');
+        $this->date = date_format($this->date,"Y-m-d");
+    }
+
     /**
      * Nov. 06, 2019
      * @author john kevin paunel
@@ -64,6 +72,20 @@ class JobOrderController extends Controller
             ->editColumn('id', function($jobOrder) {
                 return str_pad($jobOrder->id, 5, '0', STR_PAD_LEFT);
             })
+            ->setRowClass(function ($jobOrder) {
+                $date = Carbon::parse($jobOrder->pickup_date);
+                $now = Carbon::now('Asia/Manila');
+
+                $diff = $date->diffInDays($now);
+
+                if($diff <= 1)
+                {
+                    return 'alert-danger';
+                }elseif ($diff <= 3 && $diff > 1){
+                    return 'alert-warning';
+                }
+
+            })
             ->rawColumns(['action','status'])
             ->make(true);
     }
@@ -91,16 +113,13 @@ class JobOrderController extends Controller
      * */
     public function createJobOrder(Request $request)
     {
-        $date = Carbon::now('Asia/Manila');
-        $date = date_format($date,"Y-m-d");
-
         $request->validate([
             'title'             => ['required','max:256'],
             'description'       => ['required'],
             'category'          => ['required'],
             'customer_name'     => ['required'],
             'contact_number'    => ['required'],
-            'pickup_date'       => ['required','date','date_format:Y-m-d','after_or_equal:'.$date],
+            'pickup_date'       => ['required','date','date_format:Y-m-d','after_or_equal:'.$this->date],
             'pickup_time'       => ['required'],
             'amount'            => ['required','regex:/^\d*(\.\d{2})?$/','min:0','numeric'],
             'down_payment'      => ['numeric','regex:/^\d*(\.\d{2})?$/','min:0','max:'.$request->amount],
