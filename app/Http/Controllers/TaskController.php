@@ -94,13 +94,24 @@ class TaskController extends Controller
         }
         $tasks = $query;
         return Datatables::of($tasks)
+
             ->addColumn('action', function ($task) {
                 return '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
 <a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
 <a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
             })
             ->editColumn('job_order_id', function($task) {
-                $jobOrderLink = '<a href="'.route("job.order.profile",["jobOrderId" => $task->job_order_id]).'">'.ucfirst(JobOrder::find($task->job_order_id)->title).'</a>';
+
+                $jobs = JobOrder::onlyTrashed()
+                    ->where('id', $task->job_order_id)
+                    ->count();
+                if($jobs < 1)
+                {
+                    $jobOrderLink = '<a href="'.route("job.order.profile",["jobOrderId" => $task->job_order_id]).'">'.ucfirst(JobOrder::find($task->job_order_id)->title).'</a>';
+                }else{
+                    $jobOrderLink = "";
+                }
+
                 return $jobOrderLink;
             })
             ->editColumn('assigned_to', function($task) {

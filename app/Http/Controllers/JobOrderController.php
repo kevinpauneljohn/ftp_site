@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\category;
 use App\JobOrder;
+use App\task;
 use App\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -247,6 +248,12 @@ class JobOrderController extends Controller
     {
         $jobOrder = JobOrder::find($request->jobOrderId);
         $jobOrder->delete();
+
+        /*soft delete task related as well*/
+        $tasks = task::where('job_order_id',$request->jobOrderId)->get();
+        foreach ($tasks as $task){
+            task::find($task->id)->delete();
+        }
 
         return response()->json(["success" => true]);
     }
