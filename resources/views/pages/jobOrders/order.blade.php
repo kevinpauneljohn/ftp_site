@@ -101,6 +101,33 @@
             </table>
         </div>
     </div>
+
+    {{--delete job order--}}
+    <div class="modal modal-danger fade" id="delete-job-order">
+        <div class="modal-dialog">
+            <form class="delete-job-order-form">
+                @csrf
+                <input type="hidden" name="jobOrderId" id="job-order-id"/>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+
+                </div>
+                <div class="modal-body">
+                    Delete Job Order: <span class="job-order-name"></span>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline">Delete</button>
+                </div>
+            </div>
+            </form>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    {{--end delete job order--}}
 @endsection
 
 @section('extra_script')
@@ -118,7 +145,7 @@
     <!-- Select2 -->
     <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-    {{--    <script src="{{asset('/js/rolesPermissions.js')}}"></script>--}}
+        <script src="{{asset('/js/jobOrder.js')}}"></script>
 
     <script>
         $(function () {

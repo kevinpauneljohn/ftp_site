@@ -88,6 +88,10 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
 
     Route::get('/job-order/edit/{jobOrderId}','JobOrderController@editJobOrderPage')->name('job.orders.edit')->middleware(['auth']);
 
+    Route::post('/job-order/delete','JobOrderController@deleteJobOrder')->name('job.orders.delete')->middleware(['auth','role:super admin|admin']);
+    Route::post('/job-order-data','JobOrderController@displayJobOrderData')->name('job.orders.display.data')->middleware(['auth','role:super admin|admin']);
+
+
 Route::get('/test',function (){
     return view('layouts.customer_template');
 });

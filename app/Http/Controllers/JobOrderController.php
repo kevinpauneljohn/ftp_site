@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\category;
 use App\JobOrder;
 use App\User;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 
@@ -40,7 +41,7 @@ class JobOrderController extends Controller
             ->addColumn('action', function ($jobOrder) {
                 return '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
 <a href="'.route("job.orders.edit",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
-<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
+<a href="#" class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-'.$jobOrder->id.'"><i class="fa fa-trash"></i> Delete</a>';
             })
             ->editColumn('category_id', function($jobOrder) {
                 return category::find($jobOrder->category_id)->name;
@@ -190,6 +191,7 @@ class JobOrderController extends Controller
      * Nov. 11, 2019
      * @author john kevin paunel
      * edit job order page
+     * route: job.orders.edit
      * @param int $jobOrderId
      * @return mixed
      * */
@@ -199,6 +201,37 @@ class JobOrderController extends Controller
             'jobOrder'   => JobOrder::find($jobOrderId),
             'categories' => category::all()
         ]);
+    }
+
+    /**
+     * Nov. 11, 2019
+     * @author john kevin paunel
+     * soft delete job order
+     * route: job.orders.delete
+     * @param Request $request
+     * @return Response
+     * */
+    public function deleteJobOrder(Request $request)
+    {
+        $jobOrder = JobOrder::find($request->jobOrderId);
+        $jobOrder->delete();
+
+        return response()->json(["success" => true]);
+    }
+
+    /**
+     * Nov. 11, 2019
+     * @author john kevin paunel
+     * retrieve job order data
+     * @param Request $request
+     * route: job.orders.display.data
+     * @return object
+     * */
+    public function displayJobOrderData(Request $request)
+    {
+        $jobOrderId = explode("job-order-",$request->id);
+
+        return JobOrder::find($jobOrderId[1]);
     }
 
 }
