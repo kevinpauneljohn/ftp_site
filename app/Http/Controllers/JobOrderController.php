@@ -211,6 +211,9 @@ class JobOrderController extends Controller
             case 'pending':
                 return '<small class="label label-warning">'.$status.'</small>';
                 break;
+            case 'for-pickup':
+                return '<small class="label label-info">'.$status.'</small>';
+                break;
             case 'completed':
                 return '<small class="label label-success">'.$status.'</small>';
                 break;
