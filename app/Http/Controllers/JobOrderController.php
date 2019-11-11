@@ -8,6 +8,7 @@ use App\task;
 use App\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Spatie\Permission\Traits\HasRoles;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Carbon;
@@ -180,6 +181,55 @@ class JobOrderController extends Controller
         return view('pages.jobOrders.jobOrderNumber')->with([
             'referenceNumber'   => $jobOrderId
         ]);
+    }
+
+    /**
+     * Nov. 12, 2019
+     * @author john kevin paunel
+     * display all job order tasks
+     * @param int $jobOrderId
+     * */
+    public function jobOrderProfileTasks($jobOrderId)
+    {
+        $tasks = JobOrder::find($jobOrderId)->tasks;
+
+        return Datatables::of($tasks)
+
+            ->addColumn('action', function ($task) {
+                return '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
+<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
+<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
+            })
+            ->editColumn('job_order_id', function($task) {
+
+                $jobs = JobOrder::onlyTrashed()
+                    ->where('id', $task->job_order_id)
+                    ->count();
+                if($jobs < 1)
+                {
+                    $jobOrderLink = '<a href="'.route("job.order.profile",["jobOrderId" => $task->job_order_id]).'">'.ucfirst(JobOrder::find($task->job_order_id)->title).'</a>';
+                }else{
+                    $jobOrderLink = "";
+                }
+
+                return $jobOrderLink;
+            })
+            ->editColumn('assigned_to', function($task) {
+                return User::find($task->assigned_to)->username;
+            })
+            ->editColumn('status', function($task) {
+                return $this->taskStatusLabel($task->status);
+            })
+            ->editColumn('deadline_date', function($task) {
+                $date=date_create($task->deadline_date);
+                return date_format($date,"d/M/Y");
+            })
+            ->editColumn('created_at', function($task) {
+                $date=date_create($task->created_at);
+                return date_format($date,"d/M/Y");
+            })
+            ->rawColumns(['action', 'job_order_id','status'])
+            ->make(true);;
     }
 
 

@@ -260,6 +260,25 @@
                 defaultTime: false,
             });
         })
+
+    </script>
+    <script>
+        $(function() {
+            $('#job-orders-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('job.orders.tasks', ["jobOrderId" => $profile->id]) !!}',
+                columns: [
+                    { data: 'created_at', name: 'created_at'},
+                    { data: 'job_order_id', name: 'job_order_id'},
+                    { data: 'title', name: 'title' },
+                    { data: 'deadline_date', name: 'deadline_date'},
+                    { data: 'assigned_to', name: 'assigned_to'},
+                    { data: 'status', name: 'status'},
+                    { data: 'action', name: 'action', orderable: false, searchable: false}
+                ]
+            });
+        });
     </script>
 
 
