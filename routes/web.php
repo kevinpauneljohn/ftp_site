@@ -15,6 +15,8 @@
 //    return redirect(route('login'));
 //});
 
+use App\task;
+
 Route::get('admin', function () {
     return view('admin_template');
 });
@@ -93,5 +95,9 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
 
 
 Route::get('/test',function (){
-    return view('layouts.customer_template');
+    //    $countTaskCompleted = task::where([
+    //        ['job_order_id','=',8],
+    //        ['status','=','pending'],
+    //    ])->count();
+    //    return $countTaskCompleted;
 });

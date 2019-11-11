@@ -174,12 +174,49 @@ class TaskController extends Controller
 
         if($status->save())
         {
+            if($statusOperation[0] == 'completed')
+            {
+                $this->checkAllTask($status->job_order_id);
+            }
+
             $result = ['success' => true];
         }else{
             $result = ['success' => false];
         }
 
         return response()->json($result);
+    }
+
+    /**
+     * Nov. 11, 2019
+     * @author john kevin paunel
+     * will update job order status to for pick up if all tasks are completed
+     * @param int $jobOrderId
+     * @return void
+     * */
+    public function checkAllTask($jobOrderId)
+    {
+        /**
+         * count all job order tasks
+         * @var $countJobOrderTask
+         * */
+        $countJobOrderTask = task::where('job_order_id',$jobOrderId)->count();
+
+        /**
+         * count all job order tasks completed
+         * @var $countTaskCompleted
+         * */
+        $countTaskCompleted = task::where([
+            ['job_order_id','=',$jobOrderId],
+            ['status','=','completed'],
+        ])->count();
+
+        if($countJobOrderTask == $countTaskCompleted)
+        {
+            $jobOrder = JobOrder::find($jobOrderId);
+            $jobOrder->status = "for-pick-up";
+            $jobOrder->save();
+        }
     }
 
     /**
@@ -258,6 +295,9 @@ class TaskController extends Controller
                 break;
             case 'for-approval':
                 return '<small class="label label-info">'.$status.'</small>';
+                break;
+            case 'for-pick-up':
+                return '<small class="label bg-blue-active">'.$status.'</small>';
                 break;
             case 'completed':
                 return '<small class="label label-success">'.$status.'</small>';
