@@ -9,6 +9,11 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('/bower_components/select2/dist/css/select2.min.css')}}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
+    <style type="text/css">
+        .page-header{
+            font-size: 15px;
+        }
+    </style>
 @endsection
 @section('page_header')
     Job Orders
@@ -87,6 +92,14 @@
                     <small class="label bg-red">1 day or less</small>
                   <small class="label bg-yellow">3 days</small>
                   <small class="label bg-aqua">4 days to 1 week</small>
+                </span>
+                <span class=" pull-right status-display-container">
+                    Choose Status To Display <select class="status-display">
+                        <option value="all" @if(session('statusJobOrder') == null) selected="selected" @endif>all</option>
+                        <option value="pending" @if(session('statusJobOrder') == "pending") selected="selected" @endif>Pending</option>
+                        <option value="on-going" @if(session('statusJobOrder') == "for-pickup") selected="selected" @endif>For-Pickup</option>
+                        <option value="completed" @if(session('statusJobOrder') == "completed") selected="selected" @endif>Completed</option>
+                    </select>
                 </span>
             </div>
         </div>
@@ -185,6 +198,26 @@
                 ],
                 responsive:true,
                 order:[0,'asc']
+            });
+        });
+    </script>
+    <script>
+
+
+        $(document).on('change','.status-display',function () {
+            let value = $('.status-display').val();
+
+            $.ajax({
+                'url'   : '/job-set-status',
+                'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                'type'  : 'POST',
+                'data'  : {'status' : value},
+                'cache' : false,
+                success: function (result) {
+                    location.reload();
+                },error: function (result) {
+                    console.log(result.status);
+                }
             });
         });
     </script>

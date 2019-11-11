@@ -87,6 +87,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/category-data-display','ProductController@displayCategoryData')->name('category.data.display')->middleware(['auth','role:admin|super admin']);
     Route::post('/delete-category','ProductController@deleteCategory')->name('category.delete')->middleware(['auth','role:admin|super admin']);
     Route::post('/set-status','TaskController@setSession')->name('task.status')->middleware(['auth','role:admin|super admin']);
+    Route::post('/job-set-status','JobOrderController@setSession')->name('job.order.status')->middleware(['auth']);
 
     Route::get('/job-order/edit/{jobOrderId}','JobOrderController@editJobOrderPage')->name('job.orders.edit')->middleware(['auth']);
 

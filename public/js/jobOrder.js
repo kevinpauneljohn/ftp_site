@@ -37,3 +37,4 @@ $(document).on('click','.delete-job-order-form',function (form) {
         }
     });
 });
+

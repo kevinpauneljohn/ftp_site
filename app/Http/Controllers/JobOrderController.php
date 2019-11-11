@@ -73,6 +73,23 @@ class JobOrderController extends Controller
             'forPickup' => $totalForPickup
         ]);
     }
+    /**
+     * Nov. 10, 2019
+     * @author john kevin paunel
+     * set the status session for all job orders display
+     * @param Request $request
+     * @return void
+     * */
+    public function setSession(Request $request)
+    {
+        if($request->status !== 'all')
+        {
+            Session::put('statusJobOrder', $request->status);
+        }
+        else{
+            $request->session()->forget('statusJobOrder');
+        }
+    }
 
     /**
      * Nov. 07, 2019
@@ -82,8 +99,13 @@ class JobOrderController extends Controller
      * */
     public function jobOrdersData()
     {
-        $jobOrders = JobOrder::all();
-
+        if(Session::has('statusJobOrder'))
+        {
+            $query = JobOrder::where("status",Session::get('statusJobOrder'))->get();
+        }else{
+            $query = JobOrder::all();
+        }
+        $jobOrders = $query;
         return Datatables::of($jobOrders)
             ->addColumn('task_count', function ($jobOrder) {
                 return JobOrder::find($jobOrder->id)->tasks()->count();
