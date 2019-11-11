@@ -64,11 +64,13 @@ class JobOrderController extends Controller
 
         $totalCompleted = JobOrder::where("status","completed")->count();
         $totalPending = JobOrder::where("status","pending")->count();
+        $totalForPickup = JobOrder::where("status","for-pickup")->count();
 
         return view('pages.jobOrders.order')->with([
             'pending'   => $totalPending,
             'completed' => $totalCompleted,
-            'priority'  => $this->countAllPriority()
+            'priority'  => $this->countAllPriority(),
+            'forPickup' => $totalForPickup
         ]);
     }
 

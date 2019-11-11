@@ -21,9 +21,9 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{$forPickup}}</h3>
 
-                    <p>New Orders</p>
+                    <p>For Pick-up orders</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-bag"></i>
@@ -71,7 +71,7 @@
                     <p>Total Priority Orders</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
+                    <i class="fa fa-exclamation-triangle"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
@@ -86,7 +86,7 @@
                 <span class="">
                     <small class="label bg-red">1 day or less</small>
                   <small class="label bg-yellow">3 days</small>
-                  <small class="label bg-light-blue">4 days to 1 week</small>
+                  <small class="label bg-aqua">4 days to 1 week</small>
                 </span>
             </div>
         </div>
