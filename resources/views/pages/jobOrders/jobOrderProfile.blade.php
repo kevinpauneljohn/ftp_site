@@ -36,6 +36,9 @@
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
+                                <b>Job Order Number</b> <a class="pull-right">{{str_pad($profile->id, 5, '0', STR_PAD_LEFT)}}</a>
+                            </li>
+                            <li class="list-group-item">
                                 <b>Customer</b> <a class="pull-right">{{ucfirst($profile->customer_name)}}</a>
                             </li>
                             <li class="list-group-item">
@@ -73,8 +76,10 @@
                         <hr>
 
                         <strong><i class="fa fa-thermometer margin-r-5"></i> Status</strong>
-
-                        <p><small class="label label-warning">{{$profile->status}}</small></p>
+                        @php
+                            $status = new \App\Http\Controllers\JobOrderController();
+                        @endphp
+                        <p>{!! $status->taskStatusLabel($profile->status) !!}</p>
 
                         <hr>
 
