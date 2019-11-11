@@ -34,7 +34,12 @@ class JobOrderController extends Controller
      * */
     public function jobOrderPage()
     {
-        return view('pages.jobOrders.order');
+        $totalCompleted = JobOrder::where("status","completed")->count();
+        $totalPending = JobOrder::where("status","pending")->count();
+        return view('pages.jobOrders.order')->with([
+            'pending'   => $totalPending,
+            'completed' => $totalCompleted,
+        ]);
     }
 
     /**
@@ -243,10 +248,46 @@ class JobOrderController extends Controller
      * */
     public function jobOrderProfile($jobOrderId)
     {
+
         return view('pages.jobOrders.jobOrderProfile')->with([
-            'users'         => User::all(),
-            'profile'       => JobOrder::find($jobOrderId),
+            'users'             => User::all(),
+            'profile'           => JobOrder::find($jobOrderId),
+            'completeButton'    => $this->checkAllTasksStatus($jobOrderId)
         ]);
+    }
+
+    /**
+     * Nov. 12, 2019
+     * @author john kevin paunel
+     * @param int $jobOrderId
+     * @return boolean
+     * */
+    public function checkAllTasksStatus($jobOrderId)
+    {
+        /**
+         * count all job order tasks
+         * @var $countJobOrderTask
+         * */
+        $countJobOrderTask = task::where('job_order_id',$jobOrderId)->count();
+
+        /**
+         * count all job order tasks completed
+         * @var $countTaskCompleted
+         * */
+        $countTaskCompleted = task::where([
+            ['job_order_id','=',$jobOrderId],
+            ['status','=','completed'],
+        ])->count();
+
+
+            return $countJobOrderTask == $countTaskCompleted ? true : false;
+    }
+
+    public function markComplete(Request $request)
+    {
+        $tasks = new TaskController();
+        $tasks->checkAllTask($request->jobProfileId, "completed");
+        return back()->with(["success" => true]);
     }
 
     /**
@@ -326,5 +367,7 @@ class JobOrderController extends Controller
 
         return JobOrder::find($jobOrderId[1]);
     }
+
+
 
 }

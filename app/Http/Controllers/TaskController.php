@@ -176,7 +176,7 @@ class TaskController extends Controller
         {
             if($statusOperation[0] == 'completed')
             {
-                $this->checkAllTask($status->job_order_id);
+                $this->checkAllTask($status->job_order_id,"for-pickup");
             }
 
             $result = ['success' => true];
@@ -192,9 +192,10 @@ class TaskController extends Controller
      * @author john kevin paunel
      * will update job order status to for pick up if all tasks are completed
      * @param int $jobOrderId
+     * @param string $status
      * @return void
      * */
-    public function checkAllTask($jobOrderId)
+    public function checkAllTask($jobOrderId,$status)
     {
         /**
          * count all job order tasks
@@ -214,7 +215,7 @@ class TaskController extends Controller
         if($countJobOrderTask == $countTaskCompleted)
         {
             $jobOrder = JobOrder::find($jobOrderId);
-            $jobOrder->status = "for-pickup";
+            $jobOrder->status = $status;
             $jobOrder->save();
         }
     }
