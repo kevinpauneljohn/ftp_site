@@ -26,6 +26,33 @@ class JobOrderController extends Controller
     }
 
     /**
+     * Nov. 12, 2019
+     * @author john kevin paunel
+     * get total priority job orders
+     * @return int
+     * */
+    public function countAllPriority()
+    {
+        $jobOrders = JobOrder::where([
+            ["status","!=","completed"]
+        ])->get();
+        $priority = 0;
+
+        foreach ($jobOrders as $jobOrder){
+            $date = Carbon::parse($jobOrder->pickup_date);
+            $now = Carbon::now('Asia/Manila');
+
+            $diff = $date->diffInDays($now);
+
+            if($diff <= 1)
+            {
+                $priority = $priority + 1;
+            }
+        }
+        return $priority;
+    }
+
+    /**
      * Nov. 06, 2019
      * @author john kevin paunel
      * job order view page
@@ -34,11 +61,14 @@ class JobOrderController extends Controller
      * */
     public function jobOrderPage()
     {
+
         $totalCompleted = JobOrder::where("status","completed")->count();
         $totalPending = JobOrder::where("status","pending")->count();
+
         return view('pages.jobOrders.order')->with([
             'pending'   => $totalPending,
             'completed' => $totalCompleted,
+            'priority'  => $this->countAllPriority()
         ]);
     }
 
