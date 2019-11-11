@@ -86,12 +86,12 @@ class JobOrderController extends Controller
 
                 $diff = $date->diffInDays($now);
 
-                if($diff <= 1)
+                if($diff <= 1 && $jobOrder->status != "completed")
                 {
                     return 'alert-danger';
-                }elseif ($diff <= 3 && $diff > 1){
+                }elseif ($diff <= 3 && $diff > 1 && $jobOrder->status != "completed"){
                     return 'alert-warning';
-                }elseif($diff <= 7 && $diff > 3)
+                }elseif($diff <= 7 && $diff > 3 && $jobOrder->status != "completed")
                 {
                     return 'alert-info';
                 }

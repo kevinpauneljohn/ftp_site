@@ -81,7 +81,7 @@
     <!-- /.row -->
     <div class="box">
         <div class="box-body">
-            <table class="table table-bordered" id="job-orders-table">
+            <table class="table table-bordered table-hover" id="job-orders-table">
                 <thead>
                 <tr>
                     <th>Date Created</th>
