@@ -45,7 +45,10 @@
                                 <b>Contact No.</b> <a class="pull-right">{{$profile->customer_contact_number}}</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Pick-up Date</b> <a class="pull-right">{{$profile->pickup_date}} {{$profile->pickup_time}}</a>
+                                @php
+                                    $date=date_create($profile->pickup_date);
+                                @endphp
+                                <b>Pick-up Date</b> <a class="pull-right">{{date_format($date,"d/M/Y")}} {{$profile->pickup_time}}</a>
                             </li>
                             <li class="list-group-item">
                                 <b>Total Amount</b> <a class="pull-right">&#8369; {{number_format($profile->amount,2)}}</a>
