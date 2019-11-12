@@ -297,9 +297,6 @@ class TaskController extends Controller
             case 'for-approval':
                 return '<small class="label label-info">'.$status.'</small>';
                 break;
-            case 'for-pickup':
-                return '<small class="label label-info">'.$status.'</small>';
-                break;
             case 'completed':
                 return '<small class="label label-success">'.$status.'</small>';
                 break;

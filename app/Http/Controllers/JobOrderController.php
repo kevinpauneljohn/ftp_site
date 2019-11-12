@@ -277,7 +277,8 @@ class JobOrderController extends Controller
                 return User::find($task->assigned_to)->username;
             })
             ->editColumn('status', function($task) {
-                return $this->taskStatusLabel($task->status);
+                $label = new TaskController();
+                return $label->taskStatusLabel($task->status);
             })
             ->editColumn('deadline_date', function($task) {
                 $date=date_create($task->deadline_date);

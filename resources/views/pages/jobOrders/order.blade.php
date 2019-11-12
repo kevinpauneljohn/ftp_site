@@ -97,7 +97,7 @@
                     Choose Status To Display <select class="status-display">
                         <option value="all" @if(session('statusJobOrder') == null) selected="selected" @endif>all</option>
                         <option value="pending" @if(session('statusJobOrder') == "pending") selected="selected" @endif>Pending</option>
-                        <option value="on-going" @if(session('statusJobOrder') == "for-pickup") selected="selected" @endif>For-Pickup</option>
+                        <option value="for-pickup" @if(session('statusJobOrder') == "for-pickup") selected="selected" @endif>For-Pickup</option>
                         <option value="completed" @if(session('statusJobOrder') == "completed") selected="selected" @endif>Completed</option>
                     </select>
                 </span>
