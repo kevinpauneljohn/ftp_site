@@ -141,7 +141,7 @@
                     Delete Job Order: <span class="job-order-name"></span>?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                    <a class="btn btn-outline pull-left" data-dismiss="modal">Close</a>
                     <button type="submit" class="btn btn-outline">Delete</button>
                 </div>
             </div>
@@ -197,7 +197,7 @@
                     { data: 'action', name: 'action', orderable: false, searchable: false}
                 ],
                 responsive:true,
-                order:[0,'asc']
+                order:[0,'desc']
             });
         });
     </script>
