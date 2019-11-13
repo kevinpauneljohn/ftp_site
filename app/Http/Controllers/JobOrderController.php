@@ -423,6 +423,12 @@ class JobOrderController extends Controller
         return JobOrder::find($jobOrderId[1]);
     }
 
-
+    public function print($jobOrderId)
+    {
+        return view('pages.jobOrders.invoice')->with([
+            'jobOrder'  => $jobOrderId,
+            'profile'   => JobOrder::find($jobOrderId)
+        ]);
+    }
 
 }
