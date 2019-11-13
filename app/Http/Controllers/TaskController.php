@@ -31,7 +31,12 @@ class TaskController extends Controller
      * */
     public function taskPage()
     {
-        return view('pages.task.task');
+        return view('pages.task.task')->with([
+            'onGoing'    => task::where([["status","=","on-going"],["assigned_to","=",auth()->user()->id]])->count(),
+            'completed'    => task::where([["status","=","completed"],["assigned_to","=",auth()->user()->id]])->count(),
+            'pending'    => task::where([["status","=","pending"],["assigned_to","=",auth()->user()->id]])->count(),
+            'forApproval'    => task::where([["status","=","for-approval"],["assigned_to","=",auth()->user()->id]])->count(),
+        ]);
     }
 
     /**
@@ -295,7 +300,10 @@ class TaskController extends Controller
     public function allTasks()
     {
         return view('pages.task.allTask')->with([
-            'status'    => $this,
+            'onGoing'    => task::where("status","on-going")->count(),
+            'completed'    => task::where("status","completed")->count(),
+            'pending'    => task::where("status","pending")->count(),
+            'forApproval'    => task::where("status","for-approval")->count(),
         ]);
     }
 
