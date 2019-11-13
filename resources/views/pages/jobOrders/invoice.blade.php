@@ -8,7 +8,7 @@
 <center>
 <div>
     File2PRINT<br/>
-    <span style="font-size: 9px;">Vandam Mart Stall #15, Bulaon Resettlement, San Fernando, Pampanga</span>
+    <span style="font-size: 10px;">Vandam Mart Stall #15, Bulaon, City Of San Fernando, Pampanga</span>
     <br/>
         Globe #: 09166520817
     <br/>
