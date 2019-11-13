@@ -87,6 +87,7 @@
     <div class="box">
         <div class="box-header">
             <div class="page-header">
+                <input type="hidden" name="action" class="action" value="all"/>
                 <select class="status-display">
                     <option value="all" @if(session('status') == null) selected="selected" @endif>all</option>
                     <option value="pending" @if(session('status') == "pending") selected="selected" @endif>Pending</option>

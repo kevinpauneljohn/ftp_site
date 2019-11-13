@@ -43,7 +43,17 @@ class TaskController extends Controller
      * */
     public function userTask()
     {
-        $tasks = User::find(auth()->user()->id)->tasks;
+        if(Session::has('statusMyTask'))
+        {
+            $query = task::where([
+                ["status","=",Session::get('statusMyTask')],
+                ["assigned_to","=",auth()->user()->id],
+            ])->get();
+        }else{
+            $query = User::find(auth()->user()->id)->tasks;
+        }
+        $tasks = $query;
+
         return Datatables::of($tasks)
             ->addColumn('action', function ($task) {
                 $action = '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>';
@@ -71,12 +81,23 @@ class TaskController extends Controller
      * */
     public function setSession(Request $request)
     {
-        if($request->status !== 'all')
+        if($request->action == "all")
         {
-            Session::put('status', $request->status);
-        }
-        else{
-            $request->session()->forget('status');
+            if($request->status !== 'all')
+            {
+                Session::put('status', $request->status);
+            }
+            else{
+                $request->session()->forget('status');
+            }
+        }else{
+            if($request->status !== 'all')
+            {
+                Session::put('statusMyTask', $request->status);
+            }
+            else{
+                $request->session()->forget('statusMyTask');
+            }
         }
     }
     /**

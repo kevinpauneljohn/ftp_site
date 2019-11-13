@@ -75,13 +75,18 @@ $(document).on('submit','#create-task-form', function (form) {
 $('.status-display').change(function() {
 
     let value = $('.status-display').val();
+    let action = $('.action').val();
     $.ajax({
         'url'   : '/set-status',
         'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         'type'  : 'POST',
-        'data'  : {'status' : value},
+        'data'  : {
+            'status' : value,
+            'action' : action
+        },
         'cache' : false,
         success: function (result) {
+            console.log(result);
             location.reload();
         },error: function (result) {
             console.log(result.status);

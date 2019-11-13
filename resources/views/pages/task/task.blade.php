@@ -9,6 +9,11 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('/bower_components/select2/dist/css/select2.min.css')}}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
+    <style type="text/css">
+        .page-header{
+            font-size: 15px;
+        }
+    </style>
 @endsection
 @section('page_header')
     My Tasks
@@ -80,6 +85,19 @@
     </div>
     <!-- /.row -->
     <div class="box">
+        <div class="box-header">
+            <div class="page-header">
+                <input type="hidden" name="action" class="action" value="mine"/>
+                <select class="status-display">
+                    <option value="all" @if(session('statusMyTask') == null) selected="selected" @endif>all</option>
+                    <option value="pending" @if(session('statusMyTask') == "pending") selected="selected" @endif>Pending</option>
+                    <option value="on-going" @if(session('statusMyTask') == "on-going") selected="selected" @endif>On-going</option>
+                    <option value="for-approval" @if(session('statusMyTask') == "for-approval") selected="selected" @endif>For approval</option>
+                    <option value="completed" @if(session('statusMyTask') == "completed") selected="selected" @endif>Completed</option>
+                </select>
+                Choose Status To Display
+            </div>
+        </div>
         <div class="box-body">
             <table class="table table-bordered table-hover" id="job-orders-table">
                 <thead>
@@ -112,7 +130,7 @@
     <!-- Select2 -->
     <script src="{{asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-    {{--    <script src="{{asset('/js/rolesPermissions.js')}}"></script>--}}
+        <script src="{{asset('/js/task.js')}}"></script>
 
     <script>
         $(function () {
