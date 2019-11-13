@@ -256,7 +256,7 @@ class JobOrderController extends Controller
 
             ->addColumn('action', function ($task) {
                 return '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
-<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
+<a href="'.route("task.page.edit",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
 <a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
             })
             ->editColumn('job_order_id', function($task) {

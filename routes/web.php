@@ -95,6 +95,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/job-order-data','JobOrderController@displayJobOrderData')->name('job.orders.display.data')->middleware(['auth','role:super admin|admin']);
     Route::get('/job-order/tasks/{jobOrderId}','JobOrderController@jobOrderProfileTasks')->name('job.orders.tasks')->middleware(['auth']);
     Route::post('/job-order/status/complete','JobOrderController@markComplete')->name('job.order.status.complete')->middleware(['auth']);
+    Route::get('/task/edit-page/{taskId}','TaskController@editTaskPage')->name('task.page.edit')->middleware(['auth']);
 
 
 Route::get('/test',function (){
