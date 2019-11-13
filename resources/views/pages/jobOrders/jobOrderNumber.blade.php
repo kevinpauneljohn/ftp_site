@@ -39,7 +39,10 @@
             <div class="col-form-label-sm">Job Order Number</div>
         </div>
         <div class="box-body">
-            <div align="center"><button class="btn btn-default print"><i class="fa fa-print"></i> Print</button></div>
+            <div align="center">
+                <button class="btn btn-default print"><i class="fa fa-print"></i> Print</button>
+                <button class="btn btn-info"><i class="fa fa-tasks"></i> Create Task</button>
+            </div>
         </div>
     </div>
 @endsection
