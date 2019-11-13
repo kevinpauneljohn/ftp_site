@@ -55,6 +55,7 @@
             </tr>
         </table>
     </div>
+    <div style="margin-top: 20px;border-top: 2px dotted;border-color: #1c2529;"></div>
 </div>
 </body>
 
