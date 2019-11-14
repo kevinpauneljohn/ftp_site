@@ -29,14 +29,14 @@
         <div class="box-body">
             <form role="form" method="post" action="{{route('job.orders.create')}}">
                 @if(session('success') == true)
-                    <div class="alert alert-success">Job Order Successfully created</div>
+                    <div class="alert alert-success">Task Successfully Updated</div>
                 @endif
                 @csrf
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group {{$errors->has('title') ? 'has-error' : ''}}">
                             <label for="title">Title</label><span class="required">*</span>
-                            <input type="text" name="title" class="form-control" value="{{old('title')}}" />
+                            <input type="text" name="title" class="form-control" value="{{old('title')?: $task->title}}" />
                             @error('title')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -48,7 +48,7 @@
                             <div class="box-body pad">
 
                             <textarea name="description" id="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                                {{old('description')}}
+                                {{old('description') ?: $task->description}}
                             </textarea>
 
                             </div>
@@ -60,43 +60,18 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-group {{$errors->has('customer_name') ? 'has-error' : ''}}">
-                            <label for="customer_name">Customer Name</label><span class="required">*</span>
-                            <input type="text" name="customer_name" value="{{old('customer_name')}}" class="form-control" id="customer_name" />
-                            @error('customer_name')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-                        </div>
-                        <div class="form-group {{$errors->has('contact_number') ? 'has-error' : ''}}">
-                            <label>Customer Contact Number</label><span class="required">*</span>
-
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <input type="text" name="contact_number" class="form-control" data-inputmask='"mask": "(9999) 999-9999"' data-mask value="{{old('contact_number')}}">
-                            </div>
-                            @error('contact_number')
-                            <span class="invalid-feedback" role="alert">
-                             <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        <!-- /.input group -->
-                        </div>
                         <!-- Date -->
-                        <div class="form-group {{$errors->has('pickup_date') ? 'has-error' : ''}}">
-                            <label>Pickup Date</label><span class="required">*</span>
+                        <div class="form-group {{$errors->has('deadline_date') ? 'has-error' : ''}}">
+                            <label>Deadline</label><span class="required">*</span>
 
                             <div class="input-group date">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" name="pickup_date" class="form-control pull-right" id="datepicker" value="{{old('pickup_date')}}">
+                                <input type="text" name="deadline_date" class="form-control pull-right" id="datepicker" value="{{old('deadline_date') ?: $task->deadline_date}}">
                             </div>
                             <!-- /.input group -->
-                            @error('pickup_date')
+                            @error('deadline_date')
                             <span class="invalid-feedback" role="alert">
                              <strong>{{ $message }}</strong>
                         </span>
@@ -104,18 +79,18 @@
                         </div>
                         <!-- time Picker -->
                         <div class="bootstrap-timepicker">
-                            <div class="form-group {{$errors->has('pickup_time') ? 'has-error' : ''}}">
-                                <label>Pick Up Time</label><span class="required">*</span>
+                            <div class="form-group {{$errors->has('deadline_time') ? 'has-error' : ''}}">
+                                <label>Time</label><span class="required">*</span>
 
                                 <div class="input-group">
-                                    <input type="text" name="pickup_time" class="form-control timepicker" value="{{old('pickup_time')}}">
+                                    <input type="text" name="deadline_time" class="form-control timepicker" value="{{old('deadline_time') ?: $task->deadline_time}}">
 
                                     <div class="input-group-addon">
                                         <i class="fa fa-clock-o"></i>
                                     </div>
                                 </div>
                                 <!-- /.input group -->
-                                @error('pickup_time')
+                                @error('deadline_time')
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -123,26 +98,16 @@
                             </div>
                             <!-- /.form group -->
                         </div>
-                        <div class="form-group {{$errors->has('amount') ? 'has-error' : ''}}">
-                            <label for="amount">Amount</label><span class="required">*</span>
-                            <input type="number" name="amount" class="form-control" value="{{old('amount') ?: 0}}"  step="0.01" min="0"/>
-                            @error('amount')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
+                        <div class="form-group assignTo">
+                            <label for="assignTo">Assign To</label>
+                            <select class="form-control" name="assignTo" id="assignTo">
+                                <option></option>
+                                @foreach($users as $user)
+                                    <option value="{{$user->id}}" @if($user->id == $task->assigned_to) selected="selected" @endif>{{$user->username}}</option>
+                                @endforeach
+                            </select>
                         </div>
-
-                        <div class="form-group {{$errors->has('down_payment') ? 'has-error' : ''}}">
-                            <label for="down_payment">Down Payment</label>
-                            <input type="number" name="down_payment" class="form-control" value="{{old('down_payment') ?: 0}}"  step="0.01" min="0" />
-                            @error('down_payment')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-primary">Add Job Order</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </form>

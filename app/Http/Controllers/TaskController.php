@@ -338,7 +338,8 @@ class TaskController extends Controller
     public function editTaskPage($taskId)
     {
         return view('pages.task.editTask')->with([
-            'task'      => task::find($taskId)
+            'task'      => task::find($taskId),
+            'users'     => User::all()
         ]);
     }
 }

@@ -1,12 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="">
+    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="task module">
+      <change beforePath="$PROJECT_DIR$/.idea/ftp_site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ftp_site.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/task.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/task/task.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/task/task.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/3fcd99d0c8b91f50f06b0715ce73ad297a6fc258/_base.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/3fcd99d0c8b91f50f06b0715ce73ad297a6fc258/_mixins.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/3fcd99d0c8b91f50f06b0715ce73ad297a6fc258/_variables.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/58d96aa2f3ca6831ea65d734678a63e337572170/style.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/8d96c3a14a0bb8e118b2f4f0ff234b926fa1678e/_buttons.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/8d96c3a14a0bb8e118b2f4f0ff234b926fa1678e/_responsive.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/8d96c3a14a0bb8e118b2f4f0ff234b926fa1678e/_sections.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/8d96c3a14a0bb8e118b2f4f0ff234b926fa1678e/_typography.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/ef29edb4d21face4cdada241cd6b836dafbe5b2a/_footer.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/ef29edb4d21face4cdada241cd6b836dafbe5b2a/_header.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/.sass-cache/ef29edb4d21face4cdada241cd6b836dafbe5b2a/_nav.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/jquery.simpleLens.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/jquery.smartmenus.bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/nouislider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/sequence-theme.modern-slide-in.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/slick.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/bridge-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/dark-red-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/default-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/green-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/lite-blue-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/orange-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/pink-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/purple-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/red-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/css/theme-color/yellow-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/client-brand-css3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/client-brand-html5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/client-brand-java.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/client-brand-joomla.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/client-brand-jquery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/client-brand-wordpress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/close-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/electronics/electronic-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/fashion-banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/fashion/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/fashion/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/fashion/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/fashion/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/fashion/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/fashion/fashion-header-bg-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/flag/english.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/flag/french.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man-small-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man/polo-shirt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man/polo-shirt-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man/polo-shirt-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man/polo-shirt-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man/polo-shirt-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man/polo-shirt-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/man/t-shirt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/paypal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/promo-banner-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/promo-banner-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/promo-banner-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/promo-banner-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/promo-banner-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/bt-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/bt-next@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/bt-prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/slider/bt-prev@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/sports/sport-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/testimonial-bg-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/testimonial-img-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/testimonial-img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/testimonial-img-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/large/polo-shirt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/large/polo-shirt-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/large/polo-shirt-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/large/polo-shirt-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/medium/polo-shirt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/medium/polo-shirt-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/medium/polo-shirt-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/medium/polo-shirt-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/thumbnail/polo-shirt-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/thumbnail/polo-shirt-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/thumbnail/polo-shirt-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/view-slider/thumbnail/polo-shirt-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/woman-small-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/woman-small-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/women/girl-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/women/girl-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/women/girl-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/women/girl-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/women/girl-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/women/girl-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/img/women/girl-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/jquery.simpleGallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/jquery.simpleLens.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/jquery.smartmenus.bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/jquery.smartmenus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/nouislider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/sequence-theme.modern-slide-in.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/sequence.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/js/slick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/base/_base.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/base/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/base/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/layouts/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/layouts/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/layouts/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/modules/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/modules/_responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/modules/_sections.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/modules/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/task/editTask.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/task/editTask.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/header.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/layout.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/message.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/panel.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/promotion.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/promotion/button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/subcopy.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/table.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/themes/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/header.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/layout.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/message.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/panel.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/promotion.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/promotion/button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/subcopy.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/table.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/notifications/email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap-4.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/default.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/semantic-ui.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-default.blade.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,42 +214,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="170">
+              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
               <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-                <marker date="1573687202284" expanded="true" signature="1313:2399" ph="..." />
+                <marker date="1573715807787" expanded="true" signature="1814:2900" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="17">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/task.js">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RolesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/task/task.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="165">
+              <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+              <folding>
+                <element signature="e#40#53#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,12 +258,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/add-to-cart</find>
-      <find>/product-detail</find>
-      <find>quantity</find>
-      <find>categoryId</find>
-      <find>singleProductDetail</find>
-      <find>time picker</find>
       <find>createProduct</find>
       <find>tab-content</find>
       <find>small bo</find>
@@ -118,10 +278,16 @@
       <find>refe</find>
       <find>taskPage(</find>
       <find>my-task</find>
-      <find>userTask</find>
       <find>setSession</find>
       <find>/job-order/orders</find>
       <find>jobOrderPage</find>
+      <find>edit</find>
+      <find>userT</find>
+      <find>LARAVEL_LOGGER_DISABLE_ROUTES</find>
+      <find>web</find>
+      <find>userTask</find>
+      <find>task.lis</find>
+      <find>disableRoutes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,19 +296,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Cart.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_11_03_115831_add_quantity_column_to_product_user_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_11_03_124057_add_id_column_to_product_user_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AjaxLoginController.php" />
-        <option value="$PROJECT_DIR$/public/js/login.js" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-        <option value="$PROJECT_DIR$/public/css/app.css" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/customer_template.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php" />
         <option value="$PROJECT_DIR$/resources/views/customer/single_category.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/customer/productDetail.blade.php" />
         <option value="$PROJECT_DIR$/public/js/addToCart.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_06_021332_create_job_orders_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_06_021358_create_tasks_table.php" />
         <option value="D:/admin lte/AdminLTE/pages/forms/advanced.html" />
@@ -158,29 +314,39 @@
         <option value="$PROJECT_DIR$/resources/views/pages/product/category.blade.php" />
         <option value="$PROJECT_DIR$/public/js/product.js" />
         <option value="$PROJECT_DIR$/app/JobOrder.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Product.php" />
         <option value="$PROJECT_DIR$/app/task.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_10_071836_add_soft_delete_to_users.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_10_072041_add_soft_delete_to_task_table.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/editOrder.blade.php" />
         <option value="$PROJECT_DIR$/public/js/jobOrder.js" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/addOrder.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/task/editTask.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/task/taskProfile.blade.php" />
         <option value="C:/Windows/System32/drivers/etc/hosts" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderNumber.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/invoice.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/order.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php" />
         <option value="$PROJECT_DIR$/public/js/task.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/task/editTask.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/task/task.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/bootstrap/cache/config.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
       </list>
     </option>
   </component>
@@ -289,6 +455,10 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/spatie/string" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-activitylog" />
+      <path value="$PROJECT_DIR$/vendor/patchwork/utf8" />
+      <path value="$PROJECT_DIR$/vendor/anahkiasen/underscore-php" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -302,7 +472,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,91 +482,40 @@
             <path>
               <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
               <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
               <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="jobOrders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
+              <item name="lang" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/outerbox_v2/outerbox" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ftp_v2\ftp_site" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ftp_site\resources\views\customer" />
       <recent name="D:\ftp_site\resources\views\pages\product" />
       <recent name="D:\ftp_site\resources\views\pages\products" />
       <recent name="D:\ftp_site\resources\views\layouts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ftp_v2\ftp_site" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -470,21 +588,8 @@
       <workItem from="1573610505775" duration="3630000" />
       <workItem from="1573622203052" duration="13815000" />
       <workItem from="1573682574619" duration="2872000" />
-      <workItem from="1573686716311" duration="596000" />
-    </task>
-    <task id="LOCAL-00091" summary="task module&#10;- create task modal form">
-      <created>1573226308306</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1573226308306</updated>
-    </task>
-    <task id="LOCAL-00092" summary="task module&#10;- create task modal form">
-      <created>1573231590483</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1573231590483</updated>
+      <workItem from="1573686716311" duration="2363000" />
+      <workItem from="1573708860773" duration="7390000" />
     </task>
     <task id="LOCAL-00093" summary="task module&#10;- create task modal form">
       <created>1573232024780</created>
@@ -815,17 +920,30 @@
       <option name="project" value="LOCAL" />
       <updated>1573642204057</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="task module">
+      <created>1573687322940</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1573687322941</updated>
+    </task>
+    <task id="LOCAL-00141" summary="task module">
+      <created>1573688783688</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1573688783688</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372941000" />
+    <option name="totallyTimeSpent" value="382098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.16442953" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.18791947" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.020134227" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -850,6 +968,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="login" />
@@ -871,188 +992,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="task module" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_17_054923_create_permission_tables.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_20_103534_create_products_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_021358_create_tasks_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_021332_create_job_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/admin lte/AdminLTE/pages/forms/advanced.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="725" column="14" lean-forward="true" selection-start-line="725" selection-start-column="14" selection-end-line="740" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_181916_change_pick_up_time_attribute_to_varchar_from_job_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/users.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="166" selection-end-column="28" />
-          <folding>
-            <element signature="e#6676#8808#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_07_183847_change_deadline_time_attributes_to_varchar_from_tasks_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_08_003652_add_start_time_and_end_time_to_tasks_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="62" selection-start-line="16" selection-start-column="11" selection-end-line="17" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_08_151402_add_nullable_attribute_to_start_time_and_end_time_from_task_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/admin lte/AdminLTE/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="524" column="6" selection-start-line="524" selection-start-column="6" selection-end-line="587" selection-end-column="20" />
-          <folding>
-            <element signature="n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/robots.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_09_133548_add_amount_and_dp_column_to_job_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_09_134001_add_soft_deletes_to_job_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/product/addProduct.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="41" column="114" selection-start-line="41" selection-start-column="102" selection-end-line="41" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4573">
-          <caret line="269" column="23" selection-start-line="269" selection-start-column="23" selection-end-line="269" selection-end-column="23" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_10_072041_add_soft_delete_to_task_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_10_071836_add_soft_delete_to_users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1108,13 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-658">
-          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/product/products.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1133,13 +1065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="35" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="33" selection-start-line="46" selection-start-column="28" selection-end-line="60" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1192,59 +1117,227 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/task/editTask.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="43" column="80" lean-forward="true" selection-start-line="43" selection-start-column="80" selection-end-line="43" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="84" column="8" lean-forward="true" selection-start-line="84" selection-start-column="8" selection-end-line="90" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="85" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="1139">
           <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-            <marker date="1573687202284" expanded="true" signature="1313:2399" ph="..." />
-          </folding>
+        <state relative-caret-position="460">
+          <caret line="209" column="32" selection-start-line="209" selection-start-column="32" selection-end-line="217" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/task/editTask.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="272">
+          <caret line="36" column="93" selection-start-line="36" selection-start-column="93" selection-end-line="36" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/task/task.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="692">
+          <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/customer/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrdersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PermissionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/cache/packages.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/cache/services.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/cache/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="52" column="55" lean-forward="true" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="230" column="62" selection-start-line="230" selection-start-column="62" selection-end-line="230" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95202">
+          <caret line="679" column="17" selection-start-line="679" selection-start-column="17" selection-end-line="679" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_14_070232_create_activity_log_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_14_070326_create_activity_log_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/laravel-logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="76" column="79" lean-forward="true" selection-start-line="76" selection-start-column="79" selection-end-line="76" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/activitylog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/excel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2589" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/datatables/editor.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/datatables/options.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/datatables/print.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/datatables/script.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RolesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <marker date="1573715807787" expanded="true" signature="1814:2900" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
