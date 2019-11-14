@@ -41,7 +41,7 @@
         <div class="box-body">
             <div align="center">
                 <a href="{{route('job.order.print',["jobOrderId" => $referenceNumber])}}" target="_blank"> <button class="btn btn-default print"><i class="fa fa-print"></i> Print</button></a>
-                <button class="btn btn-info"><i class="fa fa-tasks"></i> Create Task</button>
+                <a href="{{route('job.order.profile',["jobOrderId" => $referenceNumber])}}"> <button class="btn btn-info"><i class="fa fa-eye"></i> View</button></a>
             </div>
         </div>
     </div>

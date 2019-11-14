@@ -54,6 +54,7 @@
     </center>
     <br/>
     <div style="border-top: 2px dotted;border-color: #1c2529;">
+        <br/>
         File2PRINT<br/>
         <span style="font-size: 10px;">Vandam Mart Stall #15, Bulaon, City Of San Fernando, Pampanga</span>
         <br/>
