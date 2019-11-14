@@ -296,6 +296,19 @@
                     </a>
                 </li>
                 @endhasanyrole
+                @hasanyrole('super admin|admin')
+                <li class="{{(Request::segment(1) == 'activity') ? 'active ' : ' '}}treeview">
+                    <a href="#">
+                        <i class="fa fa-history"></i><span>Activity</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                        <ul class="treeview-menu">
+                            <li{{(Request::segment(2) == 'my-task') ? ' class=active' : ''}}><a href="{{route('task.mine')}}">View Activity</a></li>
+                        </ul>
+                    </a>
+                </li>
+                @endhasanyrole
             </ul>
             <!-- /.sidebar-menu -->
         </section>
