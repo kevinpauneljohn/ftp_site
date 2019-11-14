@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="added activity logs trait">
+    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/jobOrders/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/jobOrders/invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,22 +68,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="80" column="44" lean-forward="true" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="44" />
+            <state relative-caret-position="345">
+              <caret line="88" column="99" selection-start-line="88" selection-start-column="99" selection-end-line="88" selection-end-column="99" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/invoice.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="50" column="72" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="72" />
+            <state relative-caret-position="1717">
+              <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#u#0;n#center#0;n#div#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#u#0;n#center#0;n#div#0;n#div#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -217,9 +218,9 @@
         <option value="$PROJECT_DIR$/app/JobOrder.php" />
         <option value="$PROJECT_DIR$/app/category.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/invoice.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -507,21 +508,7 @@
       <workItem from="1573682574619" duration="2872000" />
       <workItem from="1573686716311" duration="2363000" />
       <workItem from="1573708860773" duration="17617000" />
-      <workItem from="1573733554129" duration="2738000" />
-    </task>
-    <task id="LOCAL-00098" summary="job orders module">
-      <created>1573306910250</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1573306910250</updated>
-    </task>
-    <task id="LOCAL-00099" summary="job orders module">
-      <created>1573314784860</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1573314784860</updated>
+      <workItem from="1573733554129" duration="3675000" />
     </task>
     <task id="LOCAL-00100" summary="job orders module">
       <created>1573318157887</created>
@@ -852,11 +839,25 @@
       <option name="project" value="LOCAL" />
       <updated>1573726328263</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="added activity logs trait">
+      <created>1573771268654</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1573771268655</updated>
+    </task>
+    <task id="LOCAL-00149" summary="added activity logs trait">
+      <created>1573771584819</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1573771584819</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395063000" />
+    <option name="totallyTimeSpent" value="396000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1216,13 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="80" column="44" lean-forward="true" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -1232,11 +1226,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/invoice.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="50" column="72" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="72" />
+        <state relative-caret-position="1717">
+          <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#u#0;n#center#0;n#div#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#u#0;n#center#0;n#div#0;n#div#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="88" column="99" selection-start-line="88" selection-start-column="99" selection-end-line="88" selection-end-column="99" />
         </state>
       </provider>
     </entry>
