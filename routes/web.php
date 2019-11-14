@@ -101,5 +101,8 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/task-edit-save','TaskController@editSaveTask')->name('task.edit.save')->middleware(['auth']);
 
 Route::get('/test',function (){
-    return \Spatie\Activitylog\Models\Activity::all();
+    $lastActivity = \Spatie\Activitylog\Models\Activity::all()->last(); //returns the last logged activity
+
+    $lastActivity->subject;
+    return $lastActivity->subject;
 });
