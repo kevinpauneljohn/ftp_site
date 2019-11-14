@@ -62,7 +62,7 @@ class TaskController extends Controller
         return Datatables::of($tasks)
             ->addColumn('action', function ($task) {
                 $action = '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>';
-                $action .= ' <a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+                $action .= ' <a href="'.route("task.page.edit",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
                 $action .= (auth()->user()->hasRole('super admin')) ? ' <a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Trash</a>' : '';
                 return  $action;
             })
@@ -243,19 +243,32 @@ class TaskController extends Controller
         $statusOperation = explode('-',$request->value);
 
         $status = task::find($statusOperation[1]);
+
+        #initialize the variable
+        $action = "";
         if($statusOperation[0] == 'start')
         {
             $status->status = 'on-going';
             $status->start_time = Carbon::now();
+            $action = "started the timer";
         }elseif ($statusOperation[0] == 'end'){
             $status->status = 'for-approval';
             $status->end_time = Carbon::now();
+            $action = "finishes the task and requiring approval";
         }elseif ($statusOperation[0] == 'completed'){
             $status->status = 'completed';
+            $action = 'mark completed the task';
         }
 
         if($status->save())
         {
+            #save the activity to activity_logs table
+            activity()
+                ->causedBy(auth()->user()->id)
+                ->performedOn($status)
+                ->withProperties(['status' => $statusOperation[0]])
+                ->log($action);
+
             if($statusOperation[0] == 'completed')
             {
                 $this->checkAllTask($status->job_order_id,"for-pickup");
