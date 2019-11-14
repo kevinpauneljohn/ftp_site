@@ -98,6 +98,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/task/edit-page/{taskId}','TaskController@editTaskPage')->name('task.page.edit')->middleware(['auth']);
     Route::get('/job-order/print/{jobOrderId}','JobOrderController@print')->name('job.order.print')->middleware(['auth']);
 
+    Route::post('/task-edit-save','TaskController@editSaveTask')->name('task.edit.save')->middleware(['auth']);
 
 Route::get('/test',function (){
     //    $countTaskCompleted = task::where([

@@ -27,9 +27,13 @@
 @section('main_content')
     <div class="box">
         <div class="box-body">
-            <form role="form" method="post" action="{{route('job.orders.create')}}">
+            <form role="form" method="post" action="{{route('task.edit.save')}}">
+                <input type="hidden" name="taskId" value="{{$task->id}}">
                 @if(session('success') == true)
                     <div class="alert alert-success">Task Successfully Updated</div>
+                @endif
+                @if(session('message') == "no changes occurred")
+                    <div class="alert alert-warning">{{session('message')}}</div>
                 @endif
                 @csrf
                 <div class="row">

@@ -159,6 +159,61 @@ class TaskController extends Controller
     }
 
     /**
+     * Nov. 14, 2019
+     * @author john kevin paunel
+     * Save Edited Task
+     * @param Request $request
+     * @return mixed
+     * */
+    public function editSaveTask(Request $request)
+    {
+
+        $request->validate([
+            'title'             => ['required'],
+            'description'       => ['required'],
+            'deadline_date'     => ['required'],
+            'deadline_time'     => ['required'],
+            'assignTo'          => ['required'],
+        ]);
+
+        /**
+         * check if there is changes
+         * @var $taskExistence
+         * */
+        $taskExistence = task::where([
+            ['id','=',$request->taskId],
+            ['title','=',$request->title],
+            ['description','=',$request->description],
+            ['deadline_date','=',$request->deadline_date],
+            ['deadline_time','=',$request->deadline_time],
+            ['assigned_to','=',$request->assignTo],
+        ])->count();
+
+        /**
+         * check if status is not on-going, for-approval, and completed
+         * @var $status
+         * */
+        $status = task::find($request->taskId)->status;
+        if($taskExistence !== 1 && $status == "pending")
+        {
+            $task = task::find($request->taskId);
+            $task->title = $request->title;
+            $task->description = $request->description;
+            $task->deadline_date = $request->deadline_date;
+            $task->deadline_time = $request->deadline_time;
+            $task->assigned_to = $request->assignTo;
+
+            if($task->save())
+            {
+                return back()->with(["success" => true]);
+            }
+        }else{
+            return back()->with(["message" => "no changes occurred"]);
+        }
+
+    }
+
+    /**
      * Nov. 08, 2019
      * @author john kevin paunel
      * url: /task/profile/{taskId}
