@@ -101,9 +101,5 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/task-edit-save','TaskController@editSaveTask')->name('task.edit.save')->middleware(['auth']);
 
 Route::get('/test',function (){
-    //    $countTaskCompleted = task::where([
-    //        ['job_order_id','=',8],
-    //        ['status','=','pending'],
-    //    ])->count();
-    //    return $countTaskCompleted;
+    return \Spatie\Activitylog\Models\Activity::all();
 });
