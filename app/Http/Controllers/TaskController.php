@@ -198,14 +198,6 @@ class TaskController extends Controller
         {
             $task = task::find($request->taskId);
 
-            $param = array(
-                'title' => $task->title,
-                'description' => $task->description,
-                'deadline_date' => $task->deadline_date,
-                'deadline_time' => $task->deadline_time,
-                'assigned_to' => $task->assigned_to
-            );
-
             $task->title = $request->title;
             $task->description = $request->description;
             $task->deadline_date = $request->deadline_date;
@@ -214,12 +206,6 @@ class TaskController extends Controller
 
             if($task->save())
             {
-                activity()
-                    ->causedBy(auth()->user()->id)
-                    ->performedOn($task)
-                    ->withProperties($param)
-                    ->log('updated the task');
-
                 return back()->with(["success" => true]);
             }
         }else{
