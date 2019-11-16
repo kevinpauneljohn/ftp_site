@@ -28,16 +28,16 @@
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
+                                <b>Job Order Number</b> <a class="pull-right" href="{{route('job.order.profile',['jobOrderId' => $profile->id])}}">{{str_pad($profile->id, 5, '0', STR_PAD_LEFT)}}</a>
+                            </li>
+                            <li class="list-group-item">
                                 <b>Customer</b> <a class="pull-right">{{ucfirst($profile->customer_name)}}</a>
                             </li>
                             <li class="list-group-item">
                                 <b>Contact No.</b> <a class="pull-right">{{$profile->customer_contact_number}}</a>
                             </li>
                             <li class="list-group-item">
-                                @php
-                                    $date=date_create($profile->pickup_date);
-                                @endphp
-                                <b>Pick-up Date</b> <a class="pull-right">{{date_format($date,"d/M/Y")}} {{$profile->pickup_time}}</a>
+                                <b>Pick-up Date</b> <a class="pull-right">{{date_format(date_create($profile->pickup_date),"d/M/Y")}} {{$profile->pickup_time}}</a>
                             </li>
                             <li class="list-group-item">
                                 <b>Total Amount</b> <a class="pull-right">&#8369; {{number_format($profile->amount,2)}}</a>

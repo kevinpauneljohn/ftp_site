@@ -36,7 +36,7 @@
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
-                                <b>Job Order Number</b> <a class="pull-right">{{str_pad($profile->id, 5, '0', STR_PAD_LEFT)}}</a>
+                                <b>Job Order Number</b> <a class="pull-right" href="{{route('job.order.profile',['jobOrderId' => $profile->id])}}">{{str_pad($profile->id, 5, '0', STR_PAD_LEFT)}}</a>
                             </li>
                             <li class="list-group-item">
                                 <b>Customer</b> <a class="pull-right">{{ucfirst($profile->customer_name)}}</a>
