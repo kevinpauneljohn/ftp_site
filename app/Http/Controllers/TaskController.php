@@ -63,7 +63,7 @@ class TaskController extends Controller
             ->addColumn('action', function ($task) {
                 $action = '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>';
                 $action .= ' <a href="'.route("task.page.edit",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
-                $action .= (auth()->user()->hasRole('super admin')) ? ' <a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Trash</a>' : '';
+                $action .= (auth()->user()->hasRole('super admin')) ? ' <a class="btn btn-xs btn-danger delete-task-btn" data-toggle="modal" data-target="#delete-task" id="task-'.$task->id.'"><i class="fa fa-trash"></i> Trash</a>' : '';
                 return  $action;
             })
             ->editColumn('job_order_id', function($task) {
@@ -124,7 +124,7 @@ class TaskController extends Controller
             ->addColumn('action', function ($task) {
                 return '<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>
 <a href="'.route("task.page.edit",["taskId" => $task->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
-<a href="'.route("task.profile",["taskId" => $task->id]).'" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>';
+<a class="btn btn-xs btn-danger delete-task-btn" data-toggle="modal" data-target="#delete-task" id="task-'.$task->id.'"><i class="fa fa-trash"></i> Delete</a>';
             })
             ->editColumn('job_order_id', function($task) {
 
@@ -404,11 +404,44 @@ class TaskController extends Controller
         }
     }
 
+    /**
+     * Edit task page
+     * @param int $taskId
+     * @return mixed
+     * */
     public function editTaskPage($taskId)
     {
         return view('pages.task.editTask')->with([
             'task'      => task::find($taskId),
             'users'     => User::all()
         ]);
+    }
+
+    /**
+     * Nov. 17, 2011
+     * @author john kevin paunel
+     * fetch the task data
+     * @param Request $request
+     * @return object
+     * */
+    public function taskData(Request $request)
+    {
+        $taskId = explode('task-',$request->id);
+        $task = task::find($taskId[1]);
+        return $task;
+    }
+
+    /**
+     * Nov. 01, 2019
+     * @author john kevin paunel
+     * soft delete task
+     * @param Request $request
+     * @return  Response
+     * */
+    public function deleteTask(Request $request)
+    {
+        $task = task::find($request->taskId);
+        $task->delete();
+        return response()->json(['success' => true]);
     }
 }

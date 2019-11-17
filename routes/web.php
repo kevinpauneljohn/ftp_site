@@ -99,6 +99,8 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::get('/job-order/print/{jobOrderId}','JobOrderController@print')->name('job.order.print')->middleware(['auth']);
 
     Route::post('/task-edit-save','TaskController@editSaveTask')->name('task.edit.save')->middleware(['auth']);
+    Route::post('/task-get-data','TaskController@taskData')->name('task.data.display')->middleware(['auth','role:super admin']);
+    Route::post('/task-delete-data','TaskController@deleteTask')->name('task.data.delete')->middleware(['auth','role:super admin']);
 
 Route::get('/test',function (){
     $lastActivity = \Spatie\Activitylog\Models\Activity::all()->last(); //returns the last logged activity

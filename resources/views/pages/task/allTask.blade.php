@@ -114,6 +114,33 @@
             </table>
         </div>
     </div>
+
+    {{--delete task--}}
+    <div class="modal modal-danger fade" id="delete-task">
+        <div class="modal-dialog">
+            <form class="task-form">
+                @csrf
+                <input type="hidden" name="taskId" id="taskId"/>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span></button>
+
+                    </div>
+                    <div class="modal-body">
+                        Delete task: <span class="task-name"></span>?
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-outline pull-left" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-outline">Delete</button>
+                    </div>
+                </div>
+            </form>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    {{--end delete task--}}
 @endsection
 
 @section('extra_script')
@@ -135,6 +162,49 @@
         <script src="{{asset('/js/task.js')}}"></script>
 
     <script>
+        $(document).on('click','.delete-task-btn',function (a) {
+            a.preventDefault();
+            let value  = this.id;
+
+            $.ajax({
+                'url'   : '{{route('task.data.display')}}',
+                'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                'type'  : 'POST',
+                'data'  : {
+                    'id' : value
+                },
+                'cache' : false,
+                success: function (result) {
+                    console.log(result);
+                    $('.task-name').html('<strong>'+result.title+'</strong>')
+                    $('#taskId').val(result.id);
+                },error: function (result) {
+                    console.log(result.status);
+                }
+            });
+        });
+
+        $(document).on('submit','.task-form',function (form) {
+            form.preventDefault();
+            let value  = $('.task-form').serialize();
+
+            $.ajax({
+                'url'   : '{{route('task.data.delete')}}',
+                'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                'type'  : 'POST',
+                'data'  : value,
+                'cache' : false,
+                success: function (result) {
+                    console.log(result);
+                    if(result.success == true)
+                    {
+                        location.reload();
+                    }
+                },error: function (result) {
+                    console.log(result.status);
+                }
+            });
+        });
         $(function () {
             $('#job-order-list').DataTable()
             $('.role-assign').select2()
