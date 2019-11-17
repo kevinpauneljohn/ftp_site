@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist|sal
     Route::post('/roles-create','RolesController@rolesForm')->name('roles');
     Route::post('/permission','PermissionController@permission')->name('permissions');
 
-    Route::post('/create-job-order','JobOrderController@createJobOrder')->name('job.orders.create');
+    Route::post('/create-job-order','JobOrderController@createJobO/job-order/deleterder')->name('job.orders.create');
 
     Route::get('/users','UserController@users')->name('users');
     Route::post('/user-create','UserController@userForm')->name('users.create');
@@ -91,7 +91,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
 
     Route::get('/job-order/edit/{jobOrderId}','JobOrderController@editJobOrderPage')->name('job.orders.edit')->middleware(['auth']);
 
-    Route::post('/job-order/delete','JobOrderController@deleteJobOrder')->name('job.orders.delete')->middleware(['auth','role:super admin|admin']);
+    Route::post('/job-order/delete','JobOrderController@deleteJobOrder')->name('job.orders.delete')->middleware(['auth','role:super admin']);
     Route::post('/job-order-data','JobOrderController@displayJobOrderData')->name('job.orders.display.data')->middleware(['auth','role:super admin|admin']);
     Route::get('/job-order/tasks/{jobOrderId}','JobOrderController@jobOrderProfileTasks')->name('job.orders.tasks')->middleware(['auth']);
     Route::post('/job-order/status/complete','JobOrderController@markComplete')->name('job.order.status.complete')->middleware(['auth']);

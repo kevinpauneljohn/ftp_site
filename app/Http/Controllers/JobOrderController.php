@@ -113,7 +113,7 @@ class JobOrderController extends Controller
             ->addColumn('action', function ($jobOrder) {
                 $action = '<a href="'.route("job.order.profile",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>';
                 $action .= '<a href="'.route("job.orders.edit",["jobOrderId" => $jobOrder->id]).'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
-                if(auth()->user()->hasAnyRole(['super admin','admin']))
+                if(auth()->user()->hasAnyRole(['super admin']))
                 {
                     $action .= '<a href="#" class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-'.$jobOrder->id.'"><i class="fa fa-trash"></i> Delete</a>';
                 }
