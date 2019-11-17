@@ -16,7 +16,7 @@ $(document).on('click','.delete-job',function () {
     });
 });
 
-$(document).on('click','.delete-job-order-form',function (form) {
+$(document).on('submit','.delete-job-order-form',function (form) {
     form.preventDefault();
     let data = $('.delete-job-order-form').serialize();
 
