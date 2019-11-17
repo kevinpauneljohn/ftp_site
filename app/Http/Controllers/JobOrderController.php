@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 use Spatie\Permission\Traits\HasRoles;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Carbon;
+use Spatie\Activitylog\Models\Activity;
 
 class JobOrderController extends Controller
 {
@@ -303,11 +304,30 @@ class JobOrderController extends Controller
      * */
     public function jobOrderProfile($jobOrderId)
     {
+        $jobOrders = JobOrder::find($jobOrderId)->tasks;
+
+        if($jobOrders->count() !== 0)
+        {
+            $tasks = array();
+
+            foreach ($jobOrders as $jobOrder){
+                $tasks[$jobOrder->id] = $jobOrder->id;
+            }
+
+            $activities = Activity::where([
+                ['subject_type','=','App\task'],
+                ['subject_id','=',$tasks],
+            ])->get();
+        }else{
+            $activities = 0;
+        }
+
 
         return view('pages.jobOrders.jobOrderProfile')->with([
             'users'             => User::all(),
             'profile'           => JobOrder::find($jobOrderId),
-            'completeButton'    => $this->checkAllTasksStatus($jobOrderId)
+            'completeButton'    => $this->checkAllTasksStatus($jobOrderId),
+            'activities'        => $activities,
         ]);
     }
 

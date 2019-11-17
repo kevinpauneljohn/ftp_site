@@ -106,40 +106,106 @@
             </div>
             <!-- /.col -->
             <div class="col-md-9">
-                <div class="box">
-                    <div class="box-body">
-                        <form method="post" action="{{route('job.order.status.complete')}}">
-                            @csrf
-                            <input type="hidden" name="jobProfileId" value="{{$profile->id}}">
-                        @if($profile->status !== 'completed')
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-task">Create task</button>
-                        @endif
-                        @if($profile->status == 'for-pickup')
-                            <button type="submit" class="btn btn-success">Completed</button>
-                        @endif
-                            </form>
-                    </div>
-                </div>
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#task" data-toggle="tab">Task</a></li>
+                        <li><a href="#activity" data-toggle="tab">Activity</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="active tab-pane" id="task">
 
-                <div class="box">
-                    <div class="box-body">
-                        <table class="table table-bordered table-hover" id="job-orders-table">
-                            <thead>
-                            <tr>
-                                <th>Date Created</th>
-                                <th>Job Order</th>
-                                <th>Title</th>
-                                <th>Deadline</th>
-                                <th>Assigned To</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                        </table>
+                            <form method="post" action="{{route('job.order.status.complete')}}">
+                                @csrf
+                                <input type="hidden" name="jobProfileId" value="{{$profile->id}}">
+                                @if($profile->status !== 'completed')
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-task">Create task</button>
+                                @endif
+                                @if($profile->status == 'for-pickup')
+                                    <button type="submit" class="btn btn-success">Completed</button>
+                                @endif
+                            </form>
+
+                            <div class="box">
+                                <div class="box-body">
+                                    <table class="table table-bordered table-hover" id="job-orders-table">
+                                        <thead>
+                                        <tr>
+                                            <th>Date Created</th>
+                                            <th>Job Order</th>
+                                            <th>Title</th>
+                                            <th>Deadline</th>
+                                            <th>Assigned To</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="activity">
+                            <!-- The timeline -->
+                            <ul class="timeline timeline-inverse">
+                                <!-- timeline time label -->
+                                @if($activities !== 0)
+                                    @foreach($activities as $activity)
+                                        <li class="time-label">
+                                        <span class="
+                                            @if($activity->description == "created" )
+                                                bg-blue
+                                                @elseif($activity->description == "updated")
+                                                bg-aqua
+                                                @elseif($activity->description == "deleted")
+                                                bg-red
+                                                @elseif($activity->description == "started the timer")
+                                                bg-yellow
+                                                @elseif($activity->description == "finishes the task and requiring approval")
+                                                bg-orange
+                                                @elseif($activity->description == "mark completed the task")
+                                                bg-green
+                                            @endif">
+                                          {{date_format(date_create($activity->created_at),"d M. Y")}}
+
+                                        </span>
+                                        </li>
+                                        <!-- timeline item -->
+                                        <li>
+                                            <i class="fa fa-envelope bg-blue"></i>
+
+                                            <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i>
+                                                {{$diff = Carbon\Carbon::parse($activity->created_at)->diffForHumans()}}
+{{--                                                {{ $diff = Carbon\Carbon::parse($activity->created_at)->diffForHumans(Carbon\Carbon::now()) }}--}}
+                                            </span>
+
+                                                <h3 class="timeline-header">
+                                                    {{\App\User::find($activity->causer_id)->username}}
+                                                    <a href="#">{{$activity->description}}</a>
+                                                    @if($activity->description == "created" || $activity->description == "updated" || $activity->description == "deleted")
+                                                        the task
+                                                        <a href="#">{{\App\task::find($activity->subject_id)->title}}</a>
+                                                    @endif
+
+                                                </h3>
+                                            </div>
+                                        </li>
+                                        <!-- END timeline item -->
+                                @endforeach
+                                    <!-- /.timeline-label -->
+                                        <li>
+                                            <i class="fa fa-clock-o bg-gray"></i>
+                                        </li>
+                                @endif
+                            </ul>
+                        </div>
+                        <!-- /.tab-pane -->
                     </div>
+                    <!-- /.tab-content -->
                 </div>
+                <!-- /.nav-tabs-custom -->
             </div>
-            <!-- /.col -->
         </div>
         <!-- /.row -->
 
@@ -169,7 +235,7 @@
                             <label for="description">Description</label><span class="required">*</span>
                             <div class="box-body pad">
 
-                            <textarea name="description" id="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                <textarea name="description" id="description" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
                             </div>
                         </div>

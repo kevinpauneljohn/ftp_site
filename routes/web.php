@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin|graphic artist|sal
     Route::post('/roles-create','RolesController@rolesForm')->name('roles');
     Route::post('/permission','PermissionController@permission')->name('permissions');
 
-    Route::post('/create-job-order','JobOrderController@createJobO/job-order/deleterder')->name('job.orders.create');
+    Route::post('/create-job-order','JobOrderController@createJobOrder')->name('job.orders.create');
 
     Route::get('/users','UserController@users')->name('users');
     Route::post('/user-create','UserController@userForm')->name('users.create');
