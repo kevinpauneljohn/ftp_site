@@ -15,7 +15,9 @@
 //    return redirect(route('login'));
 //});
 
+use App\JobOrder;
 use App\task;
+use Spatie\Activitylog\Models\Activity;
 
 Route::get('admin', function () {
     return view('admin_template');
@@ -103,8 +105,17 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/task-delete-data','TaskController@deleteTask')->name('task.data.delete')->middleware(['auth','role:super admin']);
 
 Route::get('/test',function (){
-    $lastActivity = \Spatie\Activitylog\Models\Activity::all()->last(); //returns the last logged activity
+    $jobOrders = JobOrder::find(49)->tasks;
+        $tasks = array();
 
-    $lastActivity->subject;
-    return $lastActivity->subject;
+        foreach ($jobOrders as $jobOrder){
+            $tasks[$jobOrder->id] = $jobOrder->id;
+        }
+
+        $activities = Activity::where([
+            ['subject_type','=','App\task'],
+            ['subject_id','=',$tasks],
+        ])->get();
+
+        return $activities;
 });

@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="{{asset('/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
     <!-- Bootstrap time Picker -->
     <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min.css')}}">
+    <style>
+        .causer{
+            color:green;
+        }
+    </style>
 @endsection
 @section('page_header')
     Job Order Profile
@@ -181,7 +186,7 @@
                                             </span>
 
                                                 <h3 class="timeline-header">
-                                                    {{\App\User::find($activity->causer_id)->username}}
+                                                    <strong class="causer">{{\App\User::find($activity->causer_id)->username}}</strong>
                                                     <a href="#">{{$activity->description}}</a>
                                                     @if($activity->description == "created" || $activity->description == "updated" || $activity->description == "deleted")
                                                         the task
@@ -189,6 +194,19 @@
                                                     @endif
 
                                                 </h3>
+                                                <div class="timeline-body">
+                                                    @if($activity->description == "created" || $activity->description == "updated" || $activity->description == "deleted")
+                                                        <table class="table table-bordered">
+                                                            @foreach($activity->properties as $key => $value)
+                                                            <tr><td><strong>Title</strong></td><td>{{$value['title']}}</td></tr>
+                                                            <tr><td><strong>description</strong></td><td>{!! $value['description'] !!}</td></tr>
+                                                            <tr><td><strong>deadline</strong></td><td>{{$value['deadline_date']}}</td></tr>
+                                                            <tr><td><strong>time</strong></td><td>{{$value['deadline_time']}}</td></tr>
+                                                            <tr><td><strong>Assigned To</strong></td><td>{{\App\User::find($value['assigned_to'])->username}}</td></tr>
+                                                            @endforeach
+                                                        </table>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </li>
                                         <!-- END timeline item -->
