@@ -177,7 +177,19 @@
                                         </li>
                                         <!-- timeline item -->
                                         <li>
-                                            <i class="fa fa-envelope bg-blue"></i>
+                                            @if($activity->description == "created")
+                                                <i class="fa fa-plus-circle bg-blue"></i>
+                                                @elseif($activity->description == "updated")
+                                                <i class="fa fa-edit bg-aqua"></i>
+                                            @elseif($activity->description == "deleted")
+                                                <i class="fa fa-trash bg-red"></i>
+                                            @elseif($activity->description == "started the timer")
+                                                <i class="fa fa-clock-o bg-orange-active"></i>
+                                            @elseif($activity->description == "finishes the task and requiring approval")
+                                                <i class="fa fa-thumbs-o-up bg-yellow-active"></i>
+                                            @elseif($activity->description == "mark completed the task")
+                                                <i class="fa fa-check-circle bg-green-active"></i>
+                                                @endif
 
                                             <div class="timeline-item">
                                             <span class="time"><i class="fa fa-clock-o"></i>

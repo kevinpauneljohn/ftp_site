@@ -10,9 +10,9 @@ class task extends Model
 {
     use SoftDeletes, LogsActivity;
 
-    protected $fillable = ['job_order_id','created_by','title', 'description','deadline_date','deadline_time','assigned_to'];
+    protected $fillable = ['job_order_id','created_by','title', 'description','deadline_date','deadline_time','assigned_to','status'];
 
-    protected static $logAttributes = ['job_order_id','created_by','title', 'description','deadline_date','deadline_time','assigned_to'];
+    protected static $logAttributes = ['job_order_id','created_by','title', 'description','deadline_date','deadline_time','assigned_to','status'];
 
     public function users()
     {

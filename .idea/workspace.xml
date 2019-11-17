@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,17 +38,29 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1382353">
+    <splitter split-orientation="horizontal" split-proportion="0.8978692">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="178" column="48" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="120" />
+                <state relative-caret-position="391">
+                  <caret line="182" column="76" selection-start-line="182" selection-start-column="76" selection-end-line="182" selection-end-column="76" />
                   <folding>
                     <element signature="e#5574#11442#0#HTML" />
                     <element signature="e#11477#12498#0#HTML" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/task.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
+                  <folding>
+                    <element signature="e#23#62#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -80,8 +94,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="319" column="22" lean-forward="true" selection-start-line="319" selection-start-column="22" selection-end-line="319" selection-end-column="22" />
+                <state relative-caret-position="379">
+                  <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
                   <folding>
                     <element signature="e#40#57#0#PHP" expanded="true" />
                   </folding>
@@ -96,11 +110,21 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/web.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-679">
-                  <caret line="40" column="100" lean-forward="true" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
+                <state relative-caret-position="511">
+                  <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
                   <folding>
                     <element signature="e#7#389#0#PHP" expanded="true" />
+                    <element signature="e#469#486#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://D:/admin lte/AdminLTE/pages/examples/profile.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-143">
+                  <caret line="594" column="57" lean-forward="true" selection-start-line="594" selection-start-column="57" selection-end-line="594" selection-end-column="57" />
                 </state>
               </provider>
             </entry>
@@ -145,8 +169,8 @@
       <find>delete-job-order</find>
       <find>jobOrderProfile</find>
       <find>nav-tabs-custom</find>
-      <find>createJobO</find>
       <find>addJo</find>
+      <find>createJobO</find>
       <find>profile</find>
     </findStrings>
   </component>
@@ -187,7 +211,6 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/task/editTask.blade.php" />
-        <option value="$PROJECT_DIR$/app/task.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Product.php" />
         <option value="$PROJECT_DIR$/app/JobOrder.php" />
@@ -204,8 +227,9 @@
         <option value="$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/task/task.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/task.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php" />
       </list>
     </option>
@@ -355,13 +379,6 @@
             <path>
               <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
               <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -500,21 +517,7 @@
       <workItem from="1573784236199" duration="3621000" />
       <workItem from="1573848530030" duration="3862000" />
       <workItem from="1573867887190" duration="2118000" />
-      <workItem from="1573955867020" duration="11435000" />
-    </task>
-    <task id="LOCAL-00110" summary="set status display all task page">
-      <created>1573407146687</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1573407146688</updated>
-    </task>
-    <task id="LOCAL-00111" summary="set status display all task page">
-      <created>1573407221042</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1573407221042</updated>
+      <workItem from="1573955867020" duration="14334000" />
     </task>
     <task id="LOCAL-00112" summary="set status display all task page">
       <created>1573415651247</created>
@@ -845,17 +848,31 @@
       <option name="project" value="LOCAL" />
       <updated>1573973609437</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="added themes to public folder">
+      <created>1573974015985</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1573974015985</updated>
+    </task>
+    <task id="LOCAL-00161" summary="added themes to public folder">
+      <created>1573976086158</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1573976086158</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424378000" />
+    <option name="totallyTimeSpent" value="427277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.086577184" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.16845638" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.020134227" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -959,16 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="14" selection-end-column="137" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1179,16 +1186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/admin lte/AdminLTE/pages/examples/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="587" column="10" lean-forward="true" selection-start-line="587" selection-start-column="10" selection-end-line="862" selection-end-column="36" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/task/allTask.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -1213,33 +1210,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/admin lte/AdminLTE/pages/examples/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-143">
+          <caret line="594" column="57" lean-forward="true" selection-start-line="594" selection-start-column="57" selection-end-line="594" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+            <element signature="e#469#486#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/JobOrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="319" column="22" lean-forward="true" selection-start-line="319" selection-start-column="22" selection-end-line="319" selection-end-column="22" />
+        <state relative-caret-position="379">
+          <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/task.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="178" column="48" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="120" />
+        <state relative-caret-position="391">
+          <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
           <folding>
-            <element signature="e#5574#11442#0#HTML" />
-            <element signature="e#11477#12498#0#HTML" />
+            <element signature="e#23#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-679">
-          <caret line="40" column="100" lean-forward="true" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
+        <state relative-caret-position="391">
+          <caret line="182" column="76" selection-start-line="182" selection-start-column="76" selection-end-line="182" selection-end-column="76" />
           <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
+            <element signature="e#5574#11442#0#HTML" />
+            <element signature="e#11477#12498#0#HTML" />
           </folding>
         </state>
       </provider>
