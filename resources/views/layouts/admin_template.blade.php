@@ -318,6 +318,36 @@ $pendingTask = $taskCount->get();
 <script src="{{asset('/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/bower_components/admin-lte/dist/js/adminlte.min.js') }}"></script>
+<script src="{{asset('/js/notify.min.js')}}"></script>
+<script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+<script>
+    var pusher = new Pusher('9d11fb3b771888dfb1b0', {
+        cluster: 'ap1',
+        forceTLS: true
+    });
+
+    var channel = pusher.subscribe('task-channel');
+    channel.bind('task-created', function(data) {
+        console.log();
+        getUsername(data.tasks.assigned_to);
+    });
+
+    function getUsername(id)
+    {
+        $.ajax({
+            'url'   : '{{route('user.data')}}',
+            'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            'type'  : 'POST',
+            'data'  : {'id' : id},
+            'cache' : false,
+            success: function (result) {
+                $.notify("A new Task Created was assigned to: "+result, "success");
+            },error: function (result) {
+                console.log(result.status);
+            }
+        });
+    }
+</script>
 @yield('extra_script')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

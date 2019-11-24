@@ -104,6 +104,7 @@ Route::group(['middleware' => ['auth','role:super admin|admin']], function (){
     Route::post('/task-edit-save','TaskController@editSaveTask')->name('task.edit.save')->middleware(['auth']);
     Route::post('/task-get-data','TaskController@taskData')->name('task.data.display')->middleware(['auth','role:super admin']);
     Route::post('/task-delete-data','TaskController@deleteTask')->name('task.data.delete')->middleware(['auth','role:super admin']);
+    Route::post('/user','UserController@userDetails')->name('user.data')->middleware(['auth']);
 
 Route::get('/test',function (){
     $jobOrders = JobOrder::find(49)->tasks;

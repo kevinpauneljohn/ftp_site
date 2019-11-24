@@ -32,11 +32,11 @@ class FormSubmitted implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('my-channel');
+        return new Channel('task-channel');
     }
 
-    public function broadcastAs()
+    /*public function broadcastAs()
     {
-        return "form-submitted";
-    }
+        return "task-created";
+    }*/
 }

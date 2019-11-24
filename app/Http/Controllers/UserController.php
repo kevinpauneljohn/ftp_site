@@ -9,10 +9,10 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['role:super admin']);
-    }
+//    public function __construct()
+//    {
+//        $this->middleware(['role:super admin']);
+//    }
 
     /**
      * Oct. 20, 2019
@@ -65,5 +65,17 @@ class UserController extends Controller
         }
 
         return $result;
+    }
+
+    /**
+     * Nov. 24, 2019
+     * @author john kevin paunel
+     * retrieve user data by ID
+     * @param Request $request
+     * @return object
+     * */
+    public function userDetails(Request $request)
+    {
+        return User::find($request->id)->username;
     }
 }

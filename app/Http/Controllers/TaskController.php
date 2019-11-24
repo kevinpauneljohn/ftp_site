@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TaskEvent;
 use App\JobOrder;
 use App\task;
 use App\User;
@@ -346,6 +347,7 @@ class TaskController extends Controller
 
             if($task->save())
             {
+                event(new TaskEvent($task));
                 $message = ["success" => true];
             }else{
                 $message = ["success" => false];
