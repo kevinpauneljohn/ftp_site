@@ -28,7 +28,6 @@ $pendingTask = $taskCount->orderBy('created_at','desc')->get();
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
     <link rel="stylesheet" href="{{ asset('/bower_components/admin-lte/dist/css/skins/skin-purple.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/design.css') }}">
 
 @yield('extra_stylesheet')
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="">
+    <list default="true" id="fb15b3ed-e2b9-489d-abbe-b4a528f9f9e7" name="Default Changelist" comment="real time notification integrated&#10;https://responsivevoice.org/">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" afterDir="false" />
     </list>
@@ -37,14 +38,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.23310554">
+    <splitter split-orientation="horizontal" split-proportion="0.33998403">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="460">
-                  <caret line="195" column="48" lean-forward="true" selection-start-line="195" selection-start-column="48" selection-end-line="195" selection-end-column="120" />
+                  <caret line="195" column="48" selection-start-line="195" selection-start-column="48" selection-end-line="195" selection-end-column="120" />
                 </state>
               </provider>
             </entry>
@@ -62,7 +63,7 @@
             <entry file="file://$PROJECT_DIR$/resources/views/sender.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="68">
-                  <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+                  <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -71,7 +72,7 @@
             <entry file="file://$PROJECT_DIR$/resources/views/counter.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="493">
-                  <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+                  <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -79,8 +80,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="326">
-                  <caret line="347" column="16" selection-start-line="347" selection-start-column="16" selection-end-line="347" selection-end-column="83" />
+                <state relative-caret-position="-3688">
+                  <caret line="29" column="112" selection-start-line="29" selection-start-column="112" selection-end-line="29" selection-end-column="112" />
                 </state>
               </provider>
             </entry>
@@ -93,7 +94,7 @@
             <entry file="file://$PROJECT_DIR$/routes/web.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="389">
-                  <caret line="113" column="50" lean-forward="true" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
+                  <caret line="113" column="50" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
                   <folding>
                     <element signature="e#7#389#0#PHP" expanded="true" />
                     <element signature="e#469#486#0#PHP" expanded="true" />
@@ -106,7 +107,7 @@
             <entry file="file://$PROJECT_DIR$/app/Events/FormSubmitted.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="267">
-                  <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+                  <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
                   <folding>
                     <element signature="e#30#66#0#PHP" expanded="true" />
                   </folding>
@@ -117,11 +118,25 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Events/TaskEvent.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="556">
-                  <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+                <state relative-caret-position="369">
+                  <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
                   <folding>
                     <element signature="e#30#66#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitattributes">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/composer.lock">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="139" column="32" lean-forward="true" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -130,7 +145,7 @@
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="209">
-                  <caret line="344" column="52" lean-forward="true" selection-start-line="344" selection-start-column="52" selection-end-line="344" selection-end-column="52" />
+                  <caret line="344" column="52" selection-start-line="344" selection-start-column="52" selection-end-line="344" selection-end-column="52" />
                   <folding>
                     <element signature="e#40#65#0#PHP" expanded="true" />
                     <marker date="1574584871412" expanded="true" signature="1840:2958" ph="..." />
@@ -143,7 +158,7 @@
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-328">
-                  <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+                  <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
                   <folding>
                     <element signature="e#40#53#0#PHP" expanded="true" />
                   </folding>
@@ -151,11 +166,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+                <state relative-caret-position="-969">
+                  <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
                 </state>
               </provider>
             </entry>
@@ -255,13 +270,13 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/app/Events/FormSubmitted.php" />
-        <option value="$PROJECT_DIR$/app/Events/TaskEvent.php" />
         <option value="$PROJECT_DIR$/public/js/task.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
         <option value="$PROJECT_DIR$/resources/views/counter.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php" />
+        <option value="$PROJECT_DIR$/app/Events/TaskEvent.php" />
       </list>
     </option>
   </component>
@@ -408,6 +423,12 @@
               <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
               <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -421,6 +442,12 @@
               <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
               <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftp_site" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ftp_site" type="b2602c69:ProjectViewProjectNode" />
@@ -536,21 +563,7 @@
       <workItem from="1574054210577" duration="632000" />
       <workItem from="1574086364098" duration="597000" />
       <workItem from="1574439284970" duration="1808000" />
-      <workItem from="1574570235058" duration="17493000" />
-    </task>
-    <task id="LOCAL-00116" summary="job orders module">
-      <created>1573426623139</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1573426623140</updated>
-    </task>
-    <task id="LOCAL-00117" summary="job orders module">
-      <created>1573429277719</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1573429277719</updated>
+      <workItem from="1574570235058" duration="21208000" />
     </task>
     <task id="LOCAL-00118" summary="job orders module">
       <created>1573429965795</created>
@@ -881,17 +894,31 @@
       <option name="project" value="LOCAL" />
       <updated>1574590465306</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="real time notification integrated">
+      <created>1574590871117</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1574590871117</updated>
+    </task>
+    <task id="LOCAL-00167" summary="real time notification integrated&#10;https://responsivevoice.org/">
+      <created>1574597864116</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1574597864116</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="448507000" />
+    <option name="totallyTimeSpent" value="452222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.11610738" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.3590604" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.020134227" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -939,14 +966,11 @@
     <MESSAGE value="task module" />
     <MESSAGE value="added activity logs trait" />
     <MESSAGE value="added themes to public folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="added themes to public folder" />
+    <MESSAGE value="real time notification integrated" />
+    <MESSAGE value="real time notification integrated&#10;https://responsivevoice.org/" />
+    <option name="LAST_COMMIT_MESSAGE" value="real time notification integrated&#10;https://responsivevoice.org/" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/vendor/datatables/print.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/vendor/datatables/script.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/product/addProduct.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Rules/checkIfTheresChanges.php" />
     <entry file="file://$PROJECT_DIR$/app/Product.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1206,7 +1230,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/pages/jobOrders/jobOrderProfile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
-          <caret line="195" column="48" lean-forward="true" selection-start-line="195" selection-start-column="48" selection-end-line="195" selection-end-column="120" />
+          <caret line="195" column="48" selection-start-line="195" selection-start-column="48" selection-end-line="195" selection-end-column="120" />
         </state>
       </provider>
     </entry>
@@ -1230,14 +1254,14 @@
     <entry file="file://$PROJECT_DIR$/resources/views/sender.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Events/FormSubmitted.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding>
             <element signature="e#30#66#0#PHP" expanded="true" />
           </folding>
@@ -1247,7 +1271,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/counter.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1261,7 +1285,7 @@
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
-          <caret line="113" column="50" lean-forward="true" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
+          <caret line="113" column="50" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
             <element signature="e#469#486#0#PHP" expanded="true" />
@@ -1269,20 +1293,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/TaskEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#30#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="344" column="52" lean-forward="true" selection-start-line="344" selection-start-column="52" selection-end-line="344" selection-end-column="52" />
+          <caret line="344" column="52" selection-start-line="344" selection-start-column="52" selection-end-line="344" selection-end-column="52" />
           <folding>
             <element signature="e#40#65#0#PHP" expanded="true" />
             <marker date="1574584871412" expanded="true" signature="1840:2958" ph="..." />
@@ -1293,7 +1307,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-328">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
@@ -1305,10 +1319,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_template.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="-969">
+          <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Events/TaskEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+          <folding>
+            <element signature="e#30#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="139" column="32" lean-forward="true" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="true" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
