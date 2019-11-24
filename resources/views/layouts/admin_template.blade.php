@@ -78,19 +78,23 @@ $pendingTask = $taskCount->get();
                     <!-- Messages: style can be found in dropdown.less-->
                     <li class="dropdown messages-menu">
                         <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-flag-o"></i>
-                            @if($taskCount->count() > 0)
-                                <span class="label label-danger">{{$taskCount->count()}}</span>
-                            @endif
+                        <a href="#" class="dropdown-toggle task-notif" data-toggle="dropdown">
+                            <span class="notif">
+                                @if($taskCount->count() > 0)
+                                    <i class="fa fa-flag-o"></i>
+                                    <span class="label label-danger">{{$taskCount->count()}}</span>
+                                    @elseif($taskCount->count() == 0)
+                                    <i class="fa fa-flag-o"></i>
+                                @endif
+                            </span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have {{$taskCount->count()}} Pending tasks</li>
+                        <ul class="dropdown-menu task-counter">
+                            <li class="header"><span class="pending-task">You have {{$taskCount->count()}} Pending tasks</span></li>
                             @foreach($pendingTask as $task)
-                                <li>
+                                <li class="task-description">
                                     <!-- /.menu -->
                                     <!-- inner menu: contains the messages -->
-                                    <ul class="menu">
+                                        <ul class="menu">
                                         <li><!-- start message -->
                                             <a href="{{route('task.profile',['taskId' => $task->id])}}">
                                                 <div class="pull-left">
@@ -106,10 +110,10 @@ $pendingTask = $taskCount->get();
                                                 <p>{{$task->title}}</p>
                                             </a>
                                         </li>
-                                        <!-- end message -->
+                                            <!-- end message -->
                                     </ul>
                                 </li>
-                                @endforeach
+                            @endforeach
                             <li class="footer"><a href="{{route('task.mine')}}">View all tasks</a></li>
                         </ul>
                     </li>
@@ -341,7 +345,9 @@ $pendingTask = $taskCount->get();
             'data'  : {'id' : id},
             'cache' : false,
             success: function (result) {
-                $.notify("A new Task Created was assigned to: "+result, "success");
+                //$.notify("A new Task Created was assigned to: "+result, "success");
+                $('.task-notif').load( window.location.href+' .notif')
+                $('.messages-menu .task-counter').load( window.location.href+' .pending-task, .task-description')
             },error: function (result) {
                 console.log(result.status);
             }
