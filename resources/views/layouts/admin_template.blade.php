@@ -324,6 +324,8 @@ $pendingTask = $taskCount->orderBy('created_at','desc')->get();
 <script src="{{ asset('/bower_components/admin-lte/dist/js/adminlte.min.js') }}"></script>
 <script src="{{asset('/js/notify.min.js')}}"></script>
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+<!--Text to speech-->
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=uC3LLI3C"></script>
 <script>
     var pusher = new Pusher('9d11fb3b771888dfb1b0', {
         cluster: 'ap1',
@@ -348,6 +350,7 @@ $pendingTask = $taskCount->orderBy('created_at','desc')->get();
                 $.notify("A new Task Created was assigned to: "+result, "success");
                 $('.task-notif').load( window.location.href+' .notif')
                 $('.messages-menu .task-counter').load( window.location.href+' .pending-task, .task-description')
+                responsiveVoice.speak("A new Task Created was assigned to: "+result);
             },error: function (result) {
                 console.log(result.status);
             }
