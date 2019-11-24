@@ -18,6 +18,7 @@
 use App\JobOrder;
 use App\task;
 use Spatie\Activitylog\Models\Activity;
+use App\Events\FormSubmitted;
 
 Route::get('admin', function () {
     return view('admin_template');
@@ -119,3 +120,22 @@ Route::get('/test',function (){
 
         return $activities;
 });
+
+//Route::get('my-form','Testcontroller@myform');
+//Route::post('my-form','Testcontroller@myformPost');
+//
+//Route::get('/counter', function (){
+//    return view('counter');
+//});
+//
+//Route::get('/sender', function (){
+//    return view('sender');
+//});
+//
+//Route::post('/sender', function (){
+//
+//    $text = request()->content;
+//
+//    event(new FormSubmitted($text));
+//});
+
