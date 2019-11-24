@@ -6,7 +6,7 @@ will count the total pending task
 * @var $taskCount
 */
 $taskCount = User::find(auth()->user()->id)->tasks()->where('status','pending');
-$pendingTask = $taskCount->get();
+$pendingTask = $taskCount->orderBy('created_at','desc')->get();
 @endphp
 <!DOCTYPE html>
 <html>
@@ -345,7 +345,7 @@ $pendingTask = $taskCount->get();
             'data'  : {'id' : id},
             'cache' : false,
             success: function (result) {
-                //$.notify("A new Task Created was assigned to: "+result, "success");
+                $.notify("A new Task Created was assigned to: "+result, "success");
                 $('.task-notif').load( window.location.href+' .notif')
                 $('.messages-menu .task-counter').load( window.location.href+' .pending-task, .task-description')
             },error: function (result) {
