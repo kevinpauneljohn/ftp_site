@@ -333,22 +333,26 @@ $pendingTask = $taskCount->orderBy('created_at','desc')->get();
 
     var channel = pusher.subscribe('task-channel');
     channel.bind('task-created', function(data) {
-        console.log();
-        getUsername(data.tasks.assigned_to);
+        getData(data.tasks.assigned_to, "{{route('user.data')}}", "A new Task Created was assigned to: ");
     });
 
-    function getUsername(id)
+    var jobOrderChannel = pusher.subscribe('job-order-channel');
+    jobOrderChannel.bind('job-order-created', function(data) {
+        console.log(JSON.stringify(data));
+    });
+
+    function getData(id, url, message)
     {
         $.ajax({
-            'url'   : '{{route('user.data')}}',
+            'url'   : url,
             'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             'type'  : 'POST',
             'data'  : {'id' : id},
             'cache' : false,
             success: function (result) {
-                $.notify("A new Task Created was assigned to: "+result, "success");
-                $('.task-notif').load( window.location.href+' .notif')
-                $('.messages-menu .task-counter').load( window.location.href+' .pending-task, .task-description')
+                $.notify(message+" "+result, "success");
+                $('.task-notif').load( window.location.href+' .notif');
+                $('.messages-menu .task-counter').load( window.location.href+' .pending-task, .task-description');
                 responsiveVoice.speak("A new Task Created was assigned to: "+result);
             },error: function (result) {
                 console.log(result.status);

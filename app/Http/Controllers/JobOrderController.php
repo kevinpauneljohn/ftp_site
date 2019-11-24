@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\category;
+use App\Events\JobOrderEvent;
 use App\JobOrder;
 use App\task;
 use App\User;
@@ -215,17 +216,19 @@ class JobOrderController extends Controller
 
         if($jobOrder->save())
         {
-            if($request->jobOrderId == null )
-            {
-                $result = redirect(route('job.order.reference.number', ['jobOrderId' => $jobOrder->id]));
-            }else{
-                $result = back()->with('success',true);
-            }
+            return $jobOrder;
+            event(new JobOrderEvent($jobOrder));
+//            if($request->jobOrderId == null )
+//            {
+//                $result = redirect(route('job.order.reference.number', ['jobOrderId' => $jobOrder->id]));
+//            }else{
+//                $result = back()->with('success',true);
+//            }
 
         }else{
             $result = back()->with('success',false);
         }
-        return $result;
+        //return $result;
 
     }
 
