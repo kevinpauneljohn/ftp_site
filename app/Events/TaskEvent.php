@@ -37,8 +37,7 @@ class TaskEvent implements ShouldBroadcast
 
     public function broadcastAs()
     {
-        $name = "task-created";
-        return $name;
+        return "task-created";
 
     }
 }
