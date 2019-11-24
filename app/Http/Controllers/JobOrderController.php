@@ -216,19 +216,18 @@ class JobOrderController extends Controller
 
         if($jobOrder->save())
         {
-            return $jobOrder;
             event(new JobOrderEvent($jobOrder));
-//            if($request->jobOrderId == null )
-//            {
-//                $result = redirect(route('job.order.reference.number', ['jobOrderId' => $jobOrder->id]));
-//            }else{
-//                $result = back()->with('success',true);
-//            }
+            if($request->jobOrderId == null )
+            {
+                $result = redirect(route('job.order.reference.number', ['jobOrderId' => $jobOrder->id]));
+            }else{
+                $result = back()->with('success',true);
+            }
 
         }else{
             $result = back()->with('success',false);
         }
-        //return $result;
+        return $result;
 
     }
 

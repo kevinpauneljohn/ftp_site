@@ -14,14 +14,15 @@ class JobOrderEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $jobOrder;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($jobOrder)
     {
-        //
+        $this->jobOrder = $jobOrder;
     }
 
     /**

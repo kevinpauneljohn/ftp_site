@@ -333,13 +333,15 @@ $pendingTask = $taskCount->orderBy('created_at','desc')->get();
 
     var channel = pusher.subscribe('task-channel');
     channel.bind('task-created', function(data) {
-        getData(data.tasks.assigned_to, "{{route('user.data')}}", "A new Task Created was assigned to: ");
+        getData(data.tasks.assigned_to, "{{route('user.data')}}", "A new Task Created is assigned to: ");
     });
 
     var jobOrderChannel = pusher.subscribe('job-order-channel');
     jobOrderChannel.bind('job-order-created', function(data) {
         console.log(JSON.stringify(data));
+        getData(data.jobOrder.created_by, "{{route('user.data')}}", "New Job Order number "+String(data.jobOrder.id).padStart(5, '0')+" is Created by: ");
     });
+
 
     function getData(id, url, message)
     {
@@ -353,7 +355,7 @@ $pendingTask = $taskCount->orderBy('created_at','desc')->get();
                 $.notify(message+" "+result, "success");
                 $('.task-notif').load( window.location.href+' .notif');
                 $('.messages-menu .task-counter').load( window.location.href+' .pending-task, .task-description');
-                responsiveVoice.speak("A new Task Created was assigned to: "+result);
+                responsiveVoice.speak(message+""+result);
             },error: function (result) {
                 console.log(result.status);
             }

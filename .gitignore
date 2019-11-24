@@ -17,3 +17,7 @@ public/images/1572768014.jpg
 public/images/1572813003.png
 job order table.txt
 
+app/Http/Controllers/Testcontroller.php
+resources/views/counter.blade.php
+resources/views/sender.blade.php
+resources/views/test.blade.php
