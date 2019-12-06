@@ -197,7 +197,7 @@
                     { data: 'action', name: 'action', orderable: false, searchable: false}
                 ],
                 responsive:true,
-                order:[0,'desc']
+                order:[1,'desc']
             });
         });
     </script>
